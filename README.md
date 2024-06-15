@@ -2,4 +2,4 @@
 
 > A modpack aimed to create a dnd-styled adventure.
 
-[**Development Log**](https://github.com/M1hono/Minecraft-Hunt/main/CHANGELOG.md)
+[**Dev Log**](https://github.com/M1hono/Minecraft-Hunt/blob/main/CHANGELOG.md)
