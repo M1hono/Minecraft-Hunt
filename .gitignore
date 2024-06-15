@@ -8,3 +8,6 @@
 !/defaultconfigs/
 
 /kubejs/probejs/
+usercache.json
+usernamecache.json
+patchouli_data.json
