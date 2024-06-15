@@ -1,1 +1,1 @@
-// This is a sample file for testing pushing files into the repository.
+// This file is designed to be used to initialize all basic actions.
