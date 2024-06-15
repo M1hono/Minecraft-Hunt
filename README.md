@@ -1,2 +1,2 @@
 # Minecraft-Hunt
-A modpack aimed to create a dnd style adventure.
+> A modpack aimed to create a dnd-styled adventure.
