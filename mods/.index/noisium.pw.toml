@@ -1,0 +1,13 @@
+filename = 'noisium-forge-2.0.3+mc1.20-1.20.1.jar'
+name = 'Noisium'
+side = 'both'
+
+[download]
+hash = '4cec669eb885f344206ca314e245ee62a19861cb'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5302292
+project-id = 930207
