@@ -1,0 +1,8 @@
+# 忽略所有文件夹
+/*/
+
+# 但不要忽略以下文件夹
+!/mods/
+!/kubejs/
+!/config/
+!/defaultconfigs/
