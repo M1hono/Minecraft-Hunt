@@ -1,19 +1,22 @@
 // priority: 0
 
-// WARN: You need to disable this script if you are not using it/finish using it.
+// WARN: You need to disable this script if you are not using it / finish using it.
 
 /**
- * @author M1hono
  * @description This script prints various information from your modpack to the console.
  * 
  * Available commands:
  * - 'GetRecipe': Prints all recipes.
  * - 'GetDamage': Prints all damage types.
+ * - 'GetDamageTags': Prints all damage type tags.
  * - 'GetAttribute': Prints all attributes.
  * - 'GetEnchantment': Prints all enchantments.
- * - 'GetTier': Prints all tiers.
  * - 'GetBiome': Prints all biomes.
+ * - 'GetBiomeTags': Prints all biome tags.
+ * - 'GetEffect': Prints all effects.
  * - 'GetFluid': Prints all fluids.
+ * - 'GetFluidTags': Prints all fluid tags.
+ * - 'GetTier': Prints all tiers.
  * - 'ListRegistries': Lists all available registries. @deprecated
  */
 PlayerEvents.chat(event => {
@@ -21,6 +24,7 @@ PlayerEvents.chat(event => {
 
     // Load necessary classes
     const $ResourceKey = Java.loadClass("net.minecraft.resources.ResourceKey");
+    const $TagKey = Java.loadClass("net.minecraft.tags.TagKey");
     const $TierSortingRegistry = Java.loadClass("net.minecraftforge.common.TierSortingRegistry");
 
     // Utility function to create registry keys
@@ -40,15 +44,40 @@ PlayerEvents.chat(event => {
      * @param {ResourceKey} registryKey - The registry key to get entries from.
      */
     const printRegistryEntries = (registryKey) => {
-        const registry = level.registryAccess().registryOrThrow(registryKey);
-        const entries = registry.entrySet();
-        const entrySet = new Set();
+        let registry = level.registryAccess().registryOrThrow(registryKey);
+        let entries = registry.entrySet();
+        let entrySet = new Set();
 
         // Get all entries and add them to the set
-        entries.forEach(entry => entrySet.add(entry.getKey().location().toString()));
+        let iterator = entries.iterator();
+        while (iterator.hasNext()) {
+            let entry = iterator.next();
+            entrySet.add(entry.getKey().location().toString());
+        }
 
         // Print all entries to the console
         console.info('\n' + Array.from(entrySet).join('\n'));
+    };
+
+    /**
+     * Prints all tags from a given registry to the console.
+     * @param {ResourceKey} registryKey - The registry key to get tags from.
+     */
+    const printTags = (registryKey) => {
+        let registry = level.registryAccess().registryOrThrow(registryKey);
+        let tags = registry.getTagNames();
+        let tagSet = new Set();
+
+        // Get all tags and add them to the set
+        let iterator = tags.iterator();
+        while (iterator.hasNext()) {
+            let tag = iterator.next();
+            let tagKey = $TagKey.create(registryKey, tag.location());
+            tagSet.add(tagKey.location().toString());
+        }
+
+        // Print all tags to the console
+        console.info('\n' + Array.from(tagSet).join('\n'));
     };
 
     /**
@@ -66,11 +95,14 @@ PlayerEvents.chat(event => {
     const commandActions = {
         'GetRecipe': () => printRegistryEntries(RECIPE),
         'GetDamage': () => printRegistryEntries(DAMAGE_TYPE),
+        'GetDamageTags': () => printTags(DAMAGE_TYPE),
         'GetAttribute': () => printRegistryEntries(ATTRIBUTE),
         'GetEnchantment': () => printRegistryEntries(ENCHANTMENT),
-        'GetBiome': () => printRegistryEntries(BIOME),
-        'GetFluid': () => printRegistryEntries(FLUID),
         'GetEffect': () => printRegistryEntries(EFFECT),
+        'GetBiome': () => printRegistryEntries(BIOME),
+        'GetBiomeTags': () => printTags(BIOME),
+        'GetFluid': () => printRegistryEntries(FLUID),
+        'GetFluidTags': () => printTags(FLUID),
         'GetTier': () => printTiers()
     };
 
