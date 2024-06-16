@@ -14,7 +14,7 @@
  * - 'GetTier': Prints all tiers.
  * - 'GetBiome': Prints all biomes.
  * - 'GetFluid': Prints all fluids.
- * - 'ListRegistries': Lists all available registries.
+ * - 'ListRegistries': Lists all available registries. @deprecated
  */
 PlayerEvents.chat(event => {
     const { message, level } = event;
