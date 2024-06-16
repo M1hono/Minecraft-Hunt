@@ -28,7 +28,7 @@ ServerEvents.commandRegistry(event => {
                 availableActions.forEach(action => builder.suggest(action));
                 return builder.buildFuture();
             })
-            .requires(src => src.hasPermission(2))
+            .requires(src => src.hasPermission(4))
             .executes(ctx => {
                 // Generate basic autocomplete
                 const action = Arguments.STRING.getResult(ctx, "action");
