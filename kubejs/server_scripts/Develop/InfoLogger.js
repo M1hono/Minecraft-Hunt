@@ -17,6 +17,7 @@ ServerEvents.commandRegistry(event => {
         'getTier', // Prints all tiers
         'getBiome', // Prints all biomes
         'getFluid', // Prints all fluids
+        'getEffect', // Prints all effects
         'getFluidTags', // Prints all fluid tags
         'getDamageTypeTags' // Prints all damage type tags
     ];
