@@ -1,19 +1,36 @@
 /**
  * @author M1hono
- * @description This script prints all the information needed of your modpack to the console.
+ * @description This script prints various information from your modpack to the console.
+ * 
+ * Available commands:
+ * - 'GetDamage': Prints all damage types.
+ * - 'GetAttribute': Prints all attributes.
+ * - 'GetEnchantment': Prints all enchantments.
+ * - 'GetTier': Prints all tiers.
+ * - 'GetBiome': Prints all biomes.
+ * - 'GetFluid': Prints all fluids.
+ * - 'ListRegistries': Lists all available registries.
  */
 PlayerEvents.chat(event => {
 
-    const { message , level } = event;
+    const { message, level } = event;
 
-    // Get Registry Key of Resourcekey through Reflection.
-    // Should be able to be replaced to any resource key that you want to get.
-    let $ResourceKey = Java.loadClass("net.minecraft.resources.ResourceKey");
-    let DAMAGE_TYPE = $ResourceKey.createRegistryKey("damage_type");
-    let ATTRIBUTE = $ResourceKey.createRegistryKey("attribute");
-    let ENCHANTMENT = $ResourceKey.createRegistryKey("enchantment");
-    // Load necessary classes for Tier handling
-    let $TierSortingRegistry = Java.loadClass("net.minecraftforge.common.TierSortingRegistry");
+    // Get Registry Key of ResourceKey through Reflection.
+    const $ResourceKey = Java.loadClass("net.minecraft.resources.ResourceKey");
+    const $TierSortingRegistry = Java.loadClass("net.minecraftforge.common.TierSortingRegistry");
+
+    // Utility function to create registry keys
+    function createRegistryKey(name) {
+        return $ResourceKey.createRegistryKey(name);
+    }
+
+    // Create registry keys for the resources we are interested in
+    const DAMAGE_TYPE = createRegistryKey("damage_type");
+    const ATTRIBUTE = createRegistryKey("attribute");
+    const ENCHANTMENT = createRegistryKey("enchantment");
+    const BIOME = createRegistryKey("worldgen/biome");
+    const FLUID = createRegistryKey("fluid");
+    const EFFECT = createRegistryKey("mob_effect");
 
     /**
      * Prints all entries from a given registry key to the console.
@@ -47,22 +64,34 @@ PlayerEvents.chat(event => {
         console.info(allTiers);
     }
 
-    /** @param {string} message - 'GetDamage' - You can change it into any message you want to trigger the event. */ 
+    /** 
+     * Handle different chat messages to trigger the corresponding actions.
+     * @param {string} message - The chat message to trigger the event.
+     */
     if (message === 'GetDamage') {
         printRegistryEntries(DAMAGE_TYPE);
     }
 
-    /** @param {string} message - 'GetAttribute' - You can change it into any message you want to trigger the event. */ 
     if (message === 'GetAttribute') {
         printRegistryEntries(ATTRIBUTE);
     }
 
-    /** @param {string} message - 'GetEnchantment' - You can change it into any message you want to trigger the event. */
     if (message === 'GetEnchantment') {
         printRegistryEntries(ENCHANTMENT);
     }
 
-    /** @param {string} message - 'GetTier' - You can change it into any message you want to trigger the event. */ 
+    if (message === 'GetBiome') {
+        printRegistryEntries(BIOME);
+    }
+
+    if (message === 'GetFluid') {
+        printRegistryEntries(FLUID);
+    }
+
+    if (message === 'GetEffect') {
+        printRegistryEntries(EFFECT);
+    }
+
     if (message === 'GetTier') {
         printTiers();
     }
