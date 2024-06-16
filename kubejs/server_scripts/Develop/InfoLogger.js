@@ -74,8 +74,6 @@ PlayerEvents.chat(event => {
         'GetTier': () => printTiers()
     };
 
-    // Execute the appropriate action based on the chat message
-    if (commandActions[message]) {
-        commandActions[message]();
-    }
+    // Execute the command.
+    if (commandActions[message]) commandActions[message]();
 });
