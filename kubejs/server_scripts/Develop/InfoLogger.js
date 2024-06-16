@@ -39,65 +39,6 @@ PlayerEvents.chat(event => {
     const FLUID = createRegistryKey("fluid");
     const EFFECT = createRegistryKey("mob_effect");
 
-    /**
-     * Prints all entries from a given registry key to the console.
-     * @param {ResourceKey} registryKey - The registry key to get entries from.
-     */
-    const printRegistryEntries = (registryKey) => {
-        const registry = level.registryAccess().registryOrThrow(registryKey);
-        const entries = registry.entrySet();
-        const entrySet = new Set();
-
-        // Get all entries and add them to the set
-        const iterator = entries.iterator();
-        while (iterator.hasNext()) {
-            const entry = iterator.next();
-            entrySet.add(entry.getKey().location().toString());
-        }
-
-        // Print all entries to the console
-        console.info('\n' + Array.from(entrySet).join('\n'));
-    };
-
-    /**
-     * Prints all tags from a given registry to the console.
-     * @param {ResourceKey} registryKey - The registry key to get tags from.
-     */
-    const printTags = (registryKey) => {
-        const registry = level.registryAccess().registryOrThrow(registryKey);
-        const tags = registry.getTagNames();
-        const tagSet = new Set();
-
-        // Get all tags and add them to the set
-        const iterator = tags.iterator();
-        while (iterator.hasNext()) {
-            const tag = iterator.next();
-            const tagKey = $TagKey.create(registryKey, tag.location());
-            tagSet.add(tagKey.location().toString());
-        }
-
-        // Print all tags to the console
-        console.info('\n' + Array.from(tagSet).join('\n'));
-    };
-
-    /**
-     * Prints all tier names to the console, including custom KubeJS tiers.
-     */
-    const printTiers = () => {
-        const tiers = $TierSortingRegistry.getSortedTiers();
-        const tierNames = tiers.map(tier => $TierSortingRegistry.getName(tier).toString());
-
-        // Add custom KubeJS tiers
-        const customToolTiers = $ItemBuilder.TOOL_TIERS.keySet().toArray();
-        const customArmorTiers = $ItemBuilder.ARMOR_TIERS.keySet().toArray();
-
-        customToolTiers.forEach(tier => tierNames.push(tier.toString()));
-        customArmorTiers.forEach(tier => tierNames.push(tier.toString()));
-
-        // Print all tier names to the console
-        console.info('\n' + tierNames.join('\n'));
-    };
-
     // Mapping of commands to their respective actions
     const commandActions = {
         'GetRecipe': () => printRegistryEntries(RECIPE),
@@ -115,3 +56,62 @@ PlayerEvents.chat(event => {
     // Execute the command.
     if (commandActions[message]) commandActions[message]();
 });
+
+/**
+ * Prints all entries from a given registry key to the console.
+ * @param {ResourceKey} registryKey - The registry key to get entries from.
+ */
+const printRegistryEntries = (registryKey) => {
+    const registry = level.registryAccess().registryOrThrow(registryKey);
+    const entries = registry.entrySet();
+    const entrySet = new Set();
+
+    // Get all entries and add them to the set
+    const iterator = entries.iterator();
+    while (iterator.hasNext()) {
+        const entry = iterator.next();
+        entrySet.add(entry.getKey().location().toString());
+    }
+
+    // Print all entries to the console
+    console.info('\n' + Array.from(entrySet).join('\n'));
+};
+
+/**
+ * Prints all tags from a given registry to the console.
+ * @param {ResourceKey} registryKey - The registry key to get tags from.
+ */
+const printTags = (registryKey) => {
+    const registry = level.registryAccess().registryOrThrow(registryKey);
+    const tags = registry.getTagNames();
+    const tagSet = new Set();
+
+    // Get all tags and add them to the set
+    let iterator = tags.iterator();
+    while (iterator.hasNext()) {
+        let tag = iterator.next();
+        let tagKey = $TagKey.create(registryKey, tag.location());
+        tagSet.add(tagKey.location().toString());
+    }
+
+    // Print all tags to the console
+    console.info('\n' + Array.from(tagSet).join('\n'));
+};
+
+/**
+ * Prints all tier names to the console, including custom KubeJS tiers.
+ */
+const printTiers = () => {
+    const tiers = $TierSortingRegistry.getSortedTiers();
+    const tierNames = tiers.map(tier => $TierSortingRegistry.getName(tier).toString());
+
+    // Add custom KubeJS tiers
+    const customToolTiers = $ItemBuilder.TOOL_TIERS.keySet().toArray();
+    const customArmorTiers = $ItemBuilder.ARMOR_TIERS.keySet().toArray();
+
+    customToolTiers.forEach(tier => tierNames.push(tier.toString()));
+    customArmorTiers.forEach(tier => tierNames.push(tier.toString()));
+
+    // Print all tier names to the console
+    console.info('\n' + tierNames.join('\n'));
+};
