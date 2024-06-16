@@ -2,32 +2,23 @@
 // Or You could keep it as it has been developed into commands.
 
 /**
+ * @author M1hono
  * @description This script prints various information from your modpack to the console.
- * 
- * Available commands:
- * - '/info getRecipe': Prints all recipes.
- * - '/info getDamage': Prints all damage types.
- * - '/info getAttribute': Prints all attributes.
- * - '/info getEnchantment': Prints all enchantments.
- * - '/info getTier': Prints all tiers.
- * - '/info getBiome': Prints all biomes.
- * - '/info getFluid': Prints all fluids.
- * - '/info getFluidTags': Prints all fluid tags.
- * - '/info getDamageTypeTags': Prints all damage type tags.
  */
 ServerEvents.commandRegistry(event => {
-    const { commands: Commands, arguments: Arguments, suggestions: Suggestions } = event;
+    const { commands: Commands, arguments: Arguments } = event;
 
+    // List of available actions
     const availableActions = [
-        'getRecipe',
-        'getDamage',
-        'getAttribute',
-        'getEnchantment',
-        'getTier',
-        'getBiome',
-        'getFluid',
-        'getFluidTags',
-        'getDamageTypeTags'
+        'getRecipe', // Prints all recipes
+        'getDamage', // Prints all damage types
+        'getAttribute', // Prints all attributes
+        'getEnchantment', // Prints all enchantments
+        'getTier', // Prints all tiers
+        'getBiome', // Prints all biomes
+        'getFluid', // Prints all fluids
+        'getFluidTags', // Prints all fluid tags
+        'getDamageTypeTags' // Prints all damage type tags
     ];
 
     event.register(
@@ -37,16 +28,24 @@ ServerEvents.commandRegistry(event => {
                 availableActions.forEach(action => builder.suggest(action));
                 return builder.buildFuture();
             })
+            .requires(src => src.hasPermission(2))
             .executes(ctx => {
+                // Generate basic autocomplete
                 const action = Arguments.STRING.getResult(ctx, "action");
                 const source = ctx.source;
-
+                const server = source.getServer();
                 const level = source.getLevel();
 
                 if (commandActions[action]) {
                     let result = commandActions[action](level);
                     if (typeof result === 'object' && result !== null) {
+                        // Reload server scripts to Clear previous output.
+                        server.runCommandSilent("kubejs reload server_scripts");
+                        if (action === 'getTier') {
+                            console.info(action + ":\n" + result.join('\n'));
+                        } else {
                         console.info(action + ":\n" + Array.from(result).join('\n'));
+                        }
                     }
                     source.sendSuccess("Output printed to console for " + action, false);
                     return 1;
@@ -87,8 +86,10 @@ const getRegistryEntries = (registryKey, level) => {
     const entries = registry.entrySet();
     let entrySet = new Set();
 
-    // Get all entries and add them to the set
-    entries.forEach(entry => entrySet.add(entry.getKey().location().toString()));
+    // Convert the entries iterator to an array for easier iteration
+    entries.forEach(entry => {
+        entrySet.add(entry.getKey().location().toString());
+    });
 
     return entrySet;
 };
@@ -104,7 +105,7 @@ const getTags = (registryKey, level) => {
     const tags = registry.getTagNames();
     let tagSet = new Set();
 
-    // Get all tags and add them to the set
+    // Convert the tags iterator to an array for easier iteration
     tags.forEach(tag => {
         let tagKey = $TagKey.create(registryKey, tag.location());
         tagSet.add(tagKey.location().toString());
@@ -119,13 +120,13 @@ const getTags = (registryKey, level) => {
  */
 const getTiers = () => {
     const tiers = $TierSortingRegistry.getSortedTiers();
-    let tierNames = new Set(tiers.map(tier => $TierSortingRegistry.getName(tier).toString()));
+    let tierNames = tiers.map(tier => $TierSortingRegistry.getName(tier).toString());
 
     const customToolTiers = $ItemBuilder.TOOL_TIERS.keySet().toArray();
-    const customArmorTiers = $ItemBuilder.ARMOR_TIERS.keySet().toArray();
+    const customArmorTiers = $ItemBuilder.TOOL_TIERS.keySet().toArray();
 
-    customToolTiers.forEach(tier => tierNames.add(tier.toString()));
-    customArmorTiers.forEach(tier => tierNames.add(tier.toString()));
+    customToolTiers.forEach(tier => tierNames.push(tier.toString()));
+    customArmorTiers.forEach(tier => tierNames.push(tier.toString()));
 
     return tierNames;
 };
