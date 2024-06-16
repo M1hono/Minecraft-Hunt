@@ -3,6 +3,7 @@
 // WARN: You need to disable this script if you are not using it / finish using it.
 
 /**
+ * @author M1hono
  * @description This script prints various information from your modpack to the console.
  * 
  * Available commands:
