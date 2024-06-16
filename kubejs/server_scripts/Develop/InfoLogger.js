@@ -1,117 +1,145 @@
-// priority: 0
-
 // WARN: You need to disable this script if you are not using it / finish using it.
+// Or You could keep it as it has been developed into commands.
 
 /**
- * @author M1hono
  * @description This script prints various information from your modpack to the console.
  * 
  * Available commands:
- * - 'GetRecipe': Prints all recipes.
- * - 'GetDamage': Prints all damage types.
- * - 'GetAttribute': Prints all attributes.
- * - 'GetEnchantment': Prints all enchantments.
- * - 'GetTier': Prints all tiers.
- * - 'GetBiome': Prints all biomes.
- * - 'GetFluid': Prints all fluids.
- * - 'GetFluidTags': Prints all fluid tags.
- * - 'GetDamageTypeTags': Prints all damage type tags.
- * - 'ListRegistries': Lists all available registries. @deprecated
+ * - '/info getRecipe': Prints all recipes.
+ * - '/info getDamage': Prints all damage types.
+ * - '/info getAttribute': Prints all attributes.
+ * - '/info getEnchantment': Prints all enchantments.
+ * - '/info getTier': Prints all tiers.
+ * - '/info getBiome': Prints all biomes.
+ * - '/info getFluid': Prints all fluids.
+ * - '/info getFluidTags': Prints all fluid tags.
+ * - '/info getDamageTypeTags': Prints all damage type tags.
  */
-PlayerEvents.chat(event => {
-    const { message, level } = event;
+ServerEvents.commandRegistry(event => {
+    const { commands: Commands, arguments: Arguments, suggestions: Suggestions } = event;
 
-    // Load necessary classes
-    const $ResourceKey = Java.loadClass("net.minecraft.resources.ResourceKey");
-    const $TagKey = Java.loadClass("net.minecraft.tags.TagKey");
-    const $TierSortingRegistry = Java.loadClass("net.minecraftforge.common.TierSortingRegistry");
-    const $ItemBuilder = Java.loadClass("dev.latvian.mods.kubejs.item.ItemBuilder");
+    const availableActions = [
+        'getRecipe',
+        'getDamage',
+        'getAttribute',
+        'getEnchantment',
+        'getTier',
+        'getBiome',
+        'getFluid',
+        'getFluidTags',
+        'getDamageTypeTags'
+    ];
 
-    // Utility function to create registry keys
-    const createRegistryKey = (name) => $ResourceKey.createRegistryKey(name);
+    event.register(
+        Commands.literal("info")
+        .then(Commands.argument('action', Arguments.STRING.create(event))
+            .suggests((context, builder) => {
+                availableActions.forEach(action => builder.suggest(action));
+                return builder.buildFuture();
+            })
+            .executes(ctx => {
+                const action = Arguments.STRING.getResult(ctx, "action");
+                const source = ctx.source;
 
-    // Create registry keys for the resources we are interested in
-    const RECIPE = createRegistryKey("recipe_type");
-    const DAMAGE_TYPE = createRegistryKey("damage_type");
-    const ATTRIBUTE = createRegistryKey("attribute");
-    const ENCHANTMENT = createRegistryKey("enchantment");
-    const BIOME = createRegistryKey("worldgen/biome");
-    const FLUID = createRegistryKey("fluid");
-    const EFFECT = createRegistryKey("mob_effect");
+                const level = source.getLevel();
 
-    // Mapping of commands to their respective actions
-    const commandActions = {
-        'GetRecipe': () => printRegistryEntries(RECIPE),
-        'GetDamage': () => printRegistryEntries(DAMAGE_TYPE),
-        'GetAttribute': () => printRegistryEntries(ATTRIBUTE),
-        'GetEnchantment': () => printRegistryEntries(ENCHANTMENT),
-        'GetBiome': () => printRegistryEntries(BIOME),
-        'GetFluid': () => printRegistryEntries(FLUID),
-        'GetEffect': () => printRegistryEntries(EFFECT),
-        'GetTier': () => printTiers(),
-        'GetFluidTags': () => printTags(FLUID),
-        'GetDamageTypeTags': () => printTags(DAMAGE_TYPE)
-    };
-
-    // Execute the command.
-    if (commandActions[message]) commandActions[message]();
+                if (commandActions[action]) {
+                    let result = commandActions[action](level);
+                    if (typeof result === 'object' && result !== null) {
+                        console.info(action + ":\n" + Array.from(result).join('\n'));
+                    }
+                    source.sendSuccess("Output printed to console for " + action, false);
+                    return 1;
+                } else {
+                    source.sendSuccess("Invalid command action.", false);
+                    return 0;
+                }
+            })
+        )
+    );
 });
 
+const $ResourceKey = Java.loadClass("net.minecraft.resources.ResourceKey");
+const $TagKey = Java.loadClass("net.minecraft.tags.TagKey");
+const $TierSortingRegistry = Java.loadClass("net.minecraftforge.common.TierSortingRegistry");
+const $ItemBuilder = Java.loadClass("dev.latvian.mods.kubejs.item.ItemBuilder");
+
+// Utility function to create registry keys
+const createRegistryKey = (name) => $ResourceKey.createRegistryKey(name);
+
+// Create registry keys for the resources we are interested in
+const RECIPE = createRegistryKey("recipe_type");
+const DAMAGE_TYPE = createRegistryKey("damage_type");
+const ATTRIBUTE = createRegistryKey("attribute");
+const ENCHANTMENT = createRegistryKey("enchantment");
+const BIOME = createRegistryKey("worldgen/biome");
+const FLUID = createRegistryKey("fluid");
+const EFFECT = createRegistryKey("mob_effect");
+
 /**
- * Prints all entries from a given registry key to the console.
+ * Gets all entries from a given registry key.
  * @param {ResourceKey} registryKey - The registry key to get entries from.
+ * @param {Object} level - The level object.
+ * @returns {Set} - A set of entries.
  */
-const printRegistryEntries = (registryKey) => {
+const getRegistryEntries = (registryKey, level) => {
     const registry = level.registryAccess().registryOrThrow(registryKey);
     const entries = registry.entrySet();
-    const entrySet = new Set();
+    let entrySet = new Set();
 
     // Get all entries and add them to the set
-    const iterator = entries.iterator();
-    while (iterator.hasNext()) {
-        const entry = iterator.next();
-        entrySet.add(entry.getKey().location().toString());
-    }
+    entries.forEach(entry => entrySet.add(entry.getKey().location().toString()));
 
-    // Print all entries to the console
-    console.info('\n' + Array.from(entrySet).join('\n'));
+    return entrySet;
 };
 
 /**
- * Prints all tags from a given registry to the console.
+ * Gets all tags from a given registry.
  * @param {ResourceKey} registryKey - The registry key to get tags from.
+ * @param {Object} level - The level object.
+ * @returns {Set} - A set of tags.
  */
-const printTags = (registryKey) => {
+const getTags = (registryKey, level) => {
     const registry = level.registryAccess().registryOrThrow(registryKey);
     const tags = registry.getTagNames();
-    const tagSet = new Set();
+    let tagSet = new Set();
 
     // Get all tags and add them to the set
-    let iterator = tags.iterator();
-    while (iterator.hasNext()) {
-        let tag = iterator.next();
+    tags.forEach(tag => {
         let tagKey = $TagKey.create(registryKey, tag.location());
         tagSet.add(tagKey.location().toString());
-    }
+    });
 
-    // Print all tags to the console
-    console.info('\n' + Array.from(tagSet).join('\n'));
+    return tagSet;
 };
 
 /**
- * Prints all tier names to the console, including custom KubeJS tiers.
+ * Gets all tier names, including custom KubeJS tiers.
+ * @returns {Set} - A set of tier names.
  */
-const printTiers = () => {
+const getTiers = () => {
     const tiers = $TierSortingRegistry.getSortedTiers();
-    const tierNames = tiers.map(tier => $TierSortingRegistry.getName(tier).toString());
+    let tierNames = new Set(tiers.map(tier => $TierSortingRegistry.getName(tier).toString()));
 
-    // Add custom KubeJS tiers
     const customToolTiers = $ItemBuilder.TOOL_TIERS.keySet().toArray();
     const customArmorTiers = $ItemBuilder.ARMOR_TIERS.keySet().toArray();
 
-    customToolTiers.forEach(tier => tierNames.push(tier.toString()));
-    customArmorTiers.forEach(tier => tierNames.push(tier.toString()));
+    customToolTiers.forEach(tier => tierNames.add(tier.toString()));
+    customArmorTiers.forEach(tier => tierNames.add(tier.toString()));
 
-    // Print all tier names to the console
-    console.info('\n' + tierNames.join('\n'));
+    return tierNames;
+};
+
+// Mapping of commands to their respective actions
+const commandActions = {
+    'getRecipe': (level) => getRegistryEntries(RECIPE, level),
+    'getDamage': (level) => getRegistryEntries(DAMAGE_TYPE, level),
+    'getAttribute': (level) => getRegistryEntries(ATTRIBUTE, level),
+    'getEnchantment': (level) => getRegistryEntries(ENCHANTMENT, level),
+    'getBiome': (level) => getRegistryEntries(BIOME, level),
+    'getFluid': (level) => getRegistryEntries(FLUID, level),
+    'getEffect': (level) => getRegistryEntries(EFFECT, level),
+    'getTier': () => getTiers(),
+    'getFluidTags': (level) => getTags(FLUID, level),
+    'getDamageTypeTags': (level) => getTags(DAMAGE_TYPE, level)
 };
