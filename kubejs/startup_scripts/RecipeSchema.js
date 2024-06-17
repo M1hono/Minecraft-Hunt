@@ -25,4 +25,16 @@ StartupEvents.recipeSchemaRegistry((event) => {
                 .key('tool')
         )
     )
+
+    event.register(
+        'farmersdelight:cooking',
+        new $RecipeSchema(
+            components.get('outputItem')().key('result'),
+            components.get('inputItemArray')().key('ingredients'),
+            components.get('inputItem')().key('container').defaultOptional(),
+            components.get('intNumber')().key('cookingtime').optional(200),
+            components.get('floatNumber')().key('experience').optional(1.0),
+            components.get('nonBlankString')().key('recipe_book_tab').defaultOptional()
+        )
+    )
 })

@@ -19,7 +19,7 @@ ServerEvents.commandRegistry(event => {
         'getFluid', // Prints all fluids
         'getEffect', // Prints all effects
         'getFluidTags', // Prints all fluid tags
-        'getDamageTypeTags' // Prints all damage type tags
+        'getDamageTypeTags', // Prints all damage type tags
     ];
 
     event.register(
@@ -145,3 +145,14 @@ const commandActions = {
     'getFluidTags': (level) => getTags(FLUID, level),
     'getDamageTypeTags': (level) => getTags(DAMAGE_TYPE, level)
 };
+
+let randomUUID = () => event.player.uuid.class.getMethod("randomUUID").invoke(null)
+
+/**
+ * @author https://gist.github.com/storycraft
+ * @param {string} uuid 
+ * @returns {string}
+ */
+function toNBTUUID(uuid) {
+    return `[I;${uuid.replace(/-/g, '').match(/.{8}/g).map(str => Number.parseInt(str, 16)).map(num => num & 0x80000000 ? num - 0xffffffff - 1 : num).join(',')}]`;
+}
