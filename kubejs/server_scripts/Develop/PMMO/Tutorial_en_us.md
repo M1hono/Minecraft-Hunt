@@ -13,10 +13,10 @@ The rest are stored in Serverconfig or need to be defined using data packs.
 ### Structure Overview
 .minecraft/<br>
 ├── configs/<br>
-│   ├── pmmo-client.toml Controls display related to skills, experience acquisition, tooltips, and vein mining.<br>
-│   └── pmmo-common.toml For debugging purposes, this configuration file is usually not needed.<br>
+│   ├── pmmo-client.toml **Controls display related to skills, experience acquisition, tooltips, and vein mining.**<br>
+│   └── pmmo-common.toml **For debugging purposes, this configuration file is usually not needed.**<br>
 └── saves/<br>
-    └── world/ Your save name, usually you can store the configuration files here in defaultconfigs/<br>
+    └── world/ **Your save name, usually you can store the configuration files here in defaultconfigs/**<br>
         └── serverconfig/<br>
             ├── pmmo-AntiCheese.toml **Settings related to anti-cheating**<br>
             **with fishing anti-cheat disabled by default.**<br>
