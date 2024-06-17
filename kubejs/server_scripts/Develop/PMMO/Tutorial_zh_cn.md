@@ -14,19 +14,19 @@
 
 .minecraft/<br>
 ├── configs/<br>
-│   ├── pmmo-client.toml &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;控制技能、经验获取、工具提示与连锁挖矿相关的显示。<br>
-│   └── pmmo-common.toml &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;调试用，通常该配置文件无需被使用。<br>
+│   ├── pmmo-client.toml 控制技能、经验获取、工具提示与连锁挖矿相关的显示。<br>
+│   └── pmmo-common.toml 调试用，通常该配置文件无需被使用。<br>
 └── saves/<br>
-    └── world/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你的存档名，通常你可以将此处的配置文件存于defaultconfigs/<br>
+    └── world/ 你的存档名，通常你可以将此处的配置文件存于defaultconfigs/<br>
         └── serverconfig/<br>
-            ├── pmmo-AntiCheese.toml &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;反作弊相关设置，默认加入了未开启的钓鱼反作弊。<br>
-            ├── pmmo-AutoValues.toml &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过物品、方块和实体的属性与该文件的配置<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以自动为物品赋值使用需求与经验值获取，会被额外的配置如数据包覆盖。<br>
-            ├── pmmo-Globals.toml &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前用于简写数据包中NBT的Path<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constants当前未实现任何功能。<br>
-            ├── pmmo-Perks.toml &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;控制玩家在提升等级时获取的收益以及等级为玩家带来的属性上的成长<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可在此处禁用烟花火箭。<br>
-            ├── pmmo-Skills.toml &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定义技能的最高等级与其显示的图标。<br>
-            └── pmmo-server.toml &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有该模组的核心配置都存放于此处<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;包括但不限于全局的经验获取速率、升级所需经验、经验获取的方式<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以及各种需求的开关。<br>
+            ├── pmmo-AntiCheese.toml 反作弊相关设置，默认加入了未开启的钓鱼反作弊。<br>
+            ├── pmmo-AutoValues.toml 通过物品、方块和实体的属性与该文件的配置<br>
+            可以自动为物品赋值使用需求与经验值获取，会被额外的配置如数据包覆盖。<br>
+            ├── pmmo-Globals.toml 当前用于简写数据包中NBT的Path<br>
+            constants当前未实现任何功能。<br>
+            ├── pmmo-Perks.toml 控制玩家在提升等级时获取的收益以及等级为玩家带来的属性上的成长<br>
+            可在此处禁用烟花火箭。<br>
+            ├── pmmo-Skills.toml 定义技能的最高等级与其显示的图标。<br>
+            └── pmmo-server.toml 所有该模组的核心配置都存放于此处<br>
+            包括但不限于全局的经验获取速率、升级所需经验、经验获取的方式<br>
+            以及各种需求的开关。<br>

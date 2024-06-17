@@ -11,35 +11,23 @@ Some basic global configurations and client configurations are stored in config/
 The rest are stored in Serverconfig or need to be defined using data packs.
 
 ### Structure Overview
-.minecraft/
-
-├── configs/
-
-│   ├── pmmo-client.toml Controls display related to skills, experience acquisition, tooltips, and vein mining.
-
-│   └── pmmo-common.toml For debugging purposes, this configuration file is usually not needed.
-
-└── saves/
-
-    └── world/ Your save name, usually you can store the configuration files here in defaultconfigs/
-
-        └── serverconfig/
-
-            ├── pmmo-AntiCheese.toml Settings related to anti-cheating
-            with fishing anti-cheat disabled by default.
-            
-            ├── pmmo-AutoValues.toml Automatically assigns usage requirements and experience values to items based on their properties
-            and the configuration in this file
-            can be overridden by additional configurations such as data packs.
-            
-            ├── pmmo-Globals.toml Currently used for shorthand NBT Paths in data packs
-            constants currently have no implemented functionality.
-            
-            ├── pmmo-Perks.toml Controls the benefits players receive when leveling up and the attribute growth associated with levels
-            fireworks can be disabled here.
-            
-            ├── pmmo-Skills.toml Defines the maximum level of skills and their display icons.
-            
-            └── pmmo-server.toml All core configurations of the mod are stored here
-            including but not limited to global experience acquisition rates, experience required for leveling up, methods of experience acquisition
-            and various requirement toggles.
+.minecraft/<br>
+├── configs/<br>
+│   ├── pmmo-client.toml Controls display related to skills, experience acquisition, tooltips, and vein mining.<br>
+│   └── pmmo-common.toml For debugging purposes, this configuration file is usually not needed.<br>
+└── saves/<br>
+    └── world/ Your save name, usually you can store the configuration files here in defaultconfigs/<br>
+        └── serverconfig/<br>
+            ├── pmmo-AntiCheese.toml Settings related to anti-cheating<br>
+            with fishing anti-cheat disabled by default.<br>
+            ├── pmmo-AutoValues.toml Automatically assigns usage requirements and experience values to items based on their properties<br>
+            and the configuration in this file<br>
+            can be overridden by additional configurations such as data packs.<br>
+            ├── pmmo-Globals.toml Currently used for shorthand NBT Paths in data packs<br>
+            constants currently have no implemented functionality.<br>
+            ├── pmmo-Perks.toml Controls the benefits players receive when leveling up and the attribute growth associated with levels<br>
+            fireworks can be disabled here.<br>
+            ├── pmmo-Skills.toml Defines the maximum level of skills and their display icons.<br>
+            └── pmmo-server.toml All core configurations of the mod are stored here<br>
+            including but not limited to global experience acquisition rates, experience required for leveling up, methods of experience acquisition<br>
+            and various requirement toggles.<br>
