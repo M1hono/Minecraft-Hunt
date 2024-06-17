@@ -13,14 +13,25 @@
 ### 结构概览
 .minecraft/
 ├── configs/
+
 │   ├── pmmo-client.toml 控制技能、经验获取、工具提示与连锁挖矿相关的显示。
+
 │   └── pmmo-common.toml 调试用，通常该配置文件无需被使用。
+
 └── saves/
+
     └── world/ 你的存档名，通常你可以将此处的配置文件存于defaultconfigs/
+
         └── serverconfig/
+
             ├── pmmo-AntiCheese.toml 反作弊相关设置，默认加入了未开启的钓鱼反作弊。
+
             ├── pmmo-AutoValues.toml 通过物品、方块和实体的属性与该文件的配置，可以自动为物品赋值使用需求与经验值获取，会被额外的配置如数据包覆盖。
+
             ├── pmmo-Globals.toml 当前用于简写数据包中NBT的Path，constants当前未实现任何功能。
+
             ├── pmmo-Perks.toml 控制玩家在提升等级时获取的收益以及等级为玩家带来的属性上的成长，可在此处禁用烟花火箭。
+
             ├── pmmo-Skills.toml 定义技能的最高等级与其显示的图标。
+            
             └── pmmo-server.toml 所有该模组的核心配置都存放于此处，包括但不限于全局的经验获取速率、升级所需经验、经验获取的方式以及各种需求的开关。
