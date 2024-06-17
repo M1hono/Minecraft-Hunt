@@ -25,15 +25,21 @@ The rest are stored in Serverconfig or need to be defined using data packs.
 
         └── serverconfig/
 
-            ├── pmmo-AntiCheese.toml Settings related to anti-cheating, with fishing anti-cheat disabled by default.
+            ├── pmmo-AntiCheese.toml Settings related to anti-cheating
+            with fishing anti-cheat disabled by default.
             
-            ├── pmmo-AutoValues.toml Automatically assigns usage requirements and experience values to items based on their properties and the configuration in 
-            this file, can be overridden by additional configurations such as data packs.
+            ├── pmmo-AutoValues.toml Automatically assigns usage requirements and experience values to items based on their properties
+            and the configuration in this file
+            can be overridden by additional configurations such as data packs.
             
-            ├── pmmo-Globals.toml Currently used for shorthand NBT Paths in data packs, constants currently have no implemented functionality.
+            ├── pmmo-Globals.toml Currently used for shorthand NBT Paths in data packs
+            constants currently have no implemented functionality.
             
-            ├── pmmo-Perks.toml Controls the benefits players receive when leveling up and the attribute growth associated with levels, fireworks can be disabled here.
+            ├── pmmo-Perks.toml Controls the benefits players receive when leveling up and the attribute growth associated with levels
+            fireworks can be disabled here.
             
             ├── pmmo-Skills.toml Defines the maximum level of skills and their display icons.
             
-            └── pmmo-server.toml All core configurations of the mod are stored here, including but not limited to global experience acquisition rates, experience required for leveling up, methods of experience acquisition, and various requirement toggles.
+            └── pmmo-server.toml All core configurations of the mod are stored here
+            including but not limited to global experience acquisition rates, experience required for leveling up, methods of experience acquisition
+            and various requirement toggles.
