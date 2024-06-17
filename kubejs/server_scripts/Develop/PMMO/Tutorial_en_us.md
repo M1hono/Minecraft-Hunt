@@ -18,16 +18,16 @@ The rest are stored in Serverconfig or need to be defined using data packs.
 └── saves/<br>
     └── world/ Your save name, usually you can store the configuration files here in defaultconfigs/<br>
         └── serverconfig/<br>
-            ├── pmmo-AntiCheese.toml Settings related to anti-cheating<br>
-            with fishing anti-cheat disabled by default.<br>
-            ├── pmmo-AutoValues.toml Automatically assigns usage requirements and experience values to items based on their properties<br>
-            and the configuration in this file<br>
-            can be overridden by additional configurations such as data packs.<br>
-            ├── pmmo-Globals.toml Currently used for shorthand NBT Paths in data packs<br>
-            constants currently have no implemented functionality.<br>
-            ├── pmmo-Perks.toml Controls the benefits players receive when leveling up and the attribute growth associated with levels<br>
-            fireworks can be disabled here.<br>
-            ├── pmmo-Skills.toml Defines the maximum level of skills and their display icons.<br>
-            └── pmmo-server.toml All core configurations of the mod are stored here<br>
-            including but not limited to global experience acquisition rates, experience required for leveling up, methods of experience acquisition<br>
-            and various requirement toggles.<br>
+            ├── pmmo-AntiCheese.toml **Settings related to anti-cheating**<br>
+            **with fishing anti-cheat disabled by default.**<br>
+            ├── pmmo-AutoValues.toml **Automatically assigns usage requirements and experience values to items based on their properties**<br>
+            **and the configuration in this file**<br>
+            **can be overridden by additional configurations such as data packs.**<br>
+            ├── pmmo-Globals.toml **Currently used for shorthand NBT Paths in data packs**<br>
+            **constants currently have no implemented functionality.**<br>
+            ├── pmmo-Perks.toml **Controls the benefits players receive when leveling up and the attribute growth associated with levels**<br>
+            **fireworks can be disabled here.**<br>
+            ├── pmmo-Skills.toml **Defines the maximum level of skills and their display icons.**<br>
+            └── pmmo-server.toml **All core configurations of the mod are stored here**<br>
+            **including but not limited to global experience acquisition rates, experience required for leveling up, methods of experience acquisition**<br>
+            **and various requirement toggles.**<br>
