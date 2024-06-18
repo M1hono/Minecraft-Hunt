@@ -132,17 +132,6 @@
         "value": 1024
       }
     },
-    "forge:entity_reach": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
     "l2damagetracker:damage_absorption": {
       "enabled": false,
       "min": {
@@ -152,6 +141,17 @@
       "max": {
         "default": 10000,
         "value": 10000
+      }
+    },
+    "forge:entity_reach": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
       }
     },
     "attributeslib:dodge_chance": {
