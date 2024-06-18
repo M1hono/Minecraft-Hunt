@@ -5,7 +5,8 @@
  * @author M1hono
  * @description This script prints various information from your modpack to the console.
  */
-ServerEvents.commandRegistry(event => {
+ServerEvents.commandRegistry(event => {     
+    
     const { commands: Commands, arguments: Arguments } = event;
     
     // List of available actions
@@ -48,7 +49,6 @@ ServerEvents.commandRegistry(event => {
         'getStatType',
         'getPlacementModifierType',
         'getWorldgenFeature',
-        // 'getTrait',
         'getGlobalLootModifierSerializers',
         'getTreeDecoratorType',
         'getIntProviderType',
@@ -104,7 +104,8 @@ ServerEvents.commandRegistry(event => {
         'getStructurePoolElement',
         'getBlockPredicateType',
         'getRuleBlockEntityModifier',
-        'getWorldgenStructureType'
+        'getWorldgenStructureType',
+        'getTrait'
     ];
 
     event.register(
@@ -193,7 +194,7 @@ const PLACED_FEATURE = createRegistryKey("worldgen/placed_feature");
 const STAT_TYPE = createRegistryKey("stat_type");
 const PLACEMENT_MODIFIER_TYPE = createRegistryKey("worldgen/placement_modifier_type");
 const WORLDGEN_FEATURE = createRegistryKey("worldgen/feature");
-// const TRAIT = createRegistryKey("l2hostility:trait");
+const TRAIT = createRegistryKey("l2hostility:trait");
 const GLOBAL_LOOT_MODIFIER_SERIALIZERS = createRegistryKey("forge:global_loot_modifier_serializers");
 const TREE_DECORATOR_TYPE = createRegistryKey("minecraft:worldgen/tree_decorator_type");
 const INT_PROVIDER_TYPE = createRegistryKey("minecraft:int_provider_type");
@@ -270,26 +271,6 @@ const getRegistryEntries = (registryKey, level) => {
 };
 
 /**
- * Gets all tags from a given registry.
- * @param {ResourceKey} registryKey - The registry key to get tags from.
- * @param {Object} level - The level object.
- * @returns {Set} - A set of tags.
- */
-const getTags = (registryKey, level) => {
-    const registry = level.registryAccess().registryOrThrow(registryKey);
-    const tags = registry.getTagNames();
-    let tagSet = new Set();
-
-    // Convert the tags iterator to an array for easier iteration
-    tags.forEach(tag => {
-        let tagKey = $TagKey.create(registryKey, tag.location());
-        tagSet.add(tagKey.location().toString());
-    });
-
-    return tagSet;
-};
-
-/**
  * Gets all tier names, including custom KubeJS tiers.
  * @returns {Set} - A set of tier names.
  */
@@ -305,6 +286,32 @@ const getTiers = () => {
 
     return tierNames;
 };
+
+const $LHTraits = Java.loadClass("dev.xkmc.l2hostility.init.registrate.LHTraits");
+const $Component = Java.loadClass("net.minecraft.network.chat.Component");
+
+/**
+ * Get all traits and their descriptions
+ * @param {Object} level - The level object.
+ * @returns {Set} - A set of traits and their descriptions.
+ */
+const getTraits = (level) => {
+    let traits = new Set();
+    let traitRegistry = $LHTraits.TRAITS.get();
+    let values = traitRegistry.getValues();
+
+    values.forEach(traitInstance => {
+        let trait = traitInstance.getRegistryName().toString();
+        let traitNameKey = `trait.${traitInstance.getRegistryName().getNamespace()}.${traitInstance.getRegistryName().getPath()}`;
+        let traitDescKey = `${traitNameKey}.desc`;
+        let traitName = $Component.translatable(traitNameKey).getString();
+        let traitDesc = $Component.translatable(traitDescKey).getString();
+        traits.add(`Trait:${trait}， ${traitName}, Description: ${traitDesc}`);
+    });
+
+    return traits;
+};
+
 
 /**
  * Additional function to fetch all registry types
@@ -362,7 +369,6 @@ const commandActions = {
     'getStatType': (level) => getRegistryEntries(STAT_TYPE, level),
     'getPlacementModifierType': (level) => getRegistryEntries(PLACEMENT_MODIFIER_TYPE, level),
     'getWorldgenFeature': (level) => getRegistryEntries(WORLDGEN_FEATURE, level),
-    // 'getTrait': (level) => getRegistryEntries(TRAIT, level),
     'getGlobalLootModifierSerializers': (level) => getRegistryEntries(GLOBAL_LOOT_MODIFIER_SERIALIZERS, level),
     'getTreeDecoratorType': (level) => getRegistryEntries(TREE_DECORATOR_TYPE, level),
     'getIntProviderType': (level) => getRegistryEntries(INT_PROVIDER_TYPE, level),
@@ -418,4 +424,5 @@ const commandActions = {
     'getStructurePoolElement': (level) => getRegistryEntries(STRUCTURE_POOL_ELEMENT, level),
     'getBlockPredicateType': (level) => getRegistryEntries(BLOCK_PREDICATE_TYPE, level),
     'getRuleBlockEntityModifier': (level) => getRegistryEntries(RULE_BLOCK_ENTITY_MODIFIER, level),
+    'getTrait': (level) => getTraits(level)
 };
