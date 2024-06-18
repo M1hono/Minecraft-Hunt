@@ -1,0 +1,9 @@
+{
+    "values":[
+        "minecraft:desert", 
+        "wythers:danakil_desert", 
+        "wythers:desert_pinnacles", 
+        "wythers:red_desert", 
+        "wythers:wooded_desert"
+    ]
+}

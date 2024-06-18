@@ -1,0 +1,16 @@
+{
+    "values": [
+        "minecraft:savanna_plateau",
+        "minecraft:savanna",
+        "minecraft:windswept_savanna",
+        "wythers:jacaranda_savanna",
+        "wythers:savanna_basaltic_incursions",
+        "wythers:wooded_savanna",
+        "wythers:scrubland",
+        "wythers:subtropical_forest_edge",
+        "wythers:subtropical_grassland",
+        "wythers:tropical_grassland",
+        "wythers:dry_savanna",
+        "wythers:humid_tropical_grassland"
+    ]
+}
