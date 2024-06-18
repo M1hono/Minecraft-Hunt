@@ -1,6 +1,4 @@
 const { $XpEvent } = require("packages/harmonised/pmmo/api/events/$XpEvent")
-// const $RitualCompleteEvents = Java.loadClass(' com.mna.api.events.RitualCompleteEvent')
-// const { $RitualCompleteEvents } = require("com/mna/api/events/$RitualCompleteEvent")
 ForgeEvents.onEvent($XpEvent, event => {
     global.test(event)
 })
