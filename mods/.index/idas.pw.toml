@@ -1,0 +1,13 @@
+filename = '[世界][结构][地牢建筑统合] idas_forge-1.9.3+1.20.1.jar'
+name = 'Integrated Dungeons and Structures'
+side = 'both'
+
+[download]
+hash = '28af49e9dbe62e2d15f63015313b36fd1a89f0f2'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5223024
+project-id = 605375

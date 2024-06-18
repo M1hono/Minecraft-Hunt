@@ -1,0 +1,13 @@
+filename = '[魔改][nbt补全]NBTac-FORGE-1.20.1-1.2.1.jar'
+name = 'NBT Autocomplete'
+side = 'both'
+
+[download]
+hash = '0c8fe0198de5ca8226af6cdead1d9c38ee5cbbe2'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5298558
+project-id = 813557

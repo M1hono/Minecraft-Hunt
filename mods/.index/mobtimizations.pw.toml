@@ -1,0 +1,13 @@
+filename = '[优化][实体AI]mobtimizations-forge-1.20.1-1.0.0.jar'
+name = 'Mobtimizations - Entity Performance Fixes'
+side = 'both'
+
+[download]
+hash = '1e7de73072e0adc9f09494cd79a79b1db030c293'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5135998
+project-id = 974401

@@ -1,0 +1,13 @@
+filename = '[辅助][旅行地图] journeymap-1.20.1-5.9.23-forge.jar'
+name = 'JourneyMap'
+side = 'both'
+
+[download]
+hash = 'ee8e1a67fead37ec07bd692053f52cdf72cc15aa'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5401131
+project-id = 32274
