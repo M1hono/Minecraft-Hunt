@@ -1,0 +1,20 @@
+{
+    "values": [
+        "minecraft:meadow",
+        "minecraft:badlands",
+        "minecraft:wooded_badlands",
+        "minecraft:cherry_grove",
+        "wythers:andesite_crags",
+        "wythers:aspen_crags",
+        "wythers:autumnal_crags",
+        "wythers:old_growth_taiga_crags",
+        "wythers:taiga_crags",
+        "wythers:thermal_taiga_crags",
+        "wythers:ayers_rock",
+        "wythers:bamboo_jungle_highlands",
+        "wythers:huangshan_highlands",
+        "wythers:jade_highlands",
+        "wythers:crimson_tundra",
+        "wythers:maple_mountains"
+    ]
+}
