@@ -106,7 +106,7 @@
 		#Range: 3 -> 6400
 		itemCapacity3=576
 		
-		#The amount of item storage added by the first Item Capacity Upgrade (Diamond)
+		#The amount of item storage added by the first Item Capacity Upgrade (Netherite)
 		#Range: 4 -> 6400
 		itemCapacity4=1152
 		

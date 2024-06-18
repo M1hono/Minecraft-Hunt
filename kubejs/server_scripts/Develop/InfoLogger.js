@@ -7,7 +7,7 @@
  */
 ServerEvents.commandRegistry(event => {
     const { commands: Commands, arguments: Arguments } = event;
-
+    
     // List of available actions
     const availableActions = [
         'getRecipe', // Prints all recipes

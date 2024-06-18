@@ -1,13 +1,13 @@
-filename = 'lmft-1.0.4+1.20.1-forge.jar'
+filename = 'lmft-1.0.3+1.20.1-forge.jar'
 name = 'Load My F***ing Tags'
-side = 'both'
+side = 'server'
 
 [download]
-hash = 'e44a12eb51813b16faaab89b8073ec63c746c1b0'
-hash-format = 'sha1'
-mode = 'metadata:curseforge'
-url = ''
+hash = '871aaf3ed28cf2890faed97fa7a247793f8588c3ed90c2c5dfbee6122cb5747737245ab7ab264221064260c9ec77d54215319a4c51a14a7281bfa2ca135bb4d8'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/67kVxsaO/versions/FMTxW0ZB/lmft-1.0.3%2B1.20.1-forge.jar'
 
-[update.curseforge]
-file-id = 4892299
-project-id = 656346
+[update.modrinth]
+mod-id = '67kVxsaO'
+version = 'FMTxW0ZB'
