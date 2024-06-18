@@ -8,4 +8,4 @@
 [**To Do**](https://github.com/M1hono/Minecraft-Hunt/blob/main/DevDocuments.md)
 
 ---
-[**Assets Documents**](https://github.com/M1hono/Minecraft-Hunt/main/kubejs/documents/assets/)
+[**Assets Documents**](https://github.com/M1hono/Minecraft-Hunt/tree/main/kubejs/documents/assets)
