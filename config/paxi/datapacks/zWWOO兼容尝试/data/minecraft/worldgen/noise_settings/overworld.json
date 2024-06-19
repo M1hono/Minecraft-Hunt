@@ -147,11 +147,10 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
-                  "wythers:coastal_mangroves",
-                  "wythers:black_beach",
+                  
+
                   "wythers:black_river",
-                  "wythers:tropical_beach",
-                  "minecraft:beach",
+
                   "wythers:jungle_river",
                   "minecraft:warm_ocean",
                   "minecraft:lukewarm_ocean",
@@ -164,8 +163,7 @@
                   "wythers:lantern_river",
                   "minecraft:frozen_river",
                   "wythers:icy_river",
-                  "wythers:gravelly_beach",
-                  "minecraft:snowy_beach",
+
                   "wythers:salt_lakes_white",
                   "wythers:salt_lakes_pink",
                   "wythers:salt_lakes_turquoise",
@@ -183,6 +181,39 @@
           ]
         }
       },
+      
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:y_above",
+          "anchor": {
+            "absolute": 63
+          },
+          "surface_depth_multiplier": 0,
+          "add_stone_depth": false
+        },
+        "then_run": {
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:biome",
+                "biome_is": [
+                  "wythers:gravelly_beach"
+                ]
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:gravel"
+                }
+              }
+            }
+          ]
+        }
+      },
+
       {
         "type": "minecraft:condition",
         "if_true": {

@@ -110,7 +110,9 @@
     }
   ],
   "placement": {
-    "salt": 0,
+    "salt": 456627010,
+    "frequency_reduction_method": "legacy_type_1",
+    "frequency": 0.5,
     "spacing": 16,
     "separation": 8,
     "type": "minecraft:random_spread",
