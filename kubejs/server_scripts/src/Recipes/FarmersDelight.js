@@ -19,12 +19,5 @@ PlayerEvents.inventoryChanged(event => {
         event.server.scheduleInTicks(2, () => {
             event.player.sendInventoryUpdate();
         });
-        event.player.tell(event.player.getFoodData())
-        event.player.tell(event.getItem().getFoodProperties(event.player).nutrition)
-        event.player.tell(event.getItem().getFoodProperties(event.player).effects)
-        event.player.tell(event.getItem().getFoodProperties(event.player).isFastFood())
-        event.player.tell(event.getItem().getFoodProperties(event.player).isMeat())
-        event.player.tell(event.getItem().getFoodProperties(event.player).canAlwaysEat())
-        event.player.tell(event.getItem().getFoodProperties(event.player).saturationModifier)
     }
 });

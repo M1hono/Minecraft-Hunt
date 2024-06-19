@@ -21,3 +21,5 @@ NagasakiSoyo&Muzimi.jar
 /journeymap/icon/
 /journeymap/server/
 /journeymap/journeymap.log
+journeymap/journeymap.log
+^journeymap/(icon)/.*$
