@@ -20,8 +20,6 @@ ServerEvents.commandRegistry(event => {
         'getBiome',
         'getFluid',
         'getEffect',
-        'getFluidTags',
-        'getDamageTypeTags',
         'getAllRegistryTypes',
         'getBlock',
         'getItem',
@@ -156,7 +154,6 @@ ServerEvents.commandRegistry(event => {
     });
 
 const $ResourceKey = Java.loadClass("net.minecraft.resources.ResourceKey");
-const $TagKey = Java.loadClass("net.minecraft.tags.TagKey");
 const $TierSortingRegistry = Java.loadClass("net.minecraftforge.common.TierSortingRegistry");
 const $ItemBuilder = Java.loadClass("dev.latvian.mods.kubejs.item.ItemBuilder");
 
@@ -344,8 +341,6 @@ const commandActions = {
     'getFluid': (level) => getRegistryEntries(FLUID, level),
     'getEffect': (level) => getRegistryEntries(EFFECT, level),
     'getTier': getTiers,
-    'getFluidTags': (level) => getTags(FLUID, level),
-    'getDamageTypeTags': (level) => getTags(DAMAGE_TYPE, level),
     'getAllRegistryTypes': getAllRegistryTypes,
     'getBlock': (level) => getRegistryEntries(BLOCK, level),
     'getItem': (level) => getRegistryEntries(ITEM, level),

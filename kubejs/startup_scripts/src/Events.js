@@ -1,3 +1,4 @@
+const { $ItemCraftedEventJS } = require("packages/dev/latvian/mods/kubejs/item/$ItemCraftedEventJS")
 const { $XpEvent } = require("packages/harmonised/pmmo/api/events/$XpEvent")
 ForgeEvents.onEvent($XpEvent, event => {
     global.test(event)
@@ -22,3 +23,5 @@ global.test2 = (event) => {
     // 打印施法者的名称
     console.info("Caster Name: " + event.getCaster().getName());
 }
+
+ForgeEvents.onEvent($ItemCraftedEventJS)
