@@ -1,0 +1,13 @@
+filename = '[莱特兰扩充][前置-莱特兰恶意][前置-莱特兰武器][前置-莱特兰弓艺] 2complements-2.4.38.jar'
+name = 'L2 Complements'
+side = 'both'
+
+[download]
+hash = '897aa74cb72e39f9cf36ee493acc0774073d9ba2'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5397979
+project-id = 758349

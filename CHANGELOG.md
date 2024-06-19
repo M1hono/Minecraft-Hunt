@@ -5,6 +5,17 @@
 
 > 需要基本的mna文档。 
 
+> 实现了初步的Assets文档架构。
+> - 为雄火龙的模型制作了样图参考文档。
+
+> 完成了InfoLogger.js 可用于获取所有的Registries。
+
+> 进行了模组的更新，使用了最新的Probejs。
+
+> 实验了PMMO的API与事件，实验了MNA Ritual的获取 - 成功。 
+
+> 使Kubejs文件结构适配新Probejs。
+
 # 2024/6/15
 > 进行模组调整后初始化了仓库。
 

@@ -1,0 +1,13 @@
+filename = '[优化][启动速度]fastboot-1.20.x-1.1.jar'
+name = 'FastBoot'
+side = 'both'
+
+[download]
+hash = 'af34ffcf3e4eb46b13906b522bc33fccdd2b4c45'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5399873
+project-id = 1030285

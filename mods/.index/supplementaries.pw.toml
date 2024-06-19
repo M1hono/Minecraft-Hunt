@@ -1,0 +1,13 @@
+filename = '[装饰][锦致装饰] [前置-idas][前置-is]supplementaries-1.20-2.8.15.jar'
+name = 'Supplementaries'
+side = 'both'
+
+[download]
+hash = '0a88d1e456be783648c547af54216d4831803976'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5418348
+project-id = 412082
