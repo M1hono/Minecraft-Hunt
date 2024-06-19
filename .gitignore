@@ -5,6 +5,7 @@
 !/kubejs/
 !/config/
 !/defaultconfigs/
+!/journeymap/
 
 # 在以上规则的基础上忽略以下文件/文件夹
 /kubejs/probejs/
@@ -16,3 +17,7 @@ options.txt
 knownkeys.txt
 NagasakiSoyo&Muzimi.json
 NagasakiSoyo&Muzimi.jar
+/journeymap/data/
+/journeymap/icon/
+/journeymap/server/
+/journeymap/journeymap.log
