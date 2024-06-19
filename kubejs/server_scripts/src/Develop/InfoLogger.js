@@ -136,11 +136,15 @@ ServerEvents.commandRegistry(event => {
                         if (commandActions[action]) {
                             let result = commandActions[action](level);
                             if (typeof result === 'object' && result !== null) {
-                                // Reload server scripts to clear previous output
+                                // Reload server scripts to Clear previous output.
                                 server.runCommandSilent("kubejs reload server_scripts");
-                                console.info(`${action}:\n${Array.from(result).join('\n')}`);
+                                if (action === 'getTier') {
+                                    console.info(action + ":\n" + result.join('\n'));
+                                } else {
+                                console.info(action + ":\n" + Array.from(result).join('\n'));
+                                }
                             }
-                            source.sendSuccess(`Output printed to console for ${action}`, false);
+                            source.sendSuccess("Output printed to console for " + action, false);
                             return 1;
                         } else {
                             source.sendSuccess("Invalid command action.", false);
