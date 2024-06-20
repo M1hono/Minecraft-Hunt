@@ -3,8 +3,6 @@ const { extractName } = require("../API/ExtractName");
 const { getMana } = require("../API/MNAmana");
 
 PlayerEvents.chat(event => {
-    const mana = getMana(event.player);
-    console.info(`Player's mana: ${mana}`);
     if (event.getMessage() != 'recipe') return;
 });
 /**
