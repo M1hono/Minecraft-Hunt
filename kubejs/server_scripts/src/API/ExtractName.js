@@ -1,7 +1,7 @@
 /**
- * @description Extracts the ritual name from the ritualId
+ * @description Extracts recipe name from the recipe path.
  * @param {string} Id 
- * @returns {string} - ritualName
+ * @returns {string} - recipeName
  */
 export function extractName(Id) {
     const parts = Id.split(':');
