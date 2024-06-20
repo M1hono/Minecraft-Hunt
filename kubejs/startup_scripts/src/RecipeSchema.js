@@ -38,4 +38,3 @@ StartupEvents.recipeSchemaRegistry((event) => {
         )
     )
 })
-
