@@ -4,6 +4,7 @@ const { getMana } = require("../API/MNAmana");
 
 PlayerEvents.chat(event => {
     if (event.getMessage() != 'recipe') return;
+    event.getLevel().per
 });
 /**
  * 

@@ -26,3 +26,9 @@ global.ritualComplete = (event) => {
             break;
     }
 }
+/**
+ * @description A set of actions when players complete the ritual.
+ */
+export const handleRitualComplete = (event) => {
+    global.ritualComplete(event);
+  }
