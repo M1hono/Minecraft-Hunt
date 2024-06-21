@@ -7,7 +7,17 @@
 
 # 在以上规则的基础上忽略以下文件/文件夹
 /kubejs/probejs/
-/.probejs/*
+.probe/
+.probe/*
+.vscode/*
+cache/
+customnpcs/
+local/
+logs/
+modernfix/
+resourcepacks/
+saves/
+
 usercache.json
 usernamecache.json
 patchouli_data.json
@@ -51,6 +61,3 @@ config/jei/jei-mod-id-format.ini
 /config/embeddium-fingerprint.json
 /config/fml.toml
 /config/quark-common.toml
-
-# 忽略 .probejs 文件夹及其所有内容
-.probejs/
