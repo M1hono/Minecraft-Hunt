@@ -2,6 +2,7 @@
 const { $Player_ } = require("packages/net/minecraft/world/entity/player/$Player")
 /**
  * @description A set of actions when players earn pmmo xp.
+ * @param { $XpEvent_ } event
  */
 global.pmmoXp = (event) => {
   /** @type {$Player_} */

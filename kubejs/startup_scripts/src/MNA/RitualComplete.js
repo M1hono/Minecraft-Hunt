@@ -3,6 +3,7 @@ const { $Player_ } = require("packages/net/minecraft/world/entity/player/$Player
 const { extractName } = require("../API/ExtractName")
 /**
  * @description A set of actions when players complete the ritual.
+ * @param { $RitualCompleteEvent_ } event
  */
 global.ritualComplete = (event) => {
 
@@ -31,4 +32,4 @@ global.ritualComplete = (event) => {
  */
 export const handleRitualComplete = (event) => {
     global.ritualComplete(event);
-  }
+}

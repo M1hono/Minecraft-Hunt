@@ -4,11 +4,10 @@ const { getMana } = require("../API/MNAmana");
 
 PlayerEvents.chat(event => {
     if (event.getMessage() != 'recipe') return;
-    event.getLevel().per
 });
 /**
  * 
- * @param {$ChatEvent$ChatComponent_} event 
+ * @param {$EventJS_} event 
  * @param {$Recipe} recipe 
  */
 function getRecipesList (event,recipe) {
