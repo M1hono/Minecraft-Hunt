@@ -61,3 +61,8 @@ config/jei/jei-mod-id-format.ini
 /config/embeddium-fingerprint.json
 /config/fml.toml
 /config/quark-common.toml
+/config/embeddium-fingerprint.json
+/config/embeddium-options.json
+/config/embeddium++.toml
+/config/fml.toml
+/journeymap/config/5.9/journeymap.minimap.config
