@@ -66,3 +66,5 @@ config/embeddium-options.json
 config/embeddium++.toml
 config/fml.toml
 journeymapconfig/5.9journeymap.minimap.config
+crash-reports/*
+screenshots/*
