@@ -11,9 +11,16 @@ ForgeEvents.onEvent($XpEvent,
 /**
  * @description Trigger player complete the ritual.
  */
-const { handleRitualComplete } = require("./MNA/RitualComplete")
 const { $RitualCompleteEvent } = require("packages/com/mna/api/events/$RitualCompleteEvent")
+const { handleRitualComplete } = require("./MNA/RitualComplete")
 ForgeEvents.onEvent( $RitualCompleteEvent,
     /**@typeof  $RitualCompleteEvent*/ event => {
     handleRitualComplete(event)
+})
+const { $LivingDamageEvent } = require("packages/net/minecraftforge/event/entity/living/$LivingDamageEvent")
+const { handleLivingDamage } = require("./Dice/LivingDamage")
+const { $AttackAnimation$Phase } = require("packages/yesman/epicfight/api/animation/types/$AttackAnimation$Phase")
+const { $AttackAnimation } = require("packages/yesman/epicfight/api/animation/types/$AttackAnimation")
+ForgeEvents.onEvent($LivingDamageEvent,/**@typeof  $LivingDamageEvent*/event=>{
+    handleLivingDamage(event)
 })

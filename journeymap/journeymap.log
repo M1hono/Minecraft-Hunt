@@ -1,11 +1,11 @@
-[23:54:26] [Render thread/INFO] [JMLogger] JourneyMap log initialized.
-[23:54:26] [Render thread/INFO] [JourneymapClient] initialize ENTER
-[23:54:26] [Render thread/INFO] [ClientAPI] [ClientAPI] built with JourneyMap API 1.9-SNAPSHOT
-[23:54:26] [Render thread/INFO] [PluginHelper] Initializing plugins with Client API: journeymap.client.api.impl.ClientAPI
-[23:54:26] [Render thread/INFO] [PluginHelper] Initialized IClientPlugin: net.blay09.mods.waystones.compat.JourneyMapIntegration
-[23:54:26] [Render thread/DEBUG] [JourneymapClient] Loading and Generating Journeymap configs
-[23:54:27] [Render thread/INFO] [?] Version: JourneyMap 1.20.1-5.9.23, built with forge 1.20.1-47.2.30
-forge: 47.2.0
+[02:48:28] [Render thread/INFO] [JMLogger] JourneyMap log initialized.
+[02:48:28] [Render thread/INFO] [JourneymapClient] initialize ENTER
+[02:48:28] [Render thread/INFO] [ClientAPI] [ClientAPI] built with JourneyMap API 1.9-SNAPSHOT
+[02:48:28] [Render thread/INFO] [PluginHelper] Initializing plugins with Client API: journeymap.client.api.impl.ClientAPI
+[02:48:28] [Render thread/INFO] [PluginHelper] Initialized IClientPlugin: net.blay09.mods.waystones.compat.JourneyMapIntegration
+[02:48:28] [Render thread/DEBUG] [JourneymapClient] Loading and Generating Journeymap configs
+[02:48:28] [Render thread/INFO] [?] Version: JourneyMap 1.20.1-5.9.23, built with forge 1.20.1-47.2.30
+forge: 47.2.20
 Environment: os.name, os.arch, java.version, user.country, user.language=null, game language=zh_cn, locale=zh_cn
 Features: 
 	RadarPlayers : singleplayer = true , multiplayer = true
@@ -22,41 +22,20 @@ FullMapProperties{state=Valid, file=journeymap.fullmap.config, configVersion=5.9
 WaypointProperties{state=Valid, file=journeymap.waypoint.config, configVersion=5.9.23, autoRemoveDeathpointDistance=2, dateFormat=MM-dd-yyyy, autoRemoveDeathpoints=false, fullscreenDoubleClickToCreate=true, managerDimensionFocus=false, minDistance=4, boldLabel=false, textureSmall=true, showDeathpointlabel=true, beaconEnabled=true, createDeathpoints=true, showName=true, disableStrikeThrough=false, maxDistance=0, autoHideLabel=true, autoRemoveTempWaypoints=2, teleportCommand=/tp {name} {x} {y} {z}, showStaticBeam=true, shaderBeacon=false, timeFormat=HH:mm:ss, showDeviationLabel=false, showDistance=true, showRotatingBeam=true, fontScale=2.0, showTexture=true, managerEnabled=true}
 WebMapProperties{state=Valid, file=journeymap.webmap.config, configVersion=5.9.23, port=8080, enabled=false}
 CoreProperties{state=Valid, file=journeymap.core.config, configVersion=5.9.23, verboseColorPalette=false, maxPlayersData=32, mapSurfaceAboveCaves=true, dataCachingEnabled=true, optionsManagerViewed=5.9.23, announceMod=true, colorPassive=#bbbbbb, mapBlendWater=true, renderDistanceSurfaceMax=0, seedId=false, radarVerticalDistance=16, mapBlendGrass=true, recordCacheStats=false, hideSneakingEntities=true, revealShape=jm.minimap.shape_circle, mapBiome=true, alwaysMapSurface=false, colorVillager=#88e188, mapPlants=false, colorPet=#0077ff, radarLateralDistance=64, mapBathymetry=false, mapCrops=true, maxMobsData=32, mapPlantShadows=false, alwaysMapCaves=false, checkUpdates=true, mapBlendFoliage=true, hideSpectators=false, mappingEnabled=true, colorPlayer=#ffffff, tileHighDisplayQuality=true, cacheVillagersData=2200, logLevel=INFO, maxVillagersData=32, mapWaterBiomeColors=true, maxAnimalsData=32, mapTransparency=true, caveBlackAsClear=false, tileRenderType=1, caveIgnoreGlass=true, mapTopography=true, renderDistanceCaveMax=0, mapAntialiasing=true, colorSelf=#0000ff, cachePlayersData=2000, cacheMobsData=3000, cachePlayerData=1000, splashViewed=5.9.23, colorHostile=#ff0000, cacheAnimalsData=3100, themeName=Purist, mapCaveLighting=true, renderDelay=2, glErrorChecking=false, autoMapPoll=2000}
-[23:54:27] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeKeyEvents
-[23:54:27] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeChatEvents
-[23:54:27] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeHudOverlayEvents
-[23:54:27] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeWorldEvent
-[23:54:27] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeChunkEvents
-[23:54:27] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeClientTickEvent
-[23:54:27] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeRenderLevelLastEvent
-[23:54:27] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeLoggedInEvent
-[23:54:27] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeTextureStitchedEvent
-[23:54:27] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgePopupCustomEvents
-[23:54:27] [Render thread/INFO] [JourneymapClient] initialize EXIT, elapsed count 1 avg 168.81ms
-[23:54:30] [Render thread/INFO] [JourneymapClient] Journeymap PostInit
-[23:54:30] [Render thread/DEBUG] [JourneymapClient] postInitialize ENTER
-[23:54:30] [Render thread/TRACE] [ThemeLoader] Initializing themes ...
-[23:54:30] [Render thread/INFO] [ThemeLoader] Preloaded theme textures: 73
-[23:54:30] [Render thread/INFO] [JourneymapClient] postInitialize EXIT, elapsed count 1 avg 126.99ms
-[23:54:31] [JM-VersionCheck-1/INFO] [VersionCheck] Newer version online: JourneyMap 5.9.24 for Minecraft 1.20.1 on https://www.curseforge.com/minecraft/mc-mods/journeymap/files/5457831
-[23:54:37] [Server thread/INFO] [ForgeConfig] Loading JourneyMap Forge Configs
-[23:54:48] [Render thread/INFO] [ModBlockDelegate] Custom modded block handling enabled for create
-[23:54:48] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/skeleton_assassin_t2.png
-[23:54:49] [Render thread/INFO] [WaypointStore] Loaded 1 waypoints from D:\MC\Server\PrismLauncher-Windows-MSVC-Portable-8.3\instances\Minecraft-Hunter\.minecraft\journeymap\data\sp\新的世界\waypoints
-[23:54:49] [Render thread/INFO] [JourneymapClient] Mapping started in D:\MC\Server\PrismLauncher-Windows-MSVC-Portable-8.3\instances\Minecraft-Hunter\.minecraft\journeymap\data\sp\新的世界\overworld. Memory: 2564MB total, 434MB free 
-[23:54:49] [Render thread/INFO] [ChatLog] JourneyMap (旅行地图) : 按下 [J]
-[23:55:08] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/barkling_t1.png
-[23:56:04] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/deathcap_t2.png
-[23:56:48] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/pixie_fire.png
-[23:57:35] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/deathcap_t1.png
-[00:07:40] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/hulking_zombie_t2.png
-[00:07:54] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/hulking_zombie_t1.png
-[00:08:00] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/arcane_eye_t1.png
-[00:08:24] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/pixie_wind.png
-[00:08:31] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/witchhunter_t2.png
-[00:08:31] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/pixie_water.png
-[00:08:37] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/spellbreaker_t1.png
-[00:09:04] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/skeleton_assassin_t1.png
-[00:09:07] [Render thread/WARN] [JMLogger] Can't get entityTexture for mna:textures/entity_icon/witchhunter_t1.png
-[00:09:47] [Render thread/INFO] [JourneymapClient] Mapping halted in D:\MC\Server\PrismLauncher-Windows-MSVC-Portable-8.3\instances\Minecraft-Hunter\.minecraft\journeymap\data\mp\offline\minecraft:overworld
-[00:09:48] [Server thread/INFO] [ForgeConfig] Loading JourneyMap Forge Configs
+[02:48:28] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeKeyEvents
+[02:48:28] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeChatEvents
+[02:48:28] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeHudOverlayEvents
+[02:48:28] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeWorldEvent
+[02:48:28] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeChunkEvents
+[02:48:28] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeClientTickEvent
+[02:48:28] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeRenderLevelLastEvent
+[02:48:28] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeLoggedInEvent
+[02:48:28] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgeTextureStitchedEvent
+[02:48:28] [Render thread/DEBUG] [ForgeEventHandlerManager] Handler registered: journeymap.client.event.forge.ForgePopupCustomEvents
+[02:48:28] [Render thread/INFO] [JourneymapClient] initialize EXIT, elapsed count 1 avg 129.27ms
+[02:48:31] [Render thread/INFO] [JourneymapClient] Journeymap PostInit
+[02:48:31] [Render thread/DEBUG] [JourneymapClient] postInitialize ENTER
+[02:48:31] [Render thread/TRACE] [ThemeLoader] Initializing themes ...
+[02:48:32] [Render thread/INFO] [ThemeLoader] Preloaded theme textures: 73
+[02:48:32] [Render thread/INFO] [JourneymapClient] postInitialize EXIT, elapsed count 1 avg 124.51ms
+[02:48:33] [JM-VersionCheck-1/INFO] [VersionCheck] Newer version online: JourneyMap 5.10.0 for Minecraft 1.20.1 on https://www.curseforge.com/minecraft/mc-mods/journeymap/files/5458344

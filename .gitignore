@@ -68,3 +68,4 @@ config/fml.toml
 journeymapconfig/5.9journeymap.minimap.config
 crash-reports/*
 screenshots/*
+.DS_Store
