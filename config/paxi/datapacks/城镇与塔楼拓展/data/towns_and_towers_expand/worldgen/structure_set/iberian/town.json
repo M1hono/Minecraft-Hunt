@@ -1,0 +1,18 @@
+{
+    "structures": [
+        {
+            "structure": "towns_and_towers_expand:iberian/town",
+            "weight": 1
+        },
+        {
+            "structure": "towns_and_towers_expand:iberian/tower",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 32,
+        "separation": 6,
+        "salt": 856074439
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "rolls": 8,
+        "bonus_rolls": 4,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:paper",
+            "weight": 10
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:book",
+            "weight": 5,
+            "functions": [
+              {
+                "function": "minecraft:enchant_randomly",
+                "conditions": [
+                  {
+                    "condition": "minecraft:random_chance",
+                    "chance": 0.5
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:map",
+            "weight": 2,
+            "functions": [
+              {
+                "function": "minecraft:set_name",
+                "entity": "this",
+                "name": "掠夺者据点侦查报告"
+              },
+              {
+                "function": "minecraft:exploration_map",
+                "destination": "minecraft:pillager_outpost",
+                "skip_existing_chunks": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
