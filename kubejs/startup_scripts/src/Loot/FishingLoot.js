@@ -21,7 +21,6 @@ global.fishingLoot = (event) => {
     falling_block.setMotion(dx, dy, dz)
     falling_block.mergeNbt({
         BlockState: {Name: "minecraft:barrel"},
-        TileEntityData: {LootTable: 'minecraft:chests/bastion_treasure'}
     })
     falling_block.persistentData.putBoolean('fishing_loot', true)
     falling_block.spawn()

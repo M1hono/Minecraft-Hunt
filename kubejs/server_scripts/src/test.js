@@ -1,8 +1,9 @@
-const { $BlockPos } = require("packages/net/minecraft/core/$BlockPos")
+const { $ResourceLocation } = require("packages/net/minecraft/resources/$ResourceLocation")
 const { $ServerLevel } = require("packages/net/minecraft/server/level/$ServerLevel")
 const { $FallingBlockEntity } = require("packages/net/minecraft/world/entity/item/$FallingBlockEntity")
-const { $Item } = require("packages/net/minecraft/world/item/$Item")
-
+const { $LootParams$Builder } = require("packages/net/minecraft/world/level/storage/loot/$LootParams$Builder")
+const { $LootContextParamSets } = require("packages/net/minecraft/world/level/storage/loot/parameters/$LootContextParamSets")
+const { $LootrBarrelBlockEntity } = require("packages/noobanidus/mods/lootr/block/entities/$LootrBarrelBlockEntity")
 function screenshake(event) {
     const { x, y, z, level } = event
     level.getEntitiesWithin(AABB.of(x - 20, y - 20, z - 20, x + 20, y + 20, z + 20)).forEach(entity => {
@@ -18,47 +19,56 @@ LevelEvents.afterExplosion(event => {
     screenshake(event)
 })
 /**
- * 
- * @param {$FallingBlockEntity} entity 
- * @param {$ServerLevel} level 
- * @returns 
+ * tracking falling block's alive status.
+ * @param {$FallingBlockEntity} entity
+ * @param {$ServerLevel} level
  */
-function checkAndRemove(entity, level) {
-    const pos = entity.getBlock().pos
-    const block = level.getBlockState(pos)
-    level.getServer().tell('Checking entity...')
+function trackingFallingBlock(entity, level) {
+    let pos = entity.getBlock().pos
+    let block = level.getBlockState(pos)
     if (entity.isAlive()) {
-        level.getServer().schedule(10, () => checkAndRemove(entity, level))
+        level.getServer().schedule(20, () => trackingFallingBlock(entity, level))
     } else {
         pos = entity.getBlock().pos
         block = level.getBlockState(pos)
-        if (block.getBlock().id == "lootr:lootr_barrel") {
-            level.getServer().tell('Barrel found, scheduling removal...')
-            level.getBlock(pos).getEntity().persistentData.putBoolean('removed', true)
-        } else {
-            level.getServer().tell('No barrel found or already removed')
+        if (block.getBlock().id == "minecraft:barrel") {
+            level.getBlock(pos).getEntity().persistentData.putBoolean('fallingblock', true)
         }
     }
 }
 EntityEvents.spawned(event => {
-    const entity = event.entity
-    const level = entity.getLevel()
-    if (entity instanceof $FallingBlockEntity && entity.persistentData.getBoolean('fishing_loot')) {
+    const {entity , level } = event
+    if (entity instanceof $FallingBlockEntity && entity.persistentData.getBoolean('fishing_loot') == true) {
         if (level instanceof $ServerLevel) {
-            level.getServer().tell('Fishing loot entity spawned, starting check...')
-            level.getServer().schedule(20, () => checkAndRemove(entity, level))
+            trackingFallingBlock(entity, level)
         }
     }
 })
+const $LootDataType = Java.loadClass('net.minecraft.world.level.storage.loot.LootDataType')
 BlockEvents.rightClicked(event => {
-    const block = event.block
-    const level = block.getLevel()
-    if (block.id == "lootr:lootr_barrel") {
-        const pos = block.pos
-        const entity = level.getBlock(pos).getEntity()
-        if (entity.persistentData.getBoolean('removed')) {
-            level.removeBlock(pos,true)
-        } else {
+    const {block , server} = event
+    let pos = block.pos
+    let entity = block.getEntity()
+    if (block.id == "minecraft:barrel") {
+        if (entity.persistentData.getBoolean('fallingblock') == true) {
+            let lootData = Utils.getServer().getLootData()
+            let allTables = lootData.getKeys($LootDataType.TABLE)
+            let filteredList = allTables.stream().filter(id => id.path.contains('chest')).map(id => id.toString()).toList()
+            fishingChestLoot(event , filteredList[Math.floor(Math.random() * filteredList.length)])
+            event.level.removeBlock(pos , false)
+            event.player.playNotifySound("block.wood.place" , "ambient" , 1 , 1)
         }
     }
 })
+/**
+ * 
+ * @param {import("packages/dev/latvian/mods/kubejs/block/$BlockRightClickedEventJS").$BlockRightClickedEventJS$Type} event 
+ * @param {$LootTable_} loot 
+ */
+function fishingChestLoot(event,loot) {
+    let lootParam = new $LootParams$Builder(event.getLevel()).create($LootContextParamSets.EMPTY)
+    let lootTable = event.getServer().lootData.getLootTable(loot).getRandomItems(lootParam)
+    lootTable.forEach(item => {
+        event.block.popItem(item)
+    })
+}

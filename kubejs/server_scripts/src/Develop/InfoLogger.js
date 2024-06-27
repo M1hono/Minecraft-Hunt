@@ -1,3 +1,4 @@
+// priority: 100
 /**
  * @author M1hono
  * @description This script prints various information from your modpack to the console.

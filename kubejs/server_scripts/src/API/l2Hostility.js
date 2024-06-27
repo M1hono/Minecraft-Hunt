@@ -1,5 +1,3 @@
-const { $Entity } = require("packages/net/minecraft/world/entity/$Entity");
-
 // requires: l2hostility
 const { $Entity } = require("packages/net/minecraft/world/entity/$Entity");
 const $HostileEntity = Java.loadClass("dev.xkmc.l2hostility.content.capability.mob.MobTraitCap");
