@@ -1,4 +1,5 @@
 // requires: l2hostility
+const { $Entity } = require("packages/net/minecraft/world/entity/$Entity");
 const $HostileEntity = Java.loadClass("dev.xkmc.l2hostility.content.capability.mob.MobTraitCap");
 /**
  * @typedef {"l2hostility:adaptive"
@@ -43,11 +44,11 @@ const $HostileEntity = Java.loadClass("dev.xkmc.l2hostility.content.capability.m
  */
 /**
  * @description check if the mob has the specified trait.
- * @param {entity} entity - the mob you want to check.
+ * @param {$Entity} entity - the mob you want to check.
  * @param {Trait} trait - the trait you want to check.
  * @returns {boolean} - whether the mob has the trait.
  */
-function hasTrait(entity, trait) {
+export function hasTrait(entity, trait) {
     let hasTrait = false;
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
         console.log("Capability present");
@@ -65,11 +66,11 @@ function hasTrait(entity, trait) {
 }
 /**
  * @description get the level of the specified trait of the mob.
- * @param {entity} entity - the mob you want to get the trait.
+ * @param {$Entity} entity - the mob you want to get the trait.
  * @param {Trait} trait - the trait you want to get.
  * @returns {number} - the level of the trait.
  */
-function getTraitLevel(entity, trait) {
+export function getTraitLevel(entity, trait) {
     let traitLevel = -1;
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
         console.log("Capability present");
@@ -87,11 +88,11 @@ function getTraitLevel(entity, trait) {
 }
 /**
  * @description set the trait of the mob.
- * @param {entity} entity - the mob you want to set the trait.
+ * @param {$Entity} entity - the mob you want to set the trait.
  * @param {Trait} trait - the trait you want to set.
  * @param {number} lv - the level of the trait.
  */
-function setTrait(entity, trait, lv) {
+export function setTrait(entity, trait, lv) {
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
         const currentHealth = entity.health;
         const maxHealth = entity.getAttributeValue("minecraft:generic.max_health");
@@ -107,10 +108,10 @@ function setTrait(entity, trait, lv) {
 
 /**
  * Get the level of the mob.
- * @param {entity} entity - the mob you want to get the level.
+ * @param {$Entity} entity - the mob you want to get the level.
  * @returns {number} - the level of the mob.
  */
-function getDifficultLevel(entity) {
+export function getDifficultLevel(entity) {
     let lv = 0;
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
         lv = mobTraitCap.getLevel();
@@ -119,10 +120,10 @@ function getDifficultLevel(entity) {
 }
 /**
  * @description set the level of the mob without rerolling the traits.
- * @param {entity} entity - the mob you want to set the level.
+ * @param {$Entity} entity - the mob you want to set the level.
  * @param {number} lv - the level you want to set.
  */
-function setLevelWithoutReroll(entity, lv) {
+export function setLevelWithoutReroll(entity, lv) {
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
         const currentHealth = entity.health;
         const maxHealth = entity.getAttributeValue("minecraft:generic.max_health");
@@ -137,11 +138,11 @@ function setLevelWithoutReroll(entity, lv) {
 }
 /**
  * Set the level of the mob and reroll the traits.
- * @param {entity} entity - The mob you want to set the level.
+ * @param {$Entity} entity - The mob you want to set the level.
  * @param {number} lv - The level you want to set.
  * @param {boolean} [reroll=false] - Whether the mob will reroll the traits with max chance.
  */
-function setLevelWithReroll(entity, lv, reroll) {
+export function setLevelWithReroll(entity, lv, reroll) {
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
         if (reroll === undefined) reroll = false;
         const currentHealth = entity.getHealth();
@@ -158,10 +159,10 @@ function setLevelWithReroll(entity, lv, reroll) {
 }
 /**
  * @description get all the traits of the mob.
- * @param {entity} entity - the mob you want ot get the traits.
+ * @param {$Entity} entity - the mob you want ot get the traits.
  * @returns {Array}
  */
-function getAllTraits(entity) {
+export function getAllTraits(entity) {
     let traitsList = [];
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
         let traits = mobTraitCap.traits;

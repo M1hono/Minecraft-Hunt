@@ -17,6 +17,8 @@ logs/
 modernfix/
 resourcepacks/
 saves/
+PCL
+NagasakiSoyo&Muzimi-natives
 
 usercache.json
 usernamecache.json
@@ -26,24 +28,19 @@ options.txt
 knownkeys.txt
 NagasakiSoyo&Muzimi.json
 NagasakiSoyo&Muzimi.jar
+Minecraft-Hunt.json
+Minecraft-Hunt.jar
 journeymap/data/
 journeymap/icon/
 journeymap/server/
 journeymapjourneymap.log
 journeymapjourneymap.log
-^journeymap/(icon)/.*$
+journeymap/*
 config/jei/jei-client.ini
 config/jei/jei-colors.ini
 config/jei/jei-debug.ini
 config/jei/jei-mod-id-format.ini
-journeymapconfig/5.9journeymap.core.config
-journeymapconfig/5.9journeymap.fullmap.config
-journeymapconfig/5.9journeymap.minimap.config
-journeymapconfig/5.9journeymap.minimap2.config
-journeymapconfig/5.9journeymap.topo.config
-journeymapconfig/5.9journeymap.waypoint.config
-journeymapconfig/5.9journeymap.webmap.config
-journeymap/icon/*
+journeymapconfig/*
 config/jei/blacklist.cfg
 config/jei/ingredient-list-type-sort-order.ini
 config/embeddium-fingerprint.json
@@ -68,3 +65,6 @@ config/fml.toml
 journeymapconfig/5.9journeymap.minimap.config
 crash-reports/*
 screenshots/*
+.DS_Store
+/.minecraft.zip
+.minecraft.zip

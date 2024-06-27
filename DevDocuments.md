@@ -6,6 +6,8 @@
 > 放弃则[ ] ~~如此划去该Todo~~。
 
 > 完成时在末尾填入完成人姓名。 => 客服-2024/6/18 + Soyo-2024/6/19 (如为多人合力完成或完善)
+## 2024/6/25
+- [x] 删除wwee(William Wythers' Expanded Ecosphere)及其兼容数据包: 因其事实上并没有兼容, 目前世界使用Tectonic+WWOO(William Wythers' Overhauled Overworld - 重置原版生物群系,并没有添加新群系)来表现。=> Soyo-2024/6/25
 
 ## 2024/6/22
 - [ ] 完成骰子有关战斗的文档设计，并以livingattackevent作为实验来实现，初步成功后加入史诗战斗模组尝试获取动画结束事件。

@@ -1,3 +1,5 @@
+const { $Item } = require("packages/net/minecraft/world/item/$Item")
+
 function screenshake(event) {
     const { x, y, z, level } = event
     level.getEntitiesWithin(AABB.of(x - 20, y - 20, z - 20, x + 20, y + 20, z + 20)).forEach(entity => {
@@ -9,3 +11,6 @@ function screenshake(event) {
         }
     })
 }
+LevelEvents.afterExplosion(event => {
+    screenshake(event)
+})
