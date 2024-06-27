@@ -1,0 +1,13 @@
+filename = '[魔改][粒子渲染]lodestone-1.20.1-1.6.0.1.jar'
+name = 'Lodestone'
+side = 'both'
+
+[download]
+hash = '0d02ecdb3819774ba5958e32428d872c3d462541'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5443100
+project-id = 616457
