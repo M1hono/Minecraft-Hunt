@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "rolls": 8,
+        "bonus_rolls": 4,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:porkchop",
+            "weight": 5
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:beef",
+            "weight": 5
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:sweet_berries",
+            "weight": 5
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:emerald",
+            "weight": 2
+          }
+        ]
+      }
+    ]
+  }
+  

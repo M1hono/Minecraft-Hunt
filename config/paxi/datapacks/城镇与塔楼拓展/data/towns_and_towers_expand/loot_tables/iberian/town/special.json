@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 8,
+      "bonus_rolls": 4,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:paper",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                {
+                  "text": "纪念性纸条 没有别的用处",
+                  "color": "aqua",
+                  "font": "minecraft:default",
+                  "bold": false,
+                  "italic": false,
+                  "underlined": false,
+                  "strikethrough": false,
+                  "obfuscated": false
+                }
+              ],
+              "replace": false
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": "纪念纸条"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
