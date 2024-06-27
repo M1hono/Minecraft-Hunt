@@ -1,3 +1,7 @@
+# 2024/6/26
+> 完成了iberian的城镇中心要塞的结构。
+> 将towns and towers的village_iberian的生成范围拓展 允许在savanna生物群系内生成 以适配删除wwee后。
+
 # 2024/6/22
 > 完成了Project MMO技能章节的文档。
 

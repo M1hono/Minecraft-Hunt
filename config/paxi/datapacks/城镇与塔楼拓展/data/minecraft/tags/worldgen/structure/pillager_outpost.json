@@ -1,0 +1,125 @@
+{
+    "values": [
+        "minecraft:pillager_outpost",
+        {
+            "id": "towns_and_towers:exclusives/pillager_outpost_classic",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:exclusives/pillager_outpost_iberian",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:exclusives/pillager_outpost_mediterranean",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:exclusives/pillager_outpost_oriental",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:exclusives/pillager_outpost_rustic",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:exclusives/pillager_outpost_swedish",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:exclusives/pillager_outpost_tudor",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_badlands",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_beach",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_birch_forest",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_desert",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_flower_forest",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_forest",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_grove",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_jungle",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_meadow",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_mushroom_fields",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_ocean",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_old_growth_taiga",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_savanna",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_savanna_plateau",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_snowy_beach",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_snowy_plains",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_snowy_slopes",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_snowy_taiga",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_sparse_jungle",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_sunflower_plains",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_swamp",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_taiga",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:pillager_outpost_wooded_badlands",
+            "required": false
+        }
+    ]
+}

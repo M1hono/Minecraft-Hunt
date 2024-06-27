@@ -40,7 +40,6 @@ function checkAndRemove(entity, level) {
         }
     }
 }
-
 EntityEvents.spawned(event => {
     const entity = event.entity
     const level = entity.getLevel()
@@ -51,7 +50,6 @@ EntityEvents.spawned(event => {
         }
     }
 })
-
 BlockEvents.rightClicked(event => {
     const block = event.block
     const level = block.getLevel()

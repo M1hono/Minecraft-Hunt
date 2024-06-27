@@ -1,0 +1,13 @@
+filename = 'Loquat-1.20.1-forge-2.1.1.jar'
+name = 'Loquat 🧩 (Forge)'
+side = 'both'
+
+[download]
+hash = '6e51ca55cabb8bf336c84180378e81718c450261'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5124918
+project-id = 885292
