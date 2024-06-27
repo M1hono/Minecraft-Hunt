@@ -14,3 +14,4 @@ function screenshake(event) {
 LevelEvents.afterExplosion(event => {
     screenshake(event)
 })
+console.log("test")
