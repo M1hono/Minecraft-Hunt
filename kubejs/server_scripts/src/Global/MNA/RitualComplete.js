@@ -1,4 +1,4 @@
-// priority: 100
+// priority: 101
 const { $Player_ } = require("packages/net/minecraft/world/entity/player/$Player")
 const { extractName } = require("../API/ExtractName")
 /**
@@ -26,10 +26,4 @@ global.ritualComplete = (event) => {
         default:
             break;
     }
-}
-/**
- * @description A set of actions when players complete the ritual.
- */
-export const handleRitualComplete = (event) => {
-    global.ritualComplete(event);
 }

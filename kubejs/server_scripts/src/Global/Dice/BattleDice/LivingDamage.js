@@ -39,10 +39,3 @@ global.LivingDamage = (event) => {
         target.invulnerableTime = 0
     }
 }
-/**
- * handle living damage event.
- * @param {$LivingDamageEvent} event 
- */
-export function handleLivingDamage(event) {
-    global.LivingDamage(event)
-}

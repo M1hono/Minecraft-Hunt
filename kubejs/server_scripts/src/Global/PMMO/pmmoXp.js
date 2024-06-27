@@ -1,4 +1,4 @@
-// priority: 100
+// priority: 101
 const { $Player_ } = require("packages/net/minecraft/world/entity/player/$Player")
 /**
  * @description A set of actions when players earn pmmo xp.
@@ -25,10 +25,4 @@ global.pmmoXp = (event) => {
       event.setCanceled(true)
       break;
   }
-}
-/**
- * @description A set of actions when players earn pmmo xp.
- */
-export const handlePmmoXp = (event) => {
-  global.pmmoXp(event);
 }

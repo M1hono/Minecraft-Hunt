@@ -1,4 +1,4 @@
-// priority: 100
+// priority: 101
 import { $ItemFishedEvent } from "packages/net/minecraftforge/event/entity/player/$ItemFishedEvent"
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player"
 
@@ -25,12 +25,4 @@ global.fishingLoot = (event) => {
     falling_block.persistentData.putBoolean('fishing_loot', true)
     falling_block.spawn()
     event.setCanceled(true)
-}
-
-/**
- * 
- * @param {$ItemFishedEvent} event 
- */
-export const handleFishingLoot = (event) => {
-    global.fishingLoot(event)
 }

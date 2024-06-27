@@ -1,3 +1,4 @@
+// priority: 101
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
 /**
  * 
