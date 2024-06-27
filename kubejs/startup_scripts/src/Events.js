@@ -22,3 +22,9 @@ const { handleLivingDamage } = require("./Dice/LivingDamage")
 ForgeEvents.onEvent($LivingDamageEvent,/**@typeof  $LivingDamageEvent*/event=>{
     handleLivingDamage(event)
 })
+const { handleFishingLoot } = require("./Loot/FishingLoot")
+const { $ItemFishedEvent } = require("packages/net/minecraftforge/event/entity/player/$ItemFishedEvent")
+const { $FallingBlockRenderer } = require("packages/net/minecraft/client/renderer/entity/$FallingBlockRenderer")
+ForgeEvents.onEvent($ItemFishedEvent,/**@typeof $ItemFishedEvent*/event=>{
+    handleFishingLoot(event)
+})
