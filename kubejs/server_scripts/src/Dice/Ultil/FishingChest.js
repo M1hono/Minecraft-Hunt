@@ -61,7 +61,7 @@ BlockEvents.rightClicked(event => {
         if (entity.persistentData.getBoolean('fallingblock') == true) {
             fishingChestLoot(event)
             level.removeBlock(pos, false)
-            player.playNotifySound("block.wood.place", "ambient", 1, 1)
+            player.playNotifySound("block.dirt .place", "ambient", 1, 1)
         }
     }
 })
@@ -134,8 +134,6 @@ function rarityCheck(lootTable) {
 function rerollLoot(lootTable, checkObject) {
     checkObject.lootRare = rarityCheck(lootTable)
     checkObject.largeLoot = sizeCheck(lootTable)
-    console.info('lootRare:' + checkObject.lootRare)
-    console.info('largeLoot:' + checkObject.largeLoot)
 }
 /**
  * @author M1hono
