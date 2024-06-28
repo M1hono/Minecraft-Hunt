@@ -1,4 +1,4 @@
-// priority: 99
+// priority: 100
 /**
  * @typedef {"attack" | "defense" | "ulti"} DiceType
  */

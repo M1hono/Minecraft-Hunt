@@ -11,7 +11,7 @@ import { $Player } from "packages/net/minecraft/world/entity/player/$Player"
  */
 global.dice = (player, type , sides) =>{
     global.initDice(player)
-    const data = { player }
+    const { data } = player
     const dice =  Math.floor(Math.random() * sides) + 1
     switch (type) {
         case 'attack':
@@ -28,7 +28,7 @@ global.dice = (player, type , sides) =>{
     }
 }
 global.initDice = (player) =>{
-    const data = { player }
+    const { data } = player
     if (data.attackdice === undefined) data.attackdice = 1
     if (data.defencedice === undefined) data.defencedice = 1
     if (data.ultildice === undefined) data.ultildice = 1
