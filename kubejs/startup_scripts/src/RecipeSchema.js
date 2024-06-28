@@ -1,12 +1,10 @@
-// Classes needed for building recipes schema.
-const $RecipeSchema = Java.loadClass('dev.latvian.mods.kubejs.recipe.schema.RecipeSchema')
-const $RecipeComponentBuilder = Java.loadClass('dev.latvian.mods.kubejs.recipe.component.RecipeComponentBuilder')
-
+import { $RecipeComponentBuilder } from "packages/dev/latvian/mods/kubejs/recipe/component/$RecipeComponentBuilder"
+import { $RecipeSchema } from "packages/dev/latvian/mods/kubejs/recipe/schema/$RecipeSchema"
 /**
  * @author M1hono
  * @description This script is a test of building recipes schema.
  */
-StartupEvents.recipeSchemaRegistry((event) => {
+StartupEvents.recipeSchemaRegistry(event => {
     const { components } = event
 
     event.register(

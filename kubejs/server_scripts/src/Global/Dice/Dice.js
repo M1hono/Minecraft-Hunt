@@ -1,28 +1,35 @@
 // priority: 101
-const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
+import { $Player } from "packages/net/minecraft/world/entity/player/$Player"
+/**
+ * @typedef {"attack" | "defense" | "ultil"} DiceType
+ */
 /**
  * 
  * @param {$Player} player 
+ * @param {DiceType} type 
+ * @param {number} sides
  */
 global.dice = (player, type , sides) =>{
-    global.initDice()
+    global.initDice(player)
+    const data = { player }
     const dice =  Math.floor(Math.random() * sides) + 1
     switch (type) {
         case 'attack':
-            player.data.attackdice = dice
+            data.attackdice = dice
             break;
         case 'defend':
-            player.data.defencedice = dice
+            data.defencedice = dice
             break;
-        case 'util':
-            player.data.ultildice = dice
+        case 'ultil':
+            data.ultildice = dice
             break;
         default:
             break;
     }
 }
 global.initDice = (player) =>{
-    if (player.data.attackdice === undefined) player.data.attackdice = 1
-    if (player.data.defencedice === undefined) player.data.defencedice = 1
-    if (player.data.ultildice === undefined) player.data.ultildice = 1
+    const data = { player }
+    if (data.attackdice === undefined) data.attackdice = 1
+    if (data.defencedice === undefined) data.defencedice = 1
+    if (data.ultildice === undefined) data.ultildice = 1
 }

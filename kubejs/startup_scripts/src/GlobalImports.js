@@ -1,5 +1,17 @@
 // priority: 99
 /**
+ * @typedef {"attack" | "defense" | "ulti"} ActionType
+ */
+/**
+ * 
+ * @param {$Player} player 
+ * @param {ActionType} type 
+ * @param {number} sides
+ */
+export function handleDiceRoll(player, type , sides) {
+    global.dice(player, type , sides)
+}
+/**
  * @description A set of actions when players earn pmmo xp.
  */
 export const handlePmmoXp = (event) => {

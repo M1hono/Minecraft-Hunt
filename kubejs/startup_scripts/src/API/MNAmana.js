@@ -1,3 +1,4 @@
+// priority: 101
 // requires: mna
 const { PlayerMagicProvider } = require("packages/com/mna/capabilities/playerdata/magic/PlayerMagicProvider");
 const { ServerMessageDispatcher } = require("packages/com/mna/network/ServerMessageDispatcher");

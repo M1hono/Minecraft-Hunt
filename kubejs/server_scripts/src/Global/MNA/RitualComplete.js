@@ -1,4 +1,4 @@
-// priority: 101
+// priority: 100
 const { $Player_ } = require("packages/net/minecraft/world/entity/player/$Player")
 const { extractName } = require("../API/ExtractName")
 /**

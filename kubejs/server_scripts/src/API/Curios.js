@@ -1,3 +1,4 @@
+// priority: 101
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player");
 const { $Slot } = require("packages/net/minecraft/world/inventory/$Slot");
 const { $Item } = require("packages/net/minecraft/world/item/$Item");

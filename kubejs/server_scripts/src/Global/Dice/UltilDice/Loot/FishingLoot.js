@@ -1,4 +1,4 @@
-// priority: 101
+// priority: 100
 import { $ItemFishedEvent } from "packages/net/minecraftforge/event/entity/player/$ItemFishedEvent"
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player"
 

@@ -1,4 +1,4 @@
-// priority: 101
+// priority: 100
 const { $Player_ } = require("packages/net/minecraft/world/entity/player/$Player")
 /**
  * @description A set of actions when players earn pmmo xp.

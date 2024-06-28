@@ -1,3 +1,4 @@
+// priority: 101
 const UUID = Java.loadClass('java.util.UUID');
 const $UUIDUtil = Java.loadClass('net.minecraft.core.UUIDUtil');
 /**

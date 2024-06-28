@@ -1,6 +1,7 @@
+// priority: 101
 // requires: l2hostility
-const { $Entity } = require("packages/net/minecraft/world/entity/$Entity");
-const $HostileEntity = Java.loadClass("dev.xkmc.l2hostility.content.capability.mob.MobTraitCap");
+import { $Entity } from "packages/net/minecraft/world/entity/$Entity";
+import { $HostileEntity } from "packages/dev/xkmc/l2hostility/content/capability/mob/$MobTraitCap";
 /**
  * @typedef {"l2hostility:adaptive"
  * |"l2hostility:arena"
