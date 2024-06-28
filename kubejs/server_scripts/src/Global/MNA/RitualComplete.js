@@ -1,6 +1,6 @@
 // priority: 100
 const { $Player_ } = require("packages/net/minecraft/world/entity/player/$Player")
-const { extractName } = require("../API/ExtractName")
+const { extractName } = require("../../API/ExtractName")
 /**
  * @description A set of actions when players complete the ritual.
  * @param { $RitualCompleteEvent_ } event

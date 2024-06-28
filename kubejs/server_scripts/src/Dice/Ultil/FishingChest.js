@@ -8,14 +8,17 @@ const { $LootContextParamSets } = require("packages/net/minecraft/world/level/st
 const { $LootTable } = require("packages/net/minecraft/world/level/storage/loot/$LootTable")
 const { getSkillLevel } = require("../../API/Pmmo")
 const { handleDiceRoll } = require("../../GlobalImports")
+const { $ItemStack } = require("packages/net/minecraft/world/item/$ItemStack")
 /**
  * @author M1hono
- * @description tracking falling block's alive status.
+ * @description Tracking falling block's alive status.
  * @param {$FallingBlockEntity} entity
  * @param {$ServerLevel} level
  */
 function trackingFallingBlock(entity, level) {
-    let pos = entity.block.pos
+    const {
+        block: { pos },
+    } = entity
     let block = level.getBlockState(pos)
     if (entity.isAlive()) {
         level.getServer().schedule(20, () => trackingFallingBlock(entity, level))
@@ -29,12 +32,14 @@ function trackingFallingBlock(entity, level) {
 }
 /**
  * @author M1hono
- * @description fire tracking function when targeted falling block spawned.
+ * @description Fire tracking function when targeted falling block spawned.
  */
 EntityEvents.spawned(event => {
-    const {entity , level } = event
-    if (entity instanceof $FallingBlockEntity
-        &&
+    const {
+        entity,
+        level
+    } = event
+    if (entity instanceof $FallingBlockEntity &&
         entity.persistentData.getBoolean('fishing_loot') == true) {
         if (level instanceof $ServerLevel) {
             trackingFallingBlock(entity, level)
@@ -43,28 +48,29 @@ EntityEvents.spawned(event => {
 })
 /**
  * @author M1hono
- * @description fire loot drops event when the player right-clicked the fishing-chest.
+ * @description Fire loot drops event when the player right-clicked the fishing-chest.
  */
 BlockEvents.rightClicked(event => {
     const {
-        block : { pos , entity }
+        block,
+        block: { pos, entity },
+        level,
+        player
     } = event
-    if (Block.id == "minecraft:barrel") {
+    if (block.id == "minecraft:barrel") {
         if (entity.persistentData.getBoolean('fallingblock') == true) {
             fishingChestLoot(event)
-            event.level.removeBlock(pos , false)
-            event.player.playNotifySound("block.wood.place" , "ambient" , 1 , 1)
+            level.removeBlock(pos, false)
+            player.playNotifySound("block.wood.place", "ambient", 1, 1)
         }
     }
 })
 /**
  * @author M1hono
- * @description handle loot drops event when the player right-clicked the fishing-chest.
+ * @description Handle loot drops event when the player right-clicked the fishing-chest.
  * @param {$BlockRightClickedEventJS_} event
  */
 function fishingChestLoot(event) {
-    if (!event.getEntity().isPlayer()) return
-
     const {
         level,
         server: { lootData },
@@ -72,68 +78,105 @@ function fishingChestLoot(event) {
         player
     } = event
 
-    let lootParam = new $LootParams$Builder(level)
-    .create($LootContextParamSets.EMPTY)
-    let lootTable = getLootTable(player , lootData)
+    let lootParam = new $LootParams$Builder(level).create($LootContextParamSets.EMPTY)
+    let checkObject = { lootRare: false, largeLoot: false }
+    let lootTable = getLootTable(player, lootData, lootParam)
 
-    let lootRarity = true
-    let largeLoot = true
-    if (lootTable.contains(
-        item =>{
-            item.rairity == 'EPIC'})) lootRarity = true
-    if (lootTable.size()>=12) largeLoot = true
-    let wis = getSkillLevel("wisdom" , player)
-    let dex = getSkillLevel("dexterity" , player)
-    let dice = handleDiceRoll(player , "ultil" , 20 + wis + ( dex/2 | 0 ) )
+    rerollLoot(lootTable, checkObject)
 
-    while (!fishingchestOpenCheck(player , dice , wis , dex , lootRarity , largeLoot)) {
-        lootTable = getLootTable(player , lootData)
-        if (lootTable.contains(
-            item =>{
-                item.rairity == 'EPIC'})) lootRarity = true
-        if (lootTable.size()>=12) largeLoot = true
+    let skill = getSkillLevel("wisdom", player) + (getSkillLevel("dexterity", player) / 2 | 0)
+    let diceRoll = handleDiceRoll(player, "ultil", 20)
+
+    while (!fishingchestOpenCheck(diceRoll, skill, checkObject.lootRare, checkObject.largeLoot)) {
+        console.info('test')
+        lootTable = getLootTable(player, lootData, lootParam)
+        rerollLoot(lootTable, checkObject)
     }
 
     lootTable.forEach(
+        /**@param {$ItemStack} item */
         item => {
+            console.log(item.rarity.toString())
             block.popItem(item)
-    })
-}
-/**
- * @author M1hono
- * @description get loot table from the chest.
- * @param {$Player} player 
- * @param {$LootDataManager_} lootData 
- * @returns 
- */
-function getLootTable(player , lootData) {
-    return lootData
-    .getLootTable(chestloot(player))
-    .getRandomItems(lootParam)
-
-}
-/**
- * @author M1hono
- * @description check if the player can open the fishing chest.
- * @param {$Player} player - player instance
- * @param {integer} dice - dice roll result
- * @param {integer} wis - wisdom skill level
- * @param {integer} dex - dexterity skill level
- * @param {boolean} lootRarity - if the loot table contains epic rarity item
- * @param {boolean} largeLoot - if the loot table contains more than 12 items
- * @returns {boolean} - if the player can open the chest
- */
-function fishingchestOpenCheck(player, dice , wis , dex , lootRarity , largeLoot) {
-    if (largeLoot) {
-        if (dice < 10) return false
-        if (lootRarity) {
-            if (dice < 15) return false
         }
+    )
+}
+/**
+ * @author M1hono
+ * @description Check if the loot table contains more than 10 items.
+ * @param {$LootTable} lootTable
+ * @returns {boolean}
+ */
+function sizeCheck(lootTable) {
+    return lootTable.size() >= 10
+}
+/**
+ * @description Check if the loot table contains uncommon item.
+ * @param {$LootTable} lootTable
+ * @returns {boolean}
+ */
+function rarityCheck(lootTable) {
+    for (let index = 0; index < lootTable.size(); index++) {
+        const item = lootTable[index]
+        console.info(item.rarity.toString())
+        if (item.rarity.toString() == 'UNCOMMON') {
+            return true
+        }
+    }
+    return false
+}
+/**
+ * @author M1hono
+ * @description Re-roll the loot table to check for rare and large loot.
+ * @param {$LootTable} lootTable
+ * @param {object} checkObject
+ */
+function rerollLoot(lootTable, checkObject) {
+    checkObject.lootRare = rarityCheck(lootTable)
+    checkObject.largeLoot = sizeCheck(lootTable)
+    console.info('lootRare:' + checkObject.lootRare)
+    console.info('largeLoot:' + checkObject.largeLoot)
+}
+/**
+ * @author M1hono
+ * @description Get loot table from the chest.
+ * @param {$Player} player
+ * @param {$LootDataManager_} lootData
+ * @returns {$LootTable}
+ */
+function getLootTable(player, lootData, lootParam) {
+    return lootData
+        .getLootTable(chestloot(player))
+        .getRandomItems(lootParam)
+}
+/**
+ * @author M1hono
+ * @description Check if the player can open the fishing chest.
+ * @param {integer} diceRoll - Dice roll result
+ * @param {integer} skill - Player's wisdom and dexterity level
+ * @param {boolean} lootRare - If the loot table contains rare item
+ * @param {boolean} largeLoot - If the loot table contains more than 12 items
+ * @returns {boolean} - If the player can open the chest
+ */
+function fishingchestOpenCheck(diceRoll, skill, lootRare, largeLoot) {
+    if (diceRoll >= 20) {
+        return lootRare && largeLoot;
+    }
+
+    const totalScore = diceRoll + skill;
+    if (lootRare && largeLoot) {
+        return totalScore >= 18;
+    } else if (lootRare) {
+        return totalScore >= 15;
+    } else if (largeLoot) {
+        return totalScore >= 7;
+    } else {
+        return false;
     }
 }
 /**
  * @author M1hono
- * @description return a random chest loot table.
+ * @description Return a random chest loot table.
  * @param {$Player} player
  * @returns {$LootTable}
  */
@@ -141,11 +184,9 @@ function chestloot(player) {
     const {
         server: { lootData }
     } = player
-
     let filteredList = lootData.getKeys($LootDataType.TABLE)
-    .stream()
-    .filter(id => id.path.contains('chest'))
-    .map(id => id.toString()).toList()
-
+        .stream()
+        .filter(id => id.path.contains('chest'))
+        .map(id => id.toString()).toList()
     return filteredList[Math.floor(Math.random() * filteredList.length)]
 }
