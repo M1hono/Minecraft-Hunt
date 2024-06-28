@@ -66,3 +66,4 @@ journeymapconfig/5.9journeymap.minimap.config
 crash-reports/*
 screenshots/*
 .DS_Store
+.assets_helper/links.json
