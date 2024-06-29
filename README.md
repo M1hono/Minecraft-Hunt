@@ -17,6 +17,6 @@
 ---
 [**Documents - 文档目录**](https://github.com/M1hono/Minecraft-Hunt/tree/main/kubejs/documents)
 
-[**基本开发文档**](https://github.com/M1hono/Minecraft-Hunt/tree/main/kubejs/documents/development/README.md)
+[**Development - 基本开发文档**](https://github.com/M1hono/Minecraft-Hunt/tree/main/kubejs/documents/development/README.md)
 
 [**Assets Documents - 美术开发文档目录**](https://github.com/M1hono/Minecraft-Hunt/tree/main/kubejs/documents/assets)
