@@ -3,9 +3,9 @@ const { $ServerLevel } = require("packages/net/minecraft/server/level/$ServerLev
 const { $FallingBlockEntity } = require("packages/net/minecraft/world/entity/item/$FallingBlockEntity")
 const { $LootParams$Builder } = require("packages/net/minecraft/world/level/storage/loot/$LootParams$Builder")
 const { $LootContextParamSets } = require("packages/net/minecraft/world/level/storage/loot/parameters/$LootContextParamSets")
-const { getSkillLevel } = require("../../API/Pmmo")
-const { handleDiceRoll } = require("../../GlobalImports")
-const { lootbigSuccess, lootbigFailure, lootNormalEvents } = require("../RewardEvents")
+const { getSkillLevel } = require("../../../API/Pmmo")
+const { handleDiceRoll } = require("../../../GlobalImports")
+const { lootbigSuccess, lootbigFailure, lootNormalEvents } = require("../../RewardEvents")
 /**
  * @author M1hono
  * @description Tracking falling block's alive status.
