@@ -5,9 +5,11 @@
 ## 初始化项目
 
 1. **Fork 项目：**
+
     打开 [Minecraft-Hunt GitHub 仓库](https://github.com/M1hono/Minecraft-Hunt)，点击右上角的 "Fork" 按钮，将项目 Fork 到你的 GitHub 账户中。
 
 2. **在现有的Minecraft实例文件夹中初始化仓库：**
+   
     打开命令行或终端，导航到你的Minecraft实例文件夹，执行以下命令：
 
 ```bash
@@ -17,7 +19,8 @@ git remote add origin https://github.com/YourUsername/Minecraft-Hunt.git 、、 
 git pull origin main
 ```
 
-3. **设置上游仓库：**
+1. **设置上游仓库：**
+
     为了保持与原始仓库的同步，设置上游仓库：
 
 ```bash
@@ -27,16 +30,19 @@ git remote add upstream https://github.com/M1hono/Minecraft-Hunt.git
 ## 合作流程
 
 4. **创建并切换到新分支：**
+
     在开始工作之前，建议从主分支创建一个新的特性分支：
 
 ```bash
 git checkout -b feature-branch
 ```
 
-5. **修改代码：**
+1. **修改代码：**
+
     在你的Minecraft实例文件夹中，编辑项目的代码、资源文件或配置文件，根据你的需求进行修改和调整。
 
-6. **提交更改：**
+2. **提交更改：**
+
     保存修改后，使用以下命令将更改提交到你的本地仓库：
 
 ```bash
@@ -44,21 +50,25 @@ git add .
 git commit -m "描述你的修改内容"
 ```
 
-7. **推送到远程仓库：**
+1. **推送到远程仓库：**
+
     如果你准备将你的更改合并到主分支中，将你的本地分支推送到远程仓库：
 
 
 ## 提交 Pull Request (PR)
 
 8. **创建 Pull Request：**
+
     打开你 Fork 的 GitHub 仓库页面，选择你刚刚推送的特性分支，点击“Compare & pull request”，填写相关信息并提交PR。
 
-9. **等待审查和合并：**
+9.  **等待审查和合并：**
+
     等待项目维护者审查你的PR。他们可能会提出修改建议或直接合并你的更改到主分支中。
 
 ## 结束合作
 
 10. **删除本地和远程分支：**
+
     一旦你的PR被合并，可以安全地删除你的特性分支：
 
 ```bash
@@ -70,6 +80,7 @@ git push origin --delete feature-branch # 删除远程分支
     但如果你是长期开发成员，则没有做这件事的必要。
 
 ## 规范
+
     在你完成某项工作时，你需要在CHANGELOG于DevDocuments中写入你所提供的贡献，如果你是外部开发者的话，则需要再CHANGELOG的新增事项中留下你的名字。
 例如：
 > 我完成了这个更改 => 2024/某月、某日 - 我的名字
