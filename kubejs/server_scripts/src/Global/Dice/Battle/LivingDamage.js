@@ -1,3 +1,4 @@
+// priority: 50
 import { Components } from "packages/moe/wolfgirl/probejs/generated/registry/mna/Components"
 import { $LivingDamageEvent } from "packages/net/minecraftforge/event/entity/living/$LivingDamageEvent"
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
@@ -6,13 +7,10 @@ const { $Player } = require("packages/net/minecraft/world/entity/player/$Player"
  * handle living damage event
  * @param {$LivingDamageEvent} event 
  */
-global.LivingDamage = (event) => {
+global.livingDamage = (event) => {
     const entity = event.source.actual
     const target = event.entity
     const amount = event.amount
-    // console.info(event.source.immediate)
-    // console.info(event.source.actual)
-    // console.info(event.source.getType())
     if (entity instanceof $Player) {
         global.initDice(entity)
         if (!entity.stages.has("attack")) {

@@ -1,4 +1,4 @@
-// priority: 99
+// priority: 125
 /**
  * @typedef {"attack" | "defense" | "ulti"} ActionType
  */
@@ -10,6 +10,15 @@
  */
 export function handleDiceRoll(player, type , sides) {
     global.dice(player, type , sides)
+}
+/**
+ * 
+ * @param {$Player} player 
+ * @param {DiceType} type 
+ * @returns {number}
+ */
+export function handleGetDice(player, type) {
+    return global.getDice(player, type)
 }
 /**
  * @description A set of actions when players earn pmmo xp.
@@ -35,5 +44,5 @@ export const handleFishingLoot = (event) => {
  * @param {$LivingDamageEvent} event 
  */
 export function handleLivingDamage(event) {
-    global.LivingDamage(event)
+    global.livingDamage(event)
 }

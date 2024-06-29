@@ -1,4 +1,4 @@
-// priority: 101
+// priority: 150
 import { $Server } from "packages/info/journeymap/shaded/org/eclipse/jetty/server/$Server";
 import { $Dimension } from "packages/java/awt/$Dimension";
 import { $Structure } from "packages/net/minecraft/world/level/levelgen/structure/$Structure";
@@ -61,4 +61,24 @@ export function spawnStructure(server, dimension, structure, x, y, z) {
     let level = server.getLevel(dimension)
     let pos = BlockPos(x, y, z)
     server.structureManager.get(structure).ifPresent(e => e.placeInWorld(level, pos, pos, new $StructurePlaceSettings(), level.random, 3))
+}
+/**
+ * @author https://discord.com/channels/303440391124942858/1140369302571200562
+ * @description Shake the screen.
+ */
+export function screenshake(event) {
+    const {
+        x,
+        y,
+        z,
+        level
+    } = event
+    level.getEntitiesWithin(AABB.of(x - 20, y - 20, z - 20, x + 20, y + 20, z + 20)).forEach(entity => {
+        if (entity.isPlayer()) {
+            let distance = entity.getDistance(x, y, z)
+            distance = 20 - distance
+            distance = distance / 20 * 2
+            entity.sendData('screenshake', { i1: distance * 0.6, i2: distance, i3: distance * 0.2, duration: 15 })
+        }
+    })
 }

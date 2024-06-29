@@ -1,4 +1,4 @@
-// priority: 100
+// priority: 125
 /**
  * @typedef {"attack" | "defense" | "ulti"} DiceType
  */
@@ -10,4 +10,13 @@
  */
 export function handleDiceRoll(player, type , sides) {
     global.dice(player, type , sides)
+}
+/**
+ * 
+ * @param {$Player} player 
+ * @param {DiceType} type 
+ * @returns {number}
+ */
+export function handleGetDice(player, type) {
+    return global.getDice(player, type)
 }

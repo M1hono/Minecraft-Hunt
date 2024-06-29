@@ -1,9 +1,9 @@
 // priority: 100
 import { $Block } from "packages/net/minecraft/world/level/block/$Block";
-import { setLevelWithoutReroll, setLevelWithReroll } from "../API/l2Hostility";
+import { setLevelWithoutReroll, setLevelWithReroll } from "../../../API/l2Hostility";
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
 import { $ServerLevel } from "packages/net/minecraft/server/level/$ServerLevel";
-import { getMaxMana, setMana } from "../API/MNAmana";
+import { getMaxMana, setMana } from "../../../API/MNAmana";
 
 /**
  * @author M1hono
@@ -14,7 +14,7 @@ import { getMaxMana, setMana } from "../API/MNAmana";
  */
 export function lootbigFailure(level, player, block) {
     const { pos } = block
-    const { potionEffects , server } = player
+    const { potionEffects } = player
     const events = [
         // event 1 : spawn a zombie
         () => {
@@ -29,7 +29,7 @@ export function lootbigFailure(level, player, block) {
         },
         // event 2 : give slowness and hunger
         () => {
-            player.tell(Text.of("稍许的瘟疫逸散，你感到虚弱").darkGreen())
+            player.tell(Text.translatable('bigFailure.loot.event_2').darkGreen())
             potionEffects.add("minecraft:slowness", 200, 2);
             potionEffects.add("minecraft:hunger", 300, 1);
         },

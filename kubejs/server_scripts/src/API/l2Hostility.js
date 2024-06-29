@@ -1,4 +1,4 @@
-// priority: 101
+// priority: 150
 // requires: l2hostility
 import { $Entity } from "packages/net/minecraft/world/entity/$Entity";
 const $HostileEntity = Java.loadClass("dev.xkmc.l2hostility.content.capability.mob.MobTraitCap")

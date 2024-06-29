@@ -1,4 +1,4 @@
-// priority: 101
+// priority: 150
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
 const { $APIUtils } = require("packages/harmonised/pmmo/api/$APIUtils");
 /**

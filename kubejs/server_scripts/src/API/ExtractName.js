@@ -1,4 +1,4 @@
-// priority: 101
+// priority: 150
 /**
  * @author M1hono
  * @description Extracts recipe name from the recipe path.

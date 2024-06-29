@@ -17,7 +17,7 @@ global.dice = (player, type , sides) =>{
         case 'attack':
             data.attackdice = dice
             break;
-        case 'defend':
+        case 'defense':
             data.defencedice = dice
             break;
         case 'ultil':
@@ -32,4 +32,21 @@ global.initDice = (player) =>{
     if (data.attackdice === undefined) data.attackdice = 1
     if (data.defencedice === undefined) data.defencedice = 1
     if (data.ultildice === undefined) data.ultildice = 1
+}
+/**
+ * 
+ * @param {$Player} player 
+ * @param {DiceType} type 
+ * @returns {number}
+ */
+global.getDice = (player, type) =>{
+    const { data } = player
+    switch (type) {
+        case 'attack':
+            return data.attackdice
+        case 'defense':
+            return data.defencedice
+        case 'ultil':
+            return data.ultildice
+    }
 }
