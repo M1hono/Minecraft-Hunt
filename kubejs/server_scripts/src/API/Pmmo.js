@@ -7,7 +7,8 @@ const { $APIUtils } = require("packages/harmonised/pmmo/api/$APIUtils");
  * 力量 敏捷 体质 智力 感知 魅力
  */
 /**
- * 
+ * @author M1hono
+ * @description get the skill level of the player
  * @param {SkilType} skill 
  * @param {$Player} player 
  * @returns 

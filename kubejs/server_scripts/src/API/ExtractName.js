@@ -1,5 +1,6 @@
 // priority: 101
 /**
+ * @author M1hono
  * @description Extracts recipe name from the recipe path.
  * @param {string} Id 
  * @returns {string} - recipeName

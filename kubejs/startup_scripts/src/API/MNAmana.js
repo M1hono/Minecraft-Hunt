@@ -4,6 +4,7 @@ const { PlayerMagicProvider } = require("packages/com/mna/capabilities/playerdat
 const { ServerMessageDispatcher } = require("packages/com/mna/network/ServerMessageDispatcher");
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player");
 /**
+ * @author M1hono
  * @description Check if the player has enough mana.
  * @param {$Player} player
  * @param {number} amount - The amount of mana to check.
@@ -18,6 +19,7 @@ export function hasEnoughMana(player, amount) {
     return hasEnough;
 }
 /**
+ * @author M1hono
  * @description Get the player's mana.
  * @param {$Player} player
  * @returns {number} - Player's amount of mana.
@@ -31,6 +33,7 @@ export function getMana(player) {
     return amount;
 }
 /**
+ * @author M1hono
  * @description Set the player's mana.
  * @param {$Player} player
  * @param {number} amount - The amount of mana you want to set.
@@ -45,6 +48,7 @@ export function setMana(player, amount) {
     });
 }
 /**
+ * @author M1honos
  * @description Consume the player's mana.
  * @param {$Player} player
  * @param {number} amount - The amount of mana you want to consume.
@@ -59,6 +63,7 @@ export function consumeMana(player, amount) {
     });
 }
 /**
+ * @author M1hono
  * @description Refill the player's mana.
  * @param {$Player} player
  * @param {number} amount - The amount of mana you want to refill.
@@ -73,6 +78,7 @@ export function restoreMana(player, amount) {
     });
 }
 /**
+ * @author M1hono
  * @description Get the player's max mana.
  * @param {$Player} player
  * @returns {number} - Player's max amount of mana.
@@ -86,6 +92,7 @@ export function getMaxMana(player) {
     return maxAmount;
 }
 /**
+ * @author M1hono
  * @description Set the player's max mana.
  * @param {$Player} player
  * @param {number} amount - The max amount of mana you want to set.
@@ -100,6 +107,7 @@ export function setMaxMana(player, amount) {
     });
 }
 /**
+ * @author M1hono
  * @description Get the player's mana regen.
  * @param {$Player} player
  * @returns {number} - Player's mana regen.
@@ -113,6 +121,7 @@ export function getManaRegen(player) {
     return regenRate;
 }
 /**
+ * @author M1hono
  * @description Set the player's mana regen.
  * @param {$Player} player
  * @param {number} amount - The mana regen you want to set.
