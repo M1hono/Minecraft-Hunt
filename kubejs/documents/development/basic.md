@@ -85,6 +85,7 @@ git push origin --delete feature-branch # 删除远程分支
 ## 规范
 
 在你完成某项工作时，需要在CHANGELOG于DevDocuments中写入你所提供的贡献。
+
 如果你是外部开发者的话，则请在新增事项后留下你的名字。
     
 例如：
