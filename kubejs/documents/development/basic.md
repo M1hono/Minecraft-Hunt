@@ -84,7 +84,8 @@ git push origin --delete feature-branch # 删除远程分支
 
 ## 规范
 
-在你完成某项工作时，你需要在CHANGELOG于DevDocuments中写入你所提供的贡献，如果你是外部开发者的话，则需要再CHANGELOG的新增事项中留下你的名字。
+在你完成某项工作时，需要在CHANGELOG于DevDocuments中写入你所提供的贡献。
+如果你是外部开发者的话，则请在新增事项后留下你的名字。
     
 例如：
 > 我完成了这个更改 => 2024/某月、某日 - 我的名字
