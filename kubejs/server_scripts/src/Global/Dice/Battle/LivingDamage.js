@@ -1,6 +1,7 @@
 // priority: 50
 import { Components } from "packages/moe/wolfgirl/probejs/generated/registry/mna/Components"
 import { $LivingDamageEvent } from "packages/net/minecraftforge/event/entity/living/$LivingDamageEvent"
+import { playerDamage } from "../../../Dice/Battle/PlayerDamage/PlayerDamage"
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
 
 /**
@@ -8,32 +9,11 @@ const { $Player } = require("packages/net/minecraft/world/entity/player/$Player"
  * @param {$LivingDamageEvent} event 
  */
 global.livingDamage = (event) => {
-    const entity = event.source.actual
-    const target = event.entity
-    const amount = event.amount
-    if (entity instanceof $Player) {
-        global.initDice(entity)
-        if (!entity.stages.has("attack")) {
-            switch (event.source.getType()) {
-                case "player":
-                    entity.stages.add("attack")
-                    global.dice(entity, 'attack', 20)
-                    removeStage()
-                    break;
-                case "arrow":
-                    entity.stages.add("attack")
-                    global.dice(entity, 'defend', 20)
-                    removeStage()
-                    break;
-                }
-            function removeStage() {
-            entity.getServer().scheduleInTicks(1, () => {
-                entity.stages.remove("attack")
-            })
-        }
-        }
-        
-    } else {
-        target.invulnerableTime = 0
-    }
+    const {
+        entity : target,
+        amount,
+        source,
+        source : { actual : entity }
+    } = event
+    playerDamage(entity, target, amount , source)
 }
