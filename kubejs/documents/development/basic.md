@@ -4,6 +4,8 @@
 
 ## 初始化项目
 
+Minecraft Hunt使用 Forge 1.20.1 - 40.2.20.
+
 1. **Fork 项目：**
 
 打开 [Minecraft-Hunt GitHub 仓库](https://github.com/M1hono/Minecraft-Hunt)，点击右上角的 "Fork" 按钮，将项目 Fork 到你的 GitHub 账户中。
@@ -66,13 +68,13 @@ git commit -m "描述你的修改内容"
 
 9.  **等待审查和合并：**
 
-等待审查与接受或驳回PR。
+不论接受还是驳回都会提供反馈，最好能在提交前与开发者进行合作。
 
 ## 结束合作
 
 10. **删除本地和远程分支：**
 
-一旦你的PR被合并，你可以安全地删除创建的特性分支：
+一旦你的PR被合并，你可以安全地删除新建的特性分支：
 
 ```bash
 git checkout main
@@ -80,13 +82,13 @@ git branch -d feature-branch # 删除本地分支
 git push origin --delete feature-branch # 删除远程分支
 ```
 
-但如果你是长期开发成员，则没有做这件事的必要。
+如果你是长期开发成员无需进行该步骤。
 
 ## 规范
 
-在你完成某项工作时，需要在CHANGELOG于DevDocuments中写入你所提供的贡献。
+在你完成某项工作时，需要在CHANGELOG与DevDocuments中写入你所提供的贡献。
 
-如果你是外部开发者的话，则请在新增事项后留下你的名字。
+如果你是外部开发者的话，请在新增事项后留下你的名字。
     
 例如：
 > 我完成了这个更改 => 2024/某月、某日 - 我的名字
