@@ -4,6 +4,9 @@ import { $Dimension } from "packages/java/awt/$Dimension";
 import { $Structure } from "packages/net/minecraft/world/level/levelgen/structure/$Structure";
 import { $StructurePlaceSettings } from "packages/net/minecraft/world/level/levelgen/structure/templatesystem/$StructurePlaceSettings";
 import { $LootDataType } from "packages/net/minecraft/world/level/storage/loot/$LootDataType";
+import { $DamageSource } from "packages/net/minecraft/world/damagesource/$DamageSource";
+import { $Registries } from "packages/net/minecraft/core/registries/$Registries";
+import { $ResourceKey } from "packages/net/minecraft/resources/$ResourceKey";
 const UUID = Java.loadClass('java.util.UUID');
 const $UUIDUtil = Java.loadClass('net.minecraft.core.UUIDUtil');
 /**
@@ -37,7 +40,7 @@ export let entityByUUID = (uuid) => {
  * @param {string} filter
  * @returns {$LootTable}
  */
-export function chestloot(event,filter) {
+export function chestloot(event, filter) {
     const {
         server: { lootData }
     } = event
@@ -81,4 +84,23 @@ export function screenshake(event) {
             entity.sendData('screenshake', { i1: distance * 0.6, i2: distance, i3: distance * 0.2, duration: 15 })
         }
     })
+}
+const { DAMAGE_TYPE } = $Registries;
+/**
+ * @author M1hono
+ * @description Get the damage source with the entity as the source.
+ * @param {$ResourceLocation_} damageType
+ * @param {$Entity_} entity
+ * @returns {$DamageSource}
+ */
+export function getOrSource(damageType, entity) {
+    const { level } = entity
+    const type = Utils.id(damageType)
+    const damageTypeKey = $ResourceKey.create(DAMAGE_TYPE, type)
+    const damageTypeHolder = 
+    level
+    .registryAccess()
+    .registryOrThrow(DAMAGE_TYPE)
+    .getHolderOrThrow(damageTypeKey)
+    return new $DamageSource(damageTypeHolder, entity, entity)
 }
