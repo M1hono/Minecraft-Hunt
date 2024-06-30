@@ -1,6 +1,8 @@
-> 本文简要概述了如何通过Git命令行来初始化项目并进行合作开发。
-> 你需要[Git](https://git-scm.com/downloads)来进行合作开发。
 # Minecraft Hunt 项目合作教程
+
+> 本文简要概述了如何通过Git命令行来初始化项目并进行合作开发。
+
+> 你需要[Git](https://git-scm.com/downloads)来进行合作开发。
 
 ## 初始化项目
 
