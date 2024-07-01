@@ -9,10 +9,10 @@ const { getSkillLevel } = require("../../../API/Pmmo");
 /**
  * @author M1hono
  * @description Deal with events when player deal damage to other entities.
- * @param {$Player} entity 
- * @param {$LivingEntity} target 
- * @param {float} amount 
- * @param {$DamageSource} source 
+ * @param {$Player} entity entity that deal damage
+ * @param {$LivingEntity} target entity that take damage
+ * @param {float} amount damage amount
+ * @param {$DamageSource} source damage source
  */
 export function playerDamage(entity , target , amount , source) {
     if (entity instanceof $Player) {
@@ -26,7 +26,8 @@ export function playerDamage(entity , target , amount , source) {
             switch (source.getType()) {
                 case "player":
                     stages.add("attack")
-                    handleDiceRoll(entity, 'attack', 20)
+                    str = getSkillLevel("strength" , entity)
+                    handleDiceRoll(entity , "attack" , str )
                     removeStage( server , stages )
                     break;
                 case "arrow":
@@ -43,11 +44,12 @@ export function playerDamage(entity , target , amount , source) {
 /**
  * @author M1hono
  * @description Using stages to control the frequency of diceRoll.
- * @param {$MinecraftServer} server 
- * @param {$Stages} stages 
+ * @param {$MinecraftServer} server
+ * @param {$Stages} stages
  */
 function removeStage(server , stages) {
     server.scheduleInTicks(1, () => {
         stages.remove("attack")
     })
 }
+Utils

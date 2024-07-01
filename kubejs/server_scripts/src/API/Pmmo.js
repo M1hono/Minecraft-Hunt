@@ -9,9 +9,10 @@ const { $APIUtils } = require("packages/harmonised/pmmo/api/$APIUtils");
 /**
  * @author M1hono
  * @description get the skill level of the player
- * @param {SkilType} skill 
- * @param {$Player} player 
- * @returns 
+ * @param {SkilType} skill str dex con int wis cha
+ * 力量 敏捷 体质 智力 感知 魅力
+ * @param {$Player} player the player
+ * @returns {number} the level of the skill
  */
 export function getSkillLevel(skill , player) {
     return $APIUtils.getLevel(skill , player)

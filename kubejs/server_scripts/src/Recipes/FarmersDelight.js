@@ -3,5 +3,4 @@
  */
 ServerEvents.recipes((event) => {
     const { farmersdelight } = event.recipes
-
 })

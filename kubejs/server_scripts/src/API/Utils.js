@@ -7,6 +7,7 @@ import { $LootDataType } from "packages/net/minecraft/world/level/storage/loot/$
 import { $DamageSource } from "packages/net/minecraft/world/damagesource/$DamageSource";
 import { $Registries } from "packages/net/minecraft/core/registries/$Registries";
 import { $ResourceKey } from "packages/net/minecraft/resources/$ResourceKey";
+import { $Entity } from "packages/net/minecraft/world/entity/$Entity";
 const UUID = Java.loadClass('java.util.UUID');
 const $UUIDUtil = Java.loadClass('net.minecraft.core.UUIDUtil');
 /**
@@ -36,14 +37,14 @@ export let entityByUUID = (uuid) => {
 /**
  * @author M1hono
  * @description Return a random chest loot table.
- * @param {$Player} player
+ * @param {$Entity} entity
  * @param {string} filter
  * @returns {$LootTable}
  */
-export function chestloot(event, filter) {
+export function chestloot(entity, filter) {
     const {
         server: { lootData }
-    } = event
+    } = entity
     let filteredList = lootData.getKeys($LootDataType.TABLE)
         .stream()
         .filter(id => id.path.contains(filter))

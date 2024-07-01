@@ -67,7 +67,7 @@ export function spawnStructure(server, dimension, structure, x, y, z) {
 }
 /**
  * @author https://discord.com/channels/303440391124942858/1140369302571200562
- * @description Shake the screen.
+ * @description send data to the client to shake the screen for players.
  */
 export function screenshake(event) {
     const {

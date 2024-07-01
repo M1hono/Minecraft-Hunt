@@ -10,10 +10,10 @@ const { $Player } = require("packages/net/minecraft/world/entity/player/$Player"
  */
 global.livingDamage = (event) => {
     const {
-        entity : target,
-        amount,
-        source,
-        source : { actual : entity }
+        entity : target, // entity that take damage
+        amount, // damage amount
+        source, // damage source
+        source : { actual : entity } // enitty that deal damage
     } = event
     playerDamage(entity, target, amount , source)
 }

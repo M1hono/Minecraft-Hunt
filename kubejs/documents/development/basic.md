@@ -84,8 +84,6 @@ git branch -d feature-branch # 删除本地分支
 git push origin --delete feature-branch # 删除远程分支
 ```
 
-如果你是长期开发成员无需进行该步骤。
-
 ## 规范
 
 在你完成某项工作时，需要在CHANGELOG与DevDocuments中写入你所提供的贡献。
