@@ -19,11 +19,19 @@ ForgeEvents.onEvent( $RitualCompleteEvent,
 })
 const { $LivingDamageEvent } = require("packages/net/minecraftforge/event/entity/living/$LivingDamageEvent")
 const { handleLivingDamage } = require("./GlobalImports")
+/**
+ * @description Trigger when LivingDamage is dealt.
+ * Used to handle damage dealt by players and other damage related functions.
+ */
 ForgeEvents.onEvent($LivingDamageEvent,/**@typeof  $LivingDamageEvent*/event=>{
     handleLivingDamage(event)
 })
 const { $ItemFishedEvent } = require("packages/net/minecraftforge/event/entity/player/$ItemFishedEvent")
 const { handleFishingLoot } = require("./GlobalImports")
+/**
+ * @description Trigger player fish an item.
+ * Used to handle fishing event and fishing chest functions.
+ */
 ForgeEvents.onEvent($ItemFishedEvent,/**@typeof $ItemFishedEvent*/event=>{
     handleFishingLoot(event)
 })
