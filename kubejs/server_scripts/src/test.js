@@ -10,6 +10,8 @@ const { $Goal } = require("packages/net/minecraft/world/entity/ai/goal/$Goal")
 const { $PanicGoal } = require("packages/net/minecraft/world/entity/ai/goal/$PanicGoal")
 const { $FloatGoal } = require("packages/net/minecraft/world/entity/ai/goal/$FloatGoal")
 const { $WaterAvoidingRandomStrollGoal } = require("packages/net/minecraft/world/entity/ai/goal/$WaterAvoidingRandomStrollGoal")
+const { $Quark } = require("packages/org/violetmoon/quark/base/$Quark")
+const { $AbstractPickarang } = require("packages/org/violetmoon/quark/content/tools/entity/rang/$AbstractPickarang")
 
 LevelEvents.afterExplosion(event => {
     screenshake(event)

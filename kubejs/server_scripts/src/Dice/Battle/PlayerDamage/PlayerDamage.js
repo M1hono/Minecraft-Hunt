@@ -30,13 +30,13 @@ export function playerDamage(entity , target , amount , source) {
             switch (source.getType()) {
                 case "player":
                     stages.add("attack")
-                    str = getSkillLevel("strength" , entity)
+                    let str = getSkillLevel("strength" , entity)
                     handleDiceRoll(entity , "attack" , str )
                     removeStage( server , stages )
                     break;
                 case "arrow":
                     stages.add("attack")
-                    dex = getSkillLevel("dexterity" , entity)
+                    let dex = getSkillLevel("dexterity" , entity)
                     handleDiceRoll(entity , "attack" , dex )
                     removeStage( server , stages )
                     break;
