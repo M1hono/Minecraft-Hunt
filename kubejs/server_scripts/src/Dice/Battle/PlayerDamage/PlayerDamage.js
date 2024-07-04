@@ -3,7 +3,7 @@ import { $Stages } from "packages/dev/latvian/mods/kubejs/stages/$Stages";
 import { $MinecraftServer } from "packages/net/minecraft/server/$MinecraftServer";
 import { $DamageSource } from "packages/net/minecraft/world/damagesource/$DamageSource";
 import { $LivingEntity } from "packages/net/minecraft/world/entity/$LivingEntity";
-const { $Player } = require("packages/net/minecraft/world/entity/player/$Player");
+import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
 const { handleDiceRoll } = require("../../../GlobalImports");
 const { getSkillLevel } = require("../../../API/Pmmo");
 /**
@@ -21,7 +21,11 @@ export function playerDamage(entity , target , amount , source) {
             block,
             server
         } = entity
-        initDice(entity)
+        global.initDice(entity)
+        // console.log(entity)
+        // console.log(target)
+        // console.log(amount)
+        // console.log(source.immediate.nbt)
         if (!stages.has("attack")) {
             switch (source.getType()) {
                 case "player":
@@ -52,4 +56,3 @@ function removeStage(server , stages) {
         stages.remove("attack")
     })
 }
-Utils

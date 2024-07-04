@@ -1,6 +1,7 @@
 // priority: 0
 /**
  * @description Trigger when players earn pmmo xp.
+ * Used to handle pmmo xp event.
  */
 const { $XpEvent } = require("packages/harmonised/pmmo/api/events/$XpEvent")
 const { handlePmmoXp } = require("./GlobalImports")
@@ -10,6 +11,7 @@ ForgeEvents.onEvent($XpEvent,
 })
 /**
  * @description Trigger player complete the ritual.
+ * Used to handle ritual complete event.
  */
 const { $RitualCompleteEvent } = require("packages/com/mna/api/events/$RitualCompleteEvent")
 const { handleRitualComplete } = require("./GlobalImports")
