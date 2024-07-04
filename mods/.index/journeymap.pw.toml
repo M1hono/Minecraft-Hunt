@@ -1,13 +1,13 @@
-filename = '[辅助][旅行地图] journeymap-1.20.1-5.9.23-forge.jar'
-name = 'JourneyMap'
+filename = 'journeymap-1.20.1-5.10.0-forge.jar'
+name = 'Journeymap'
 side = 'both'
 
 [download]
-hash = 'ee8e1a67fead37ec07bd692053f52cdf72cc15aa'
+hash = '54d5dc989e1d4fe682ca072c3ae02a244631e139'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5401131
+file-id = 5458344
 project-id = 32274

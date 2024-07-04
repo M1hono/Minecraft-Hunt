@@ -1,13 +1,13 @@
-filename = '[莱特兰古遗物]l2artifacts-2.4.23.jar'
+filename = 'l2artifacts-2.4.24.jar'
 name = 'L2 Artifacts'
 side = 'both'
 
 [download]
-hash = '00606c67ddf66ba8f6e0f7fc42737d33eb14c6e6'
+hash = 'aea257532a976d98469b85796cb1d586a3d4aac1'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5349812
+file-id = 5462118
 project-id = 659547

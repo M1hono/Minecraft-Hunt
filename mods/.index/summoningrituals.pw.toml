@@ -1,0 +1,13 @@
+filename = '[魔改][召唤仪式]summoningrituals-forge-1.20.1-2.0.8.jar'
+name = 'Summoning Rituals'
+side = 'both'
+
+[download]
+hash = '0ff2f9bed3da51b9218497f3761d42c2d53f4862'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5446506
+project-id = 671040
