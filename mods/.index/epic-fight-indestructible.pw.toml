@@ -1,0 +1,13 @@
+filename = '[战斗][史诗战斗生物行为复杂定义]indestructible-20.6.7.jar'
+name = 'Epic Fight - Indestructible'
+side = 'both'
+
+[download]
+hash = '7c60ee167e38fc45acc4cb40491f439719b4ec66'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5337430
+project-id = 915201

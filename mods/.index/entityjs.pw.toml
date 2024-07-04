@@ -1,13 +1,13 @@
-filename = '[魔改][实体Kubejs]entityjs-0.1.8-1.20.1.jar'
+filename = 'entityjs-0.2.1-1.20.1.jar'
 name = 'EntityJS'
 side = 'both'
 
 [download]
-hash = 'b8f3e313bfea83e48dd843c62378d4f5a1b6a96a'
+hash = 'abd22a7d5a5221448e09c0571be732c15bebf1e5'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5351396
+file-id = 5480089
 project-id = 967617

@@ -1,7 +1,7 @@
-// priority: 101
+// priority: 150
 // requires: l2hostility
 import { $Entity } from "packages/net/minecraft/world/entity/$Entity";
-import { $HostileEntity } from "packages/dev/xkmc/l2hostility/content/capability/mob/$MobTraitCap";
+const $HostileEntity = Java.loadClass("dev.xkmc.l2hostility.content.capability.mob.MobTraitCap")
 /**
  * @typedef {"l2hostility:adaptive"
  * |"l2hostility:arena"

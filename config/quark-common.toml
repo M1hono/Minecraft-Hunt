@@ -443,7 +443,7 @@
 		"Hud On Top" = false
 
 	[tools.pickarang]
-		"Enable Flamerang" = true
+		"Enable Flamerang" = false
 		#Set this to true to use the recipe without the Heart of Diamond, even if the Heart of Diamond is enabled.
 		"Never Use Heart Of Diamond" = false
 
@@ -451,21 +451,21 @@
 			#How long it takes before the Pickarang starts returning to the player if it doesn't hit anything.
 			Timeout = 20
 			#Pickarang harvest level. 2 is Iron, 3 is Diamond, 4 is Netherite.
-			"Harvest Level" = 3
+			"Harvest Level" = 0
 			#Pickarang durability. Set to -1 to have the Pickarang be unbreakable.
 			Durability = 800
 			#Pickarang max hardness breakable. 22.5 is ender chests, 25.0 is monster boxes, 50 is obsidian. Most things are below 5.
-			"Max Hardness" = 20.0
+			"Max Hardness" = 0.0
 			#How much damage the Pickarang deals when swung as an item
-			"Attack Damage" = 2
+			"Attack Damage" = 0
 			#How many ticks do you have to wait between using the pickarang again
-			Cooldown = 10
+			Cooldown = 0
 			#Whether this pickarang type can act as a hoe.
 			"Can Act As Hoe" = false
 			#Whether this pickarang type can act as a shovel.
-			"Can Act As Shovel" = true
+			"Can Act As Shovel" = false
 			#Whether this pickarang type can act as an axe.
-			"Can Act As Axe" = true
+			"Can Act As Axe" = false
 
 		[tools.pickarang.flamerang]
 			#How long it takes before the Pickarang starts returning to the player if it doesn't hit anything.
