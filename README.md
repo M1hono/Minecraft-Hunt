@@ -5,7 +5,7 @@
 > 一个致于为玩家提供DND风格冒险的整合包。
 
 ---
-[**Dev Log - 开发日志**](https://github.com/M1hono/Minecraft-Hunt/blob/main/kubejs/documents/development/Dev/DevDocuments.mdd)
+[**Dev Log - 开发日志**](https://github.com/M1hono/Minecraft-Hunt/blob/main/kubejs/documents/development/Dev/DevDocuments.md)
 
 [**To Do - 开发进度**](https://github.com/M1hono/Minecraft-Hunt/blob/main/kubejs/documents/development/Dev/CHANGELOG.md)
 
