@@ -5,14 +5,14 @@
 > 一个致于为玩家提供DND风格冒险的整合包。
 
 ---
-[**Dev Log - 开发日志**](https://github.com/M1hono/Minecraft-Hunt/blob/main/CHANGELOG.md)
+[**Dev Log - 开发日志**](https://github.com/M1hono/Minecraft-Hunt/blob/main/kubejs/documents/development/Dev/DevDocuments.mdd)
 
-[**To Do - 开发清单**](https://github.com/M1hono/Minecraft-Hunt/blob/main/DevDocuments.md)
+[**To Do - 开发进度**](https://github.com/M1hono/Minecraft-Hunt/blob/main/kubejs/documents/development/Dev/CHANGELOG.md)
 
 ---
-[**CHANGELOG - 总更新日志**](https://github.com/M1hono/Minecraft-Hunt/tree/main/kubejs/documents/development/Dev/CHANGELOG.md)
+[**CHANGELOG - 更新日志**](https://github.com/M1hono/Minecraft-Hunt/blob/main/kubejs/documents/development/Dev/ReleaseChangeLog.md)
 
-[**Progress - 总进度**](https://github.com/M1hono/Minecraft-Hunt/tree/main/kubejs/documents/development/Dev/Progress.md)
+[**Progress - 进度**](https://github.com/M1hono/Minecraft-Hunt/blob/main/kubejs/documents/development/Dev/Progress.md)
 
 ---
 [**Documents - 文档目录**](https://github.com/M1hono/Minecraft-Hunt/tree/main/kubejs/documents)
