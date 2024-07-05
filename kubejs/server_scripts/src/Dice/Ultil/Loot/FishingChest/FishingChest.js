@@ -8,7 +8,8 @@ const { $FallingBlockEntity } = require("packages/net/minecraft/world/entity/ite
 const { $LootParams$Builder } = require("packages/net/minecraft/world/level/storage/loot/$LootParams$Builder")
 const { $LootContextParamSets } = require("packages/net/minecraft/world/level/storage/loot/parameters/$LootContextParamSets")
 /**
- * 
+ * @author M1hono
+ * @description Spawn a fishing chest when the player catch a item by fishing.
  * @param {$Player} player
  * @param {$FishingHook} hook
  * @param {double} dx
@@ -35,7 +36,7 @@ export function fishingChest(player, hook, dx, dy, dz , event) {
         let uuid = falling_block.getUuid()
         falling_block.spawn()
         let entity = level.getEntity(uuid)
-        trackingFallingBlock(entity, level)
+        trackingFallingBlock(entity)
         event.setCanceled(true)
     }
 }
@@ -45,13 +46,15 @@ export function fishingChest(player, hook, dx, dy, dz , event) {
  * @param {$FallingBlockEntity} entity
  * @param {$ServerLevel} level
  */
-function trackingFallingBlock(entity, level) {
+function trackingFallingBlock(entity) {
     const {
         block: { pos },
+        server,
+        level
     } = entity
     let blockState = level.getBlockStates(pos)
     if (entity.isAlive()) {
-        level.getServer().schedule(20, () => trackingFallingBlock(entity, level))
+        server.scheduleInTicks(10, () => trackingFallingBlock(entity))
     } else {
         pos = entity.getBlock().pos
         blockState = level.getBlockState(pos)
@@ -95,8 +98,9 @@ function fishingChestLoot(event) {
     let lootParam = new $LootParams$Builder(level).create($LootContextParamSets.EMPTY)
     let skill = getSkillLevel("wisdom", player) + (getSkillLevel("dexterity", player) / 2 | 0)
     let lootTable
-    // let diceRoll = handleDiceRoll(player, "ultil", 20)
-    let diceRoll = 1
+    let diceRoll = handleDiceRoll(player, "ultil", 20)
+    // let diceRoll = 1
+    // let diceRoll = 20
     let score = diceRoll + skill
 
     if (diceRoll == 20) {
@@ -131,6 +135,12 @@ function fishingChestLoot(event) {
             break;
     }
 }
+/**
+ * @author M1hono
+ * @description Pop item from loot table.
+ * @param {Array} lootTable
+ * @param {$Block} block
+ */
 function popItem(lootTable, block) {
     lootTable.forEach(
         item => {

@@ -1,0 +1,5 @@
+
+["replace entityindicator"]
+	#replace original entityindicator
+	replace_ui = true
+

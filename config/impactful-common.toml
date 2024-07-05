@@ -1,0 +1,43 @@
+
+["disable hit stop"]
+	disable_hit_stop = false
+
+["weapon categories setting"]
+	#format: weapon_categories hit_stop_duration speed_ratio camera_shake_duration camera_shake_amplitude
+	#example: greatsword 4 0.1 15 2
+	#weapon_categories: greatsword, longsword, sword, etc
+	#hit_stop_duration: duration of hit stop(tick)
+	#speed_ration: percentage rate, 0.0 - 1.0
+	#camera_shake_duration: duration of screen shake(tick)
+	#camera_shake_amplitude: amplitude of screen shake
+	weapon_categories_setting = ["greatsword 3 0.1 15 2", "longsword 2 0.25 8 1.2", "tachi 2 0.25 8 1.2", "uchigatana 2 0.2 8 1.2", "spear 2 0.2 10 1", "trident 2 0.2 10 1", "sword 2 0.4 8 0.75", "dagger 1 0.6 5 0.5", "fist 2 0.3 10 0.5", "axe 3 0.5 15 1.5", "hoe 2 0.3 8 0.3", "pickaxe 2 0.3 8 0.3", "shield 1 0.2 4 1"]
+
+["animation setting"]
+	#priority higher than weapon categories setting and override it
+	#format: attack_animation hit_stop_duration speed_ratio camera_shake_duration camera_shake_amplitude
+	#example: epicfight:biped/combat/greatsword_dash 4 0 20 5
+	#attack_animation: modid:path
+	#hit_stop_duration: duration of hit stop(tick)
+	#speed_ration: percentage rate, 0.0 - 1.0
+	#camera_shake_duration: duration of screen shake(tick)
+	#camera_shake_amplitude: amplitude of screen shake
+	animation_setting = []
+
+["screen shake by guard"]
+	#screen shake when guard success
+	guard_screen_shake_time = 20
+	#Range: 0.0 ~ 10.0
+	guard_screen_shake_amplitude = 2.5
+
+["screen shake by advanced guard"]
+	#screen shake when advanced guard success, like impactful guard or parry
+	advanced_guard_screen_shake_time = 15
+	#Range: 0.0 ~ 10.0
+	advanced_guard_screen_shake_amplitude = 1.5
+
+["screen shake when guard break"]
+	#screen shake when guard break
+	guard_break_screen_shake_time = 30
+	#Range: 0.0 ~ 10.0
+	guard_break_screen_shake_amplitude = 5.0
+

@@ -39,6 +39,8 @@ enableSpawnEggRecipe = true
 	#Strong Fire Charge Power
 	#Range: 1 ~ 10
 	strongFireChargePower = 2
+	#Strong Fire Charge Breaks Block
+	strongFireChargeBreakBlock = true
 
 [properties]
 	#Cleanse effect clearing test
