@@ -52,6 +52,10 @@ git checkout -b feature-branch
 保存修改后，使用以下命令将更改提交到你的本地仓库：
 
 ```bash
+git push
+```
+
+```bash
 # 一般直接add .不会出现问题，但保险起见可以将.替换为具体的文件路径。
 git add .
 git commit -m "描述你的修改内容"

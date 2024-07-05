@@ -1,9 +1,7 @@
 # 不忽略以下文件夹
-!/mods/
 !/kubejs/
 !config/
 !/defaultconfigs/
-!journeymap/
 
 # 在以上规则的基础上忽略以下文件/文件夹
 /kubejs/probejs/
