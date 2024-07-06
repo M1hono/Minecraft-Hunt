@@ -12,6 +12,11 @@ const { $FloatGoal } = require("packages/net/minecraft/world/entity/ai/goal/$Flo
 const { $WaterAvoidingRandomStrollGoal } = require("packages/net/minecraft/world/entity/ai/goal/$WaterAvoidingRandomStrollGoal")
 const { $Quark } = require("packages/org/violetmoon/quark/base/$Quark")
 const { $AbstractPickarang } = require("packages/org/violetmoon/quark/content/tools/entity/rang/$AbstractPickarang")
+const { $Pickarang } = require("packages/org/violetmoon/quark/content/tools/entity/rang/$Pickarang")
+const { $EntityType } = require("packages/net/minecraft/world/entity/$EntityType")
+const { $Inventory } = require("packages/net/minecraft/world/entity/player/$Inventory")
+const { $ServerPlayer } = require("packages/net/minecraft/server/level/$ServerPlayer")
+const { $PickarangModule } = require("packages/org/violetmoon/quark/content/tools/module/$PickarangModule")
 
 LevelEvents.afterExplosion(event => {
     screenshake(event)
@@ -19,7 +24,8 @@ LevelEvents.afterExplosion(event => {
 EntityEvents.death(event => {
     const {
         entity,
-        entity : { x, y, z , block }
+        entity : { x, y, z , block },
+        level
     } = event
     if (entity.type === "minecraft:zombie") {
         console.log("Zombie")
@@ -28,6 +34,7 @@ EntityEvents.death(event => {
         item.setPos(x, y+1, z)
         item.setNoGravity(true)
         item.addMotion(0,0.1,0)
+        entity.entityType.is("pmmo:tamable")
         item.spawn()
     }
 })
@@ -92,10 +99,7 @@ EntityEvents.hurt(event => {
             })
         })
     }
-    console.log(target.pos.distanceTo(attacker.pos))
-    console.log(target.block.canSeeSky)
 })
-
 // ItemEvents.rightClicked(event => {
 //     const {
 //         server,
@@ -127,3 +131,35 @@ let $StructureTags = Java.loadClass('net.minecraft.tags.BiomeTags')
 //         }
 //     }
 // })
+ItemEvents.rightClicked(event => {
+    const { hand, player, level} = event
+    if (hand !== "MAIN_HAND") return
+    if (level.isClientSide()) return
+
+    const inventory = new $Inventory(player)
+    const containerSize = inventory.containerSize
+    const entityType = $EntityType.byString("quark:pickarang")
+
+    for (let slot = 0; slot < containerSize; slot++) {
+        const itemStack = inventory.getItem(slot)
+        if (!itemStack.isEmpty() && itemStack.hasTag('minecraft:axes')) {
+            const pickarang = new $Pickarang(entityType, level, player)
+            pickarang.setOwner(player)
+            const offsetX = (Math.random() - 0.5) * 0.5
+            const offsetY = Math.random() * 0.5
+            const offsetZ = (Math.random() - 0.5) * 0.5
+            pickarang.setPos(player.x + offsetX, player.y + player.getEyeHeight() + offsetY, player.z + offsetZ)
+            const yaw = player.yRot + (Math.random() - 0.5) * 60
+            const pitch = player.xRot + (Math.random() - 0.5) * 60
+            pickarang.shoot(player, pitch, yaw, 0.0, 1.5 + Math.random(), 0.0)
+            pickarang.setThrowData(slot, itemStack)
+            level.addFreshEntity(pickarang)
+            inventory.setItem(slot, $ItemStack.EMPTY)
+            player.block.blockState.isSolidRender
+        }
+    }
+    if (player instanceof $ServerPlayer) {
+        $PickarangModule.throwPickarangTrigger.trigger(player)
+    }
+    level.playSound(null, player.x, player.y, player.z, $SoundEvents.ITEM_PICKUP, $SoundSource.PLAYERS, 0.5, 0.4 / (Math.random() * 0.4 + 0.8))
+})
