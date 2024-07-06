@@ -90,7 +90,7 @@ git push origin --delete feature-branch # 删除远程分支
 
 ## 规范
 
-在每次进行上述步骤时，如果你的仓库落后于原仓库，请点击Sync fork按钮来同步进度。
+在每次进行上述步骤时，如果你的仓库落后于原仓库，请点击`Sync fork`按钮来同步进度。
 
 在你完成某项工作时，需要在CHANGELOG与DevDocuments中写入你所提供的贡献。
 
