@@ -8,6 +8,10 @@ import { $DamageSource } from "packages/net/minecraft/world/damagesource/$Damage
 import { $Registries } from "packages/net/minecraft/core/registries/$Registries";
 import { $ResourceKey } from "packages/net/minecraft/resources/$ResourceKey";
 import { $Entity } from "packages/net/minecraft/world/entity/$Entity";
+import { $AsyncLocator } from "packages/brightspark/asynclocator/$AsyncLocator";
+import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
+import { $BlockPos } from "packages/net/minecraft/core/$BlockPos";
+import { $TagKey } from "packages/net/minecraft/tags/$TagKey";
 const UUID = Java.loadClass('java.util.UUID');
 const $UUIDUtil = Java.loadClass('net.minecraft.core.UUIDUtil');
 /**
@@ -104,4 +108,24 @@ export function getOrSource(damageType, entity) {
     .registryOrThrow(DAMAGE_TYPE)
     .getHolderOrThrow(damageTypeKey)
     return new $DamageSource(damageTypeHolder, entity, entity)
+}
+const { STRUCTURE } = $Registries;
+/**
+ * @author M1hono
+ * @description Locate a structure in the world.
+ * @param {$Player} player
+ * @returns {$BlockPos} pos
+ */
+export function structureLocator(player , structure){
+    const { level } = player
+    const structureId = Utils.id(structure)
+    const structureTagKey = $TagKey.create(STRUCTURE, structureId)
+    $AsyncLocator.locate(level, structureTagKey, player.blockPosition(), 100, false)
+        .thenOnServerThread(pos => {
+            if (pos != null) {
+                return pos
+            } else {
+                return null
+            }
+        })
 }

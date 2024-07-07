@@ -1,22 +1,11 @@
 // priority: 99
-const { $UUID } = require("packages/java/util/$UUID")
 const { screenshake } = require("./API/Utils")
-const { $Level } = require("packages/net/minecraft/world/level/$Level")
-const { $ItemEntity } = require("packages/net/minecraft/world/entity/item/$ItemEntity")
 const { $ItemStack } = require("packages/net/minecraft/world/item/$ItemStack")
 const { $Animal } = require("packages/net/minecraft/world/entity/animal/$Animal")
 const { $MeleeAttackGoal } = require("packages/net/minecraft/world/entity/ai/goal/$MeleeAttackGoal")
-const { $Goal } = require("packages/net/minecraft/world/entity/ai/goal/$Goal")
 const { $PanicGoal } = require("packages/net/minecraft/world/entity/ai/goal/$PanicGoal")
 const { $FloatGoal } = require("packages/net/minecraft/world/entity/ai/goal/$FloatGoal")
 const { $WaterAvoidingRandomStrollGoal } = require("packages/net/minecraft/world/entity/ai/goal/$WaterAvoidingRandomStrollGoal")
-const { $Quark } = require("packages/org/violetmoon/quark/base/$Quark")
-const { $AbstractPickarang } = require("packages/org/violetmoon/quark/content/tools/entity/rang/$AbstractPickarang")
-const { $Pickarang } = require("packages/org/violetmoon/quark/content/tools/entity/rang/$Pickarang")
-const { $EntityType } = require("packages/net/minecraft/world/entity/$EntityType")
-const { $Inventory } = require("packages/net/minecraft/world/entity/player/$Inventory")
-const { $ServerPlayer } = require("packages/net/minecraft/server/level/$ServerPlayer")
-const { $PickarangModule } = require("packages/org/violetmoon/quark/content/tools/module/$PickarangModule")
 
 LevelEvents.afterExplosion(event => {
     screenshake(event)
@@ -34,37 +23,36 @@ EntityEvents.death(event => {
         item.setPos(x, y+1, z)
         item.setNoGravity(true)
         item.addMotion(0,0.1,0)
-        entity.entityType.is("pmmo:tamable")
         item.spawn()
     }
 })
-ItemEvents.rightClicked(event => {
-    const {
-        player,
-        hand,
-        item,
-        level
-    } = event
+// ItemEvents.rightClicked(event => {
+//     const {
+//         player,
+//         hand,
+//         item,
+//         level
+//     } = event
 
-    if (item.id === "quark:pickarang") return
-    if (isAxe(item)) {
-        let pickarang = Item.of("quark:pickarang").withNBT({ 
-            "item": item.getHoverName().toString(),
-            "player": player.name.toString()
-        })
-        pickarang.use(level, player, hand)
-    }
-})
-/**
- * 
- * @param {$ItemStack} item 
- * @returns 
- */
-function isAxe(item) {
+//     if (item.id === "quark:pickarang") return
+//     if (isAxe(item)) {
+//         let pickarang = Item.of("quark:pickarang").withNBT({ 
+//             "item": item.getHoverName().toString(),
+//             "player": player.name.toString()
+//         })
+//         pickarang.use(level, player, hand)
+//     }
+// })
+// /**
+//  * 
+//  * @param {$ItemStack} item 
+//  * @returns 
+//  */
+// function isAxe(item) {
 
-    if (item.hasTag('minecraft:axes')) return true
-    return false
-}
+//     if (item.hasTag('minecraft:axes')) return true
+//     return false
+// }
 EntityEvents.hurt(event => {
     const {
         entity: target,
@@ -107,59 +95,139 @@ EntityEvents.hurt(event => {
 //     } = event
 //     $Locate
 // })
-// let $AsyncLocator = Java.loadClass('brightspark.asynclocator.AsyncLocator')
-let $StructureTags = Java.loadClass('net.minecraft.tags.BiomeTags')
+const { $Pickarang } = require("packages/org/violetmoon/quark/content/tools/entity/rang/$Pickarang")
+const { $ServerPlayer } = require("packages/net/minecraft/server/level/$ServerPlayer")
+const { $PickarangModule } = require("packages/org/violetmoon/quark/content/tools/module/$PickarangModule")
 // ItemEvents.rightClicked(event => {
-//     if (event.item.id.toString().includes('endrem:')) {
-//         if (!event.player.data.ftbquests.isCompleted("6A72CB008C10DA05")) {
-//             event.cancel()
-//             event.player.tell("You haven't got access to the end! Collect all 12 eyes by yourself before locating stronghold!")
-//         } else {
-//             $AsyncLocator.locate(event.level, $StructureTags.EYE_OF_ENDER_LOCATED, event.player.blockPosition(), 100, false)
-//                 .thenOnServerThread(pos => {
-//                     if (pos != null) {
-//                         let dist = Math.sqrt(pos.distSqr(event.player.blockPosition()))
-//                         let msg = `Distance to stonghold is `
-//                         if (dist < 1000) {
-//                             msg += `< 1000 blocks.`
-//                         } else {
-//                             msg += `> ${Math.floor(dist / 1000) * 1000} blocks.`
-//                         }
-//                         event.server.runCommandSilent(`title ${event.player.username} actionbar "${msg}"`)
-//                     }
-//                 })
+//     const {
+//         hand,
+//         player,
+//         player: { inventory , x , y , z , eyeHeight},
+//         player: { inventory : { containerSize } },
+//         level,
+//         server
+//     } = event
+//     if (hand != "MAIN_HAND") return
+//     if (level.isClientSide()) return
+//     let slot = 0
+//     function throwPickarang() {
+//         if (slot >= containerSize) return
+//         /**@type {$ItemStack} */
+//         let itemStack = inventory.getItem(slot)
+//         if (itemStack.hasTag('minecraft:axes')) {
+//             let pickarang = new $Pickarang("quark:pickarang", level, player)
+//             let offsetX = (Math.random() - 0.5) * 5
+//             let offsetY = Math.random() * 0.5
+//             let offsetZ = (Math.random() - 0.5) * 5
+//             pickarang.setPos(x + offsetX, y + eyeHeight + offsetY, z + offsetZ)
+//             pickarang.setThrowData(slot, itemStack)
+//             pickarang.setOwner(player)
+//             let yaw = player.yRotO + (Math.random() - 0.5) * 20
+//             let pitch = player.xRotO + (Math.random() - 0.5) * 10
+//             pickarang.shoot(player, pitch, yaw, 0.0, 2.5, 0.0)
+//             level.addFreshEntity(pickarang)
+//             inventory.setStackInSlot(slot, $ItemStack.EMPTY)
+//             if (player instanceof $ServerPlayer) {
+//                 $PickarangModule.throwPickarangTrigger.trigger(player)
+//             }
 //         }
+//         slot++
+//         server.scheduleInTicks(6, throwPickarang)
 //     }
+//     throwPickarang()
 // })
+const { $ThrowingAxeEntity } = require("packages/dev/xkmc/l2weaponry/content/entity/$ThrowingAxeEntity");
+const { $AbstractArrow } = require("packages/net/minecraft/world/entity/projectile/$AbstractArrow");
+const { $SoundEvents } = require("packages/net/minecraft/sounds/$SoundEvents");
+const { $SoundSource } = require("packages/net/minecraft/sounds/$SoundSource");
+const { isPlayerWearingItem } = require("./API/Curios")
+
 ItemEvents.rightClicked(event => {
-    const { hand, player, level} = event
-    if (hand !== "MAIN_HAND") return
+    const {
+        hand,
+        player,
+        level,
+        server,
+        item
+    } = event;
+    if (hand != "MAIN_HAND") return
     if (level.isClientSide()) return
+    if (item.hasTag('minecraft:axes') === false) return
+    let slot = 0
+    const cooldownTicks = 80
+    if (player.getCooldowns().isOnCooldown($ThrowingAxeEntity)) return
 
-    const inventory = new $Inventory(player)
-    const containerSize = inventory.containerSize
-    const entityType = $EntityType.byString("quark:pickarang")
+    function throwWeapon() {
+        if (slot >= player.inventory.containerSize) return
+        /**@type {$ItemStack} */
+        let itemStack = player.inventory.getItem(slot)
+        if (itemStack.hasTag('minecraft:axes')) {
+            player.potionEffects.add("minecraft:slowness", 3, 3)
+            let throwedWeapon = new $ThrowingAxeEntity(level, player, itemStack, slot)
+            
+            let x = player.getX()
+            let y = player.getY()
+            let z = player.getZ()
+            let eyeHeight = player.getEyeHeight()
+            let lookAngle = player.getLookAngle().toVector3f()
+            
+            let offsetX = lookAngle.x * 1.0
+            let offsetY = lookAngle.y * 1.0 + eyeHeight
+            let offsetZ = lookAngle.z * 1.0
+            
+            throwedWeapon.setPos(x + offsetX, y + offsetY, z + offsetZ)
+            throwedWeapon.setBaseDamage(itemStack.item?.attackDamage)
+            let yaw = player.yRotO + (Math.random() - 0.5) * 5
+            let pitch = player.xRotO + (Math.random() - 0.5) * 1
 
-    for (let slot = 0; slot < containerSize; slot++) {
-        const itemStack = inventory.getItem(slot)
-        if (!itemStack.isEmpty() && itemStack.hasTag('minecraft:axes')) {
-            const pickarang = new $Pickarang(entityType, level, player)
-            pickarang.setOwner(player)
-            const offsetX = (Math.random() - 0.5) * 0.5
-            const offsetY = Math.random() * 0.5
-            const offsetZ = (Math.random() - 0.5) * 0.5
-            pickarang.setPos(player.x + offsetX, player.y + player.getEyeHeight() + offsetY, player.z + offsetZ)
-            const yaw = player.yRot + (Math.random() - 0.5) * 60
-            const pitch = player.xRot + (Math.random() - 0.5) * 60
-            pickarang.shoot(player, pitch, yaw, 0.0, 1.5 + Math.random(), 0.0)
-            pickarang.setThrowData(slot, itemStack)
-            level.addFreshEntity(pickarang)
-            inventory.setItem(slot, $ItemStack.EMPTY)
-            player.block.blockState.isSolidRender
+            throwedWeapon.shootFromRotation(player, pitch, yaw, 0.0, 2.5, 1.0)
+            if (player.getAbilities().instabuild) {
+                throwedWeapon.pickup = $AbstractArrow.Pickup.CREATIVE_ONLY
+            }
+            level.playSound(null, throwedWeapon.getX(), throwedWeapon.getY(), throwedWeapon.getZ(), $SoundEvents.TRIDENT_THROW, $SoundSource.PLAYERS, 1.0, 1.0)
+            level.addFreshEntity(throwedWeapon)
+            if (!player.getAbilities().instabuild) {
+                throwedWeapon.pickup = $AbstractArrow.Pickup.CREATIVE_ONLY
+                player.inventory.setStackInSlot(slot, $ItemStack.EMPTY)
+                
+                server.scheduleInTicks(70, () => {
+                    throwedWeapon.kill();
+                    let currentDamage = itemStack.getDamageValue();
+                    let additionalDamage = itemStack.item?.attackDamage ?? 0
+                    let maxDamage = itemStack.getMaxDamage();
+                    let newDamageValue = currentDamage + additionalDamage;
+                    if (newDamageValue < maxDamage) {
+                        itemStack.setDamageValue(newDamageValue);
+                        player.give(itemStack);
+                    }
+                });
+                
+            }
+            player.swing(hand , true)
+            slot++
+            server.scheduleInTicks(3, throwWeapon)
+        } else {
+            slot++
+            throwWeapon()
         }
     }
-    if (player instanceof $ServerPlayer) {
-        $PickarangModule.throwPickarangTrigger.trigger(player)
+    player.getCooldowns().addCooldown($ThrowingAxeEntity, cooldownTicks)
+    throwWeapon()
+})
+PlayerEvents.loggedIn(event => {
+    const {
+        player
+    } = event
+    if (isPlayerWearingItem(player, "")) {
+        player.modifyAttribute("forge:block_reach", "7f3ee28e-0e5e-4061-b88f-4d4732b24cc6" , - 3.0 , "addition")
     }
-    level.playSound(null, player.x, player.y, player.z, $SoundEvents.ITEM_PICKUP, $SoundSource.PLAYERS, 0.5, 0.4 / (Math.random() * 0.4 + 0.8))
+})
+
+PlayerEvents.respawned(event => {
+    const {
+        player
+    } = event
+    if (isPlayerWearingItem(player, "")) {
+        player.modifyAttribute("forge:block_reach", "a78be90c-8ec0-4553-bbd5-8b82bde8df7f" , - 3.0 , "addition")
+    }
 })

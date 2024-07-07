@@ -2,8 +2,8 @@
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player");
 const { $Slot } = require("packages/net/minecraft/world/inventory/$Slot");
 const { $Item } = require("packages/net/minecraft/world/item/$Item");
-
 /**
+ * @author https://kjscndev.flarum.cloud/d/21-guan-yu-curiosde-yi-xie-mo-gai-xiang-fa
  * @description return the item list of the corresponding slot.
  * @param {$Player_} player 
  * @param {$Slot_} slot
@@ -15,9 +15,8 @@ export function getCuriosItemList(player,slot){
 	})
     return curio ? curio.StacksHandler.Stacks.Items : [];
 }
-
-
 /**
+ * @author https://kjscndev.flarum.cloud/d/21-guan-yu-curiosde-yi-xie-mo-gai-xiang-fa
  * @description Return whether the item is in the player's slot, the number of items
  * the corresponding slot number (the first one in the corresponding slot), and the number of corresponding slots
  * @param {$Player_} player 
@@ -44,9 +43,9 @@ export function CuriosPlayer(player,slot,id){
 	}})
     return result;
 }
-
 let $CuriosApi = Java.loadClass("top.theillusivec4.curios.api.CuriosApi")
 /**
+ * @author https://kjscndev.flarum.cloud/d/21-guan-yu-curiosde-yi-xie-mo-gai-xiang-fa
  * @description Control Curios slots directly.
  * @param {"shrink"|"grow"|"getfor"|"setfor"|"unlock"|"lock"} method 
  * @param {string} slot 
@@ -76,4 +75,23 @@ export function CuriosSlotMethod(method,slot,player,amount){
             $CuriosApi.getSlotHelper().lockSlotType(slot, player)
             break;
     }
+}
+/**
+ * @author M1hono
+ * @description Check if the player is wearing a specific item.
+ * @param {$Player} player 
+ * @param {string} itemId 
+ * @returns {boolean}
+ */
+export function isPlayerWearingItem(player, itemId) {
+    const curiosInventory = player.nbt.ForgeCaps['curios:inventory']["Curios"]
+    for (let curio of curiosInventory) {
+        let itemList = curio.StacksHandler.Stacks.Items
+        for (let item of itemList) {
+            if (item.id == itemId) {
+                return true
+            }
+        }
+    }
+    return false;
 }

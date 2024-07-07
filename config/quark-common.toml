@@ -459,7 +459,7 @@
 			#How much damage the Pickarang deals when swung as an item
 			"Attack Damage" = 0
 			#How many ticks do you have to wait between using the pickarang again
-			Cooldown = 0
+			Cooldown = 60
 			#Whether this pickarang type can act as a hoe.
 			"Can Act As Hoe" = false
 			#Whether this pickarang type can act as a shovel.

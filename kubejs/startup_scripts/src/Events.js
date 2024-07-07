@@ -37,3 +37,8 @@ const { handleFishingLoot } = require("./GlobalImports")
 ForgeEvents.onEvent($ItemFishedEvent,/**@typeof $ItemFishedEvent*/event=>{
     handleFishingLoot(event)
 })
+
+// const { $AdvancementEvent$AdvancementEarnEvent } = require("packages/net/minecraftforge/event/entity/player/$AdvancementEvent$AdvancementEarnEvent")
+// ForgeEvents.onEvent($AdvancementEvent$AdvancementEarnEvent,/**@typeof $AdvancementEvent$AdvancementEarnEvent*/event=>{
+//     event.isCanceled(true)
+// })
