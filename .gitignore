@@ -60,3 +60,6 @@ texturepacks/
 coremods/
 .vscode/
 mods/.index/
+.idea/
+.qmenu_opened.marker
+hs_err_pid49488.log
