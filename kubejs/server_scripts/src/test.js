@@ -1,5 +1,5 @@
 // priority: 99
-const { screenshake } = require("./API/Utils")
+const { screenshake, structureLocator,  biomeLocator } = require("./API/Utils")
 const { $ItemStack } = require("packages/net/minecraft/world/item/$ItemStack")
 const { $Animal } = require("packages/net/minecraft/world/entity/animal/$Animal")
 const { $MeleeAttackGoal } = require("packages/net/minecraft/world/entity/ai/goal/$MeleeAttackGoal")
@@ -140,7 +140,7 @@ const { $ThrowingAxeEntity } = require("packages/dev/xkmc/l2weaponry/content/ent
 const { $AbstractArrow } = require("packages/net/minecraft/world/entity/projectile/$AbstractArrow");
 const { $SoundEvents } = require("packages/net/minecraft/sounds/$SoundEvents");
 const { $SoundSource } = require("packages/net/minecraft/sounds/$SoundSource");
-const { isPlayerWearingItem } = require("./API/Curios")
+const { $TridentItem } = require("packages/net/minecraft/world/item/$TridentItem")
 
 ItemEvents.rightClicked(event => {
     const {
@@ -152,17 +152,21 @@ ItemEvents.rightClicked(event => {
     } = event;
     if (hand != "MAIN_HAND") return
     if (level.isClientSide()) return
-    if (item.hasTag('minecraft:axes') === false) return
+    // if (item.hasTag('minecraft:axes') === false) return
     let slot = 0
-    const cooldownTicks = 80
+    const cooldownTicks = 30
     if (player.getCooldowns().isOnCooldown($ThrowingAxeEntity)) return
 
     function throwWeapon() {
         if (slot >= player.inventory.containerSize) return
         /**@type {$ItemStack} */
         let itemStack = player.inventory.getItem(slot)
-        if (itemStack.hasTag('minecraft:axes')) {
-            player.potionEffects.add("minecraft:slowness", 3, 3)
+        if (!itemStack.isEmpty()) {
+            if (player.isCrouching()) {
+                player.cooldowns.addCooldown($ThrowingAxeEntity, cooldownTicks)
+                return
+            }
+            player.potionEffects.add("minecraft:slowness", 1, 3)
             let throwedWeapon = new $ThrowingAxeEntity(level, player, itemStack, slot)
             
             let x = player.getX()
@@ -176,36 +180,43 @@ ItemEvents.rightClicked(event => {
             let offsetZ = lookAngle.z * 1.0
             
             throwedWeapon.setPos(x + offsetX, y + offsetY, z + offsetZ)
-            throwedWeapon.setBaseDamage(itemStack.item?.attackDamage)
+            /**@type {$TridentItem}*/
+            let item = itemStack
+            // console.info(item.item.attackDamage)
+            let damage = itemStack.item?.attackDamage ?? player.attributes.getValue("generic.attack_damage")
+            throwedWeapon.setBaseDamage(damage)
             let yaw = player.yRotO + (Math.random() - 0.5) * 5
             let pitch = player.xRotO + (Math.random() - 0.5) * 1
 
-            throwedWeapon.shootFromRotation(player, pitch, yaw, 0.0, 2.5, 1.0)
+            throwedWeapon.shootFromRotation(player, pitch, yaw, 0.0, 3.5, 1.0)
             if (player.getAbilities().instabuild) {
                 throwedWeapon.pickup = $AbstractArrow.Pickup.CREATIVE_ONLY
             }
             level.playSound(null, throwedWeapon.getX(), throwedWeapon.getY(), throwedWeapon.getZ(), $SoundEvents.TRIDENT_THROW, $SoundSource.PLAYERS, 1.0, 1.0)
             level.addFreshEntity(throwedWeapon)
             if (!player.getAbilities().instabuild) {
-                throwedWeapon.pickup = $AbstractArrow.Pickup.CREATIVE_ONLY
                 player.inventory.setStackInSlot(slot, $ItemStack.EMPTY)
                 
                 server.scheduleInTicks(70, () => {
-                    throwedWeapon.kill();
                     let currentDamage = itemStack.getDamageValue();
                     let additionalDamage = itemStack.item?.attackDamage ?? 0
                     let maxDamage = itemStack.getMaxDamage();
                     let newDamageValue = currentDamage + additionalDamage;
                     if (newDamageValue < maxDamage) {
                         itemStack.setDamageValue(newDamageValue);
-                        player.give(itemStack);
+                        if (itemStack.hasTag("minecraft:trident")) {
+                            throwedWeapon.kill();
+                            throwedWeapon.pickup = $AbstractArrow.Pickup.CREATIVE_ONLY
+                            player.give(itemStack);
+                        }
+                    } else {
+                        throwedWeapon.kill();
                     }
                 });
                 
             }
-            player.swing(hand , true)
             slot++
-            server.scheduleInTicks(3, throwWeapon)
+            server.scheduleInTicks(1, throwWeapon)
         } else {
             slot++
             throwWeapon()
@@ -231,3 +242,12 @@ PlayerEvents.respawned(event => {
         player.modifyAttribute("forge:block_reach", "a78be90c-8ec0-4553-bbd5-8b82bde8df7f" , - 3.0 , "addition")
     }
 })
+ItemEvents.rightClicked(event => {
+    const {
+        item: { id },
+        player
+    } = event;
+    if (id === "minecraft:stick") {
+        console.log(biomeLocator(player, "minecraft:beach"))
+    }
+});
