@@ -1,7 +1,6 @@
 
 // priority: 145
-import { $TooltipFlag } from "packages/net/minecraft/world/item/$TooltipFlag"
-import { getAttackDamageFromTooltip, getItemAttackDamage, getItemAttackDamageFromTooltip } from "./Battle"
+import { getItemAttackDamageFromTooltip } from "./Battle"
 const { $MinecraftServer } = require("packages/net/minecraft/server/$MinecraftServer")
 const { $ServerLevel } = require("packages/net/minecraft/server/level/$ServerLevel")
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
