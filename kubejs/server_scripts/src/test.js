@@ -1,11 +1,5 @@
 // priority: 99
-const { screenshake, structureLocator,  biomeLocator } = require("./API/Utils")
-const { $ItemStack } = require("packages/net/minecraft/world/item/$ItemStack")
-const { $Animal } = require("packages/net/minecraft/world/entity/animal/$Animal")
-const { $MeleeAttackGoal } = require("packages/net/minecraft/world/entity/ai/goal/$MeleeAttackGoal")
-const { $PanicGoal } = require("packages/net/minecraft/world/entity/ai/goal/$PanicGoal")
-const { $FloatGoal } = require("packages/net/minecraft/world/entity/ai/goal/$FloatGoal")
-const { $WaterAvoidingRandomStrollGoal } = require("packages/net/minecraft/world/entity/ai/goal/$WaterAvoidingRandomStrollGoal")
+const { screenshake, structureLocator,  biomeLocator, randomUUID } = require("./API/Utils")
 
 LevelEvents.afterExplosion(event => {
     screenshake(event)
@@ -26,68 +20,36 @@ EntityEvents.death(event => {
         item.spawn()
     }
 })
-// ItemEvents.rightClicked(event => {
+// const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
+// const { $Animal } = require("packages/net/minecraft/world/entity/animal/$Animal")
+// const { $MeleeAttackGoal } = require("packages/net/minecraft/world/entity/ai/goal/$MeleeAttackGoal")
+// const { $PanicGoal } = require("packages/net/minecraft/world/entity/ai/goal/$PanicGoal")
+// EntityEvents.hurt(event => {
 //     const {
-//         player,
-//         hand,
-//         item,
-//         level
+//         entity: target,
+//         source: { actual: attacker }
 //     } = event
-
-//     if (item.id === "quark:pickarang") return
-//     if (isAxe(item)) {
-//         let pickarang = Item.of("quark:pickarang").withNBT({ 
-//             "item": item.getHoverName().toString(),
-//             "player": player.name.toString()
+//     if (!(attacker instanceof $Player)) return
+//     if (target instanceof $Animal) {
+//         let originalGoals = []
+//         target.goalSelector.getAvailableGoals().forEach(goal => {
+//             if (!(goal instanceof $PanicGoal)) {
+//                 originalGoals.push([goal.getPriority(), goal.getGoal()])
+//             }
 //         })
-//         pickarang.use(level, player, hand)
+//         target.goalSelector.removeAllGoals(goal => 
+//             goal instanceof $PanicGoal
+//         )
+//         target.setTarget(attacker)
+//         target.goalSelector.addGoal(1, new $MeleeAttackGoal(target, 1.0, true))
+//         target.server.scheduleInTicks(200, () => {
+//             target.setTarget(null)
+//             originalGoals.forEach(([priority, goal]) => {
+//                 target.goalSelector.addGoal(priority, goal)
+//             })
+//         })
 //     }
 // })
-// /**
-//  * 
-//  * @param {$ItemStack} item 
-//  * @returns 
-//  */
-// function isAxe(item) {
-
-//     if (item.hasTag('minecraft:axes')) return true
-//     return false
-// }
-EntityEvents.hurt(event => {
-    const {
-        entity: target,
-        source: { actual: attacker }
-    } = event
-    if (!(attacker instanceof $Player)) return
-    if (target instanceof $Animal) {
-        let originalPanicGoal
-        target.goalSelector.getAvailableGoals()
-            .forEach(goal => {
-               if (goal instanceof $PanicGoal) {
-                    originalPanicGoal = goal
-               }
-            })
-        let originalGoals = []
-        target.goalSelector.getAvailableGoals().forEach(goal => {
-            if (!(goal instanceof $PanicGoal)) {
-                originalGoals.push([goal.getPriority(), goal.getGoal()])
-            }
-        })
-        target.goalSelector.removeAllGoals(goal => 
-            goal instanceof $PanicGoal || 
-            goal instanceof $FloatGoal || 
-            goal instanceof $WaterAvoidingRandomStrollGoal
-        )
-        target.setTarget(attacker)
-        target.goalSelector.addGoal(1, new $MeleeAttackGoal(target, 1.0, true))
-        target.server.scheduleInTicks(200, () => {
-            target.setTarget(null)
-            originalGoals.forEach(([priority, goal]) => {
-                target.goalSelector.addGoal(priority, goal)
-            })
-        })
-    }
-})
 // ItemEvents.rightClicked(event => {
 //     const {
 //         server,
@@ -98,6 +60,14 @@ EntityEvents.hurt(event => {
 const { $Pickarang } = require("packages/org/violetmoon/quark/content/tools/entity/rang/$Pickarang")
 const { $ServerPlayer } = require("packages/net/minecraft/server/level/$ServerPlayer")
 const { $PickarangModule } = require("packages/org/violetmoon/quark/content/tools/module/$PickarangModule")
+const { $Enchantment } = require("packages/net/minecraft/world/item/enchantment/$Enchantment")
+const { $AttributeModifier } = require("packages/net/minecraft/world/entity/ai/attributes/$AttributeModifier")
+const { $Item } = require("packages/net/minecraft/world/item/$Item")
+const { $EquipmentSlot } = require("packages/net/minecraft/world/entity/$EquipmentSlot")
+const { $EnchantmentHelper } = require("packages/net/minecraft/world/item/enchantment/$EnchantmentHelper")
+const { $MobType } = require("packages/net/minecraft/world/entity/$MobType")
+const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
+const { getItemAttackDamage } = require("./API/Battle")
 // ItemEvents.rightClicked(event => {
 //     const {
 //         hand,
@@ -136,101 +106,32 @@ const { $PickarangModule } = require("packages/org/violetmoon/quark/content/tool
 //     }
 //     throwPickarang()
 // })
-const { $ThrowingAxeEntity } = require("packages/dev/xkmc/l2weaponry/content/entity/$ThrowingAxeEntity");
-const { $AbstractArrow } = require("packages/net/minecraft/world/entity/projectile/$AbstractArrow");
-const { $SoundEvents } = require("packages/net/minecraft/sounds/$SoundEvents");
-const { $SoundSource } = require("packages/net/minecraft/sounds/$SoundSource");
-const { $TridentItem } = require("packages/net/minecraft/world/item/$TridentItem")
 
 ItemEvents.rightClicked(event => {
     const {
         hand,
         player,
         level,
-        server,
-        item
+        server
     } = event;
     if (hand != "MAIN_HAND") return
     if (level.isClientSide()) return
     // if (item.hasTag('minecraft:axes') === false) return
     let slot = 0
-    const cooldownTicks = 30
-    if (player.getCooldowns().isOnCooldown($ThrowingAxeEntity)) return
-
-    function throwWeapon() {
-        if (slot >= player.inventory.containerSize) return
-        /**@type {$ItemStack} */
-        let itemStack = player.inventory.getItem(slot)
-        if (!itemStack.isEmpty()) {
-            if (player.isCrouching()) {
-                player.cooldowns.addCooldown($ThrowingAxeEntity, cooldownTicks)
-                return
-            }
-            player.potionEffects.add("minecraft:slowness", 1, 3)
-            let throwedWeapon = new $ThrowingAxeEntity(level, player, itemStack, slot)
-            
-            let x = player.getX()
-            let y = player.getY()
-            let z = player.getZ()
-            let eyeHeight = player.getEyeHeight()
-            let lookAngle = player.getLookAngle().toVector3f()
-            
-            let offsetX = lookAngle.x * 1.0
-            let offsetY = lookAngle.y * 1.0 + eyeHeight
-            let offsetZ = lookAngle.z * 1.0
-            
-            throwedWeapon.setPos(x + offsetX, y + offsetY, z + offsetZ)
-            /**@type {$TridentItem}*/
-            let item = itemStack
-            // console.info(item.item.attackDamage)
-            let damage = itemStack.item?.attackDamage ?? player.attributes.getValue("generic.attack_damage")
-            throwedWeapon.setBaseDamage(damage)
-            let yaw = player.yRotO + (Math.random() - 0.5) * 5
-            let pitch = player.xRotO + (Math.random() - 0.5) * 1
-
-            throwedWeapon.shootFromRotation(player, pitch, yaw, 0.0, 3.5, 1.0)
-            if (player.getAbilities().instabuild) {
-                throwedWeapon.pickup = $AbstractArrow.Pickup.CREATIVE_ONLY
-            }
-            level.playSound(null, throwedWeapon.getX(), throwedWeapon.getY(), throwedWeapon.getZ(), $SoundEvents.TRIDENT_THROW, $SoundSource.PLAYERS, 1.0, 1.0)
-            level.addFreshEntity(throwedWeapon)
-            if (!player.getAbilities().instabuild) {
-                player.inventory.setStackInSlot(slot, $ItemStack.EMPTY)
-                
-                server.scheduleInTicks(70, () => {
-                    let currentDamage = itemStack.getDamageValue();
-                    let additionalDamage = itemStack.item?.attackDamage ?? 0
-                    let maxDamage = itemStack.getMaxDamage();
-                    let newDamageValue = currentDamage + additionalDamage;
-                    if (newDamageValue < maxDamage) {
-                        itemStack.setDamageValue(newDamageValue);
-                        if (itemStack.hasTag("minecraft:trident")) {
-                            throwedWeapon.kill();
-                            throwedWeapon.pickup = $AbstractArrow.Pickup.CREATIVE_ONLY
-                            player.give(itemStack);
-                        }
-                    } else {
-                        throwedWeapon.kill();
-                    }
-                });
-                
-            }
-            slot++
-            server.scheduleInTicks(1, throwWeapon)
-        } else {
-            slot++
-            throwWeapon()
-        }
-    }
-    player.getCooldowns().addCooldown($ThrowingAxeEntity, cooldownTicks)
-    throwWeapon()
+    const cooldownTicks = 80
+    if (player.getCooldowns().isOnCooldown("axe_use")) return;
+    player.getCooldowns().addCooldown("axe_use", cooldownTicks);
+    throwWeapon(slot , player , level , server)
 })
 PlayerEvents.loggedIn(event => {
     const {
         player
     } = event
-    if (isPlayerWearingItem(player, "")) {
-        player.modifyAttribute("forge:block_reach", "7f3ee28e-0e5e-4061-b88f-4d4732b24cc6" , - 3.0 , "addition")
+    if (isPlayerWearingItem(player, 'l2hostility:ring_of_corrosion')) {
+        let blockReachIdentifier = randomUUID()
+        player.modifyAttribute("forge:block_reach", blockReachIdentifier , - 3.0 , "addition")
+        player.removeAttribute("forge:block_reach", blockReachIdentifier)
+        player.tell("You are wearing a ring")
     }
 })
 
@@ -238,16 +139,19 @@ PlayerEvents.respawned(event => {
     const {
         player
     } = event
-    if (isPlayerWearingItem(player, "")) {
-        player.modifyAttribute("forge:block_reach", "a78be90c-8ec0-4553-bbd5-8b82bde8df7f" , - 3.0 , "addition")
+    if (isPlayerWearingItem(player, 'l2hostility:ring_of_corrosion')) {
+        let blockReachIdentifier = randomUUID()
+        player.modifyAttribute("forge:block_reach", blockReachIdentifier , - 3.0 , "addition")
+        player.removeAttribute("forge:block_reach", blockReachIdentifier)
+        player.tell("You are wearing a ring")
     }
 })
-ItemEvents.rightClicked(event => {
-    const {
-        item: { id },
-        player
-    } = event;
-    if (id === "minecraft:stick") {
-        console.log(biomeLocator(player, "minecraft:beach"))
-    }
-});
+// ItemEvents.rightClicked(event => {
+//     const {
+//         hand,
+//         player,
+//         item
+//     } = event
+//     if (hand != "MAIN_HAND") return
+//     console.log(getItemAttackDamage(player, item))
+// })

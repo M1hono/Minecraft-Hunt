@@ -11,9 +11,9 @@ const { $Item } = require("packages/net/minecraft/world/item/$Item");
  */
 export function getCuriosItemList(player,slot){
     let curio = player.nbt.ForgeCaps['curios:inventory']["Curios"].find(function(curio) {
-		return curio["Identifier"] === slot;
+		return curio["Identifier"] === slot
 	})
-    return curio ? curio.StacksHandler.Stacks.Items : [];
+    return curio ? curio.StacksHandler.Stacks.Items : []
 }
 /**
  * @author https://kjscndev.flarum.cloud/d/21-guan-yu-curiosde-yi-xie-mo-gai-xiang-fa
@@ -34,12 +34,12 @@ export function CuriosPlayer(player,slot,id){
 	
     let ItemList = getCuriosItemList(player,slot)
 	result.SlotSize = player.nbt.ForgeCaps['curios:inventory']["Curios"].find(function(curio) {
-		return curio["Identifier"] === slot;
+		return curio["Identifier"] === slot
 	}).StacksHandler.Cosmetics.Size
 	ItemList.forEach(item => {if (item.id === id) { 
-		result.hasItem = true;
-        result.count += item.Count;
-        result.SlotNum = item.Slot;
+		result.hasItem = true
+        result.count += item.Count
+        result.SlotNum = item.Slot
 	}})
     return result;
 }
@@ -58,22 +58,22 @@ export function CuriosSlotMethod(method,slot,player,amount){
     {
         case "shrink":  //Subtract the corresponding numbers of slots for the player
             $CuriosApi.getSlotHelper().shrinkSlotType(slot, amount, player)
-            break;
+            break
         case "grow":  //Add the corresponding numbers of slots for the player
             $CuriosApi.getSlotHelper().growSlotType(slot, amount, player)
-            break;
+            break
         case "getfor":  //Get the amount of slots for the corresponding player
             console.log($CuriosApi.getSlotHelper().getSlotsForType(player, slot))
             return $CuriosApi.getSlotHelper().getSlotsForType(player, slot)
         case "setfor":  //Set the corresponding numbers of slots for the player
             $CuriosApi.getSlotHelper().setSlotsForType(slot, player, amount)
-            break;
+            break
         case "unlock":  //Unlock the corresponding numbers of slots for the player
             $CuriosApi.getSlotHelper().unlockSlotType(slot, player)
-            break;
+            break
         case "lock":   //Lock the corresponding numbers of slots for the player
             $CuriosApi.getSlotHelper().lockSlotType(slot, player)
-            break;
+            break
     }
 }
 /**
@@ -85,13 +85,5 @@ export function CuriosSlotMethod(method,slot,player,amount){
  */
 export function isPlayerWearingItem(player, itemId) {
     const curiosInventory = player.nbt.ForgeCaps['curios:inventory']["Curios"]
-    for (let curio of curiosInventory) {
-        let itemList = curio.StacksHandler.Stacks.Items
-        for (let item of itemList) {
-            if (item.id == itemId) {
-                return true
-            }
-        }
-    }
-    return false;
+    return curiosInventory.toString().contains(itemId)
 }
