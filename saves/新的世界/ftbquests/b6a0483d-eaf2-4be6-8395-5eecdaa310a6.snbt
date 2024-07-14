@@ -1,0 +1,12 @@
+{
+	version: 1
+	uuid: "b6a0483deaf24be683955eecdaa310a6"
+	name: "Mihono_Bourbon__#b6a0483d"
+	lock: false
+	rewards_blocked: false
+	task_progress: { }
+	started: { }
+	completed: { }
+	claimed_rewards: { }
+	player_data: { }
+}

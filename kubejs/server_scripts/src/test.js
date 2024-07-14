@@ -1,127 +1,18 @@
 // priority: 99
-const { screenshake, structureLocator,  biomeLocator, randomUUID } = require("./API/Utils")
-
-LevelEvents.afterExplosion(event => {
-    screenshake(event)
-})
-EntityEvents.death(event => {
-    const {
-        entity,
-        entity : { x, y, z , block },
-        level
-    } = event
-    if (entity.type === "minecraft:zombie") {
-        console.log("Zombie")
-        let item = block.createEntity("item")
-        item.item = Item.of("minecraft:diamond",1)
-        item.setPos(x, y+1, z)
-        item.setNoGravity(true)
-        item.addMotion(0,0.1,0)
-        item.spawn()
-    }
-})
-// const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
-// const { $Animal } = require("packages/net/minecraft/world/entity/animal/$Animal")
-// const { $MeleeAttackGoal } = require("packages/net/minecraft/world/entity/ai/goal/$MeleeAttackGoal")
-// const { $PanicGoal } = require("packages/net/minecraft/world/entity/ai/goal/$PanicGoal")
-// EntityEvents.hurt(event => {
-//     const {
-//         entity: target,
-//         source: { actual: attacker }
-//     } = event
-//     if (!(attacker instanceof $Player)) return
-//     if (target instanceof $Animal) {
-//         let originalGoals = []
-//         target.goalSelector.getAvailableGoals().forEach(goal => {
-//             if (!(goal instanceof $PanicGoal)) {
-//                 originalGoals.push([goal.getPriority(), goal.getGoal()])
-//             }
-//         })
-//         target.goalSelector.removeAllGoals(goal => 
-//             goal instanceof $PanicGoal
-//         )
-//         target.setTarget(attacker)
-//         target.goalSelector.addGoal(1, new $MeleeAttackGoal(target, 1.0, true))
-//         target.server.scheduleInTicks(200, () => {
-//             target.setTarget(null)
-//             originalGoals.forEach(([priority, goal]) => {
-//                 target.goalSelector.addGoal(priority, goal)
-//             })
-//         })
-//     }
-// })
-// ItemEvents.rightClicked(event => {
-//     const {
-//         server,
-//         player : { name }
-//     } = event
-//     $Locate
-// })
-const { $Pickarang } = require("packages/org/violetmoon/quark/content/tools/entity/rang/$Pickarang")
-const { $ServerPlayer } = require("packages/net/minecraft/server/level/$ServerPlayer")
-const { $PickarangModule } = require("packages/org/violetmoon/quark/content/tools/module/$PickarangModule")
-const { $Enchantment } = require("packages/net/minecraft/world/item/enchantment/$Enchantment")
-const { $AttributeModifier } = require("packages/net/minecraft/world/entity/ai/attributes/$AttributeModifier")
-const { $Item } = require("packages/net/minecraft/world/item/$Item")
-const { $EquipmentSlot } = require("packages/net/minecraft/world/entity/$EquipmentSlot")
-const { $EnchantmentHelper } = require("packages/net/minecraft/world/item/enchantment/$EnchantmentHelper")
-const { $MobType } = require("packages/net/minecraft/world/entity/$MobType")
+const { $CuriosContainer } = require("packages/top/theillusivec4/curios/common/inventory/container/$CuriosContainer")
+const { getCuriosItemList } = require("./API/Curios")
+const { screenshake , randomUUID, getOrSource } = require("./API/Utils")
+const { $CuriosContainerV2 } = require("packages/top/theillusivec4/curios/common/inventory/container/$CuriosContainerV2")
+const { $ListTag } = require("packages/net/minecraft/nbt/$ListTag")
+const { $CompoundTag } = require("packages/net/minecraft/nbt/$CompoundTag")
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
 const { getItemAttackDamage } = require("./API/Battle")
-// ItemEvents.rightClicked(event => {
-//     const {
-//         hand,
-//         player,
-//         player: { inventory , x , y , z , eyeHeight},
-//         player: { inventory : { containerSize } },
-//         level,
-//         server
-//     } = event
-//     if (hand != "MAIN_HAND") return
-//     if (level.isClientSide()) return
-//     let slot = 0
-//     function throwPickarang() {
-//         if (slot >= containerSize) return
-//         /**@type {$ItemStack} */
-//         let itemStack = inventory.getItem(slot)
-//         if (itemStack.hasTag('minecraft:axes')) {
-//             let pickarang = new $Pickarang("quark:pickarang", level, player)
-//             let offsetX = (Math.random() - 0.5) * 5
-//             let offsetY = Math.random() * 0.5
-//             let offsetZ = (Math.random() - 0.5) * 5
-//             pickarang.setPos(x + offsetX, y + eyeHeight + offsetY, z + offsetZ)
-//             pickarang.setThrowData(slot, itemStack)
-//             pickarang.setOwner(player)
-//             let yaw = player.yRotO + (Math.random() - 0.5) * 20
-//             let pitch = player.xRotO + (Math.random() - 0.5) * 10
-//             pickarang.shoot(player, pitch, yaw, 0.0, 2.5, 0.0)
-//             level.addFreshEntity(pickarang)
-//             inventory.setStackInSlot(slot, $ItemStack.EMPTY)
-//             if (player instanceof $ServerPlayer) {
-//                 $PickarangModule.throwPickarangTrigger.trigger(player)
-//             }
-//         }
-//         slot++
-//         server.scheduleInTicks(6, throwPickarang)
-//     }
-//     throwPickarang()
-// })
-
-ItemEvents.rightClicked(event => {
-    const {
-        hand,
-        player,
-        level,
-        server
-    } = event;
-    if (hand != "MAIN_HAND") return
-    if (level.isClientSide()) return
-    // if (item.hasTag('minecraft:axes') === false) return
-    let slot = 0
-    const cooldownTicks = 80
-    if (player.getCooldowns().isOnCooldown("axe_use")) return;
-    player.getCooldowns().addCooldown("axe_use", cooldownTicks);
-    throwWeapon(slot , player , level , server)
+const { $InteractionHand } = require("packages/net/minecraft/world/$InteractionHand")
+const { $CommandSource } = require("packages/net/minecraft/commands/$CommandSource")
+const { $CommandSourceStack } = require("packages/net/minecraft/commands/$CommandSourceStack")
+const { $CommandContext } = require("packages/com/mojang/brigadier/context/$CommandContext")
+LevelEvents.afterExplosion(event => {
+    screenshake(event)
 })
 PlayerEvents.loggedIn(event => {
     const {
@@ -134,7 +25,6 @@ PlayerEvents.loggedIn(event => {
         player.tell("You are wearing a ring")
     }
 })
-
 PlayerEvents.respawned(event => {
     const {
         player
@@ -146,12 +36,131 @@ PlayerEvents.respawned(event => {
         player.tell("You are wearing a ring")
     }
 })
-// ItemEvents.rightClicked(event => {
-//     const {
-//         hand,
-//         player,
-//         item
-//     } = event
-//     if (hand != "MAIN_HAND") return
-//     console.log(getItemAttackDamage(player, item))
+ItemEvents.rightClicked(event => {
+    const {
+        player,
+        level,
+        item,
+        hand
+    } = event
+    // if (item.isEmpty() || !item.onEntitySwing(player)) return
+    // const target = player.rayTrace(player.getAttributeValue("forge:block_reach")).entity
+    // console.log(player.persistentData.getAllKeys())
+    // player.getAttribute("generic.max_health")
+    // // player.startSleeping(player.blockPosition())
+    // /**@type {$ListTag}*/
+    // const curiosInventory = player.nbt.ForgeCaps['curios:inventory']["Curios"]
+    // const apoliPowers = player.nbt.ForgeCaps['apoli:powers']["Powers"]
+    // curiosInventory.forEach(/**@param {$CompoundTag} curio*/curio => {
+    //     if (!curio["StacksHandler"]["Stacks"]["Items"].isEmpty()) {
+    //         console.log(curio["StacksHandler"]["Stacks"]["Items"][0]["id"])
+    //     }
+    // })
+
+})
+ItemEvents.rightClicked(event => {
+    const {
+        player,
+        hand,
+        level
+    } = event
+    if (hand.toString() == "MAIN_HAND") return
+    player.swing(hand , true)
+    ++player.attackStrengthTicker
+    event.entity.health -= 1
+})
+ItemEvents.entityInteracted(event => {
+    const {
+        hand,
+        player,
+        item,
+        target,
+        level
+    } = event
+    if (hand.toString() == "MAIN_HAND") return
+    player.swing(hand , true)
+    function updateCooldown() {
+        player.getCooldowns().removeCooldown(item)
+        player.getCooldowns().addCooldown(item, 20)
+        item.damageValue++
+    }
+    if (player.getCooldowns().isOnCooldown(item)) {
+        target.attack(getOrSource("minecraft:generic" , player) , getItemAttackDamage(player,item) * 0.5)
+        updateCooldown()
+        return
+    }
+    if (player.fallDistance > 0 && !player.onGround()) {
+        player.getCooldowns().addCooldown(item , 20)
+        level.playSound(null , target.x , target.y , target.z , "entity.player.attack.crit" , "players" , 1.0 , 1.0)
+        player.crit(target)
+        target.attack(getOrSource("minecraft:generic" , player) , getItemAttackDamage(player,item) * 1.5)
+        updateCooldown()
+        return
+    }
+    level.playSound(null , target.x , target.y , target.z , "entity.player.attack.sweep" , "players" , 1.0 , 1.0)
+    player.sweepAttack()
+    target.attack(getOrSource("minecraft:generic" , player) , getItemAttackDamage(player,item))
+    updateCooldown()
+})
+// MoreJSEvents.villagerTrades(event => {
+//     event.removeTrades(/**@param {$TradeFilter} trade*/trade => {
+//         trade.match(Item.of("endrem:evil_eye") , Item.of("endrem:evil_eye") , Item.of("endrem:evil_eye") , "itemsandemeraldstoitems")
+//     })
 // })
+PlayerEvents.respawned(event=> {
+    const {
+        player,
+        oldPlayer,
+        level
+    } = event
+    if (level.difficulty == "PEACEFUL") return
+    if (oldPlayer.getAttributeBaseValue("generic.max_health") === 1) player.setAttributeBaseValue("generic.max_health" , oldPlayer.getAttributeBaseValue("generic.max_health"))
+    player.setAttributeBaseValue("generic.max_health" , oldPlayer.getAttributeBaseValue("generic.max_health") - 1.0)
+})
+FTBQuestsEvents.completed(event => {
+    const {
+        object,
+        player
+    } = event
+    if (player === null) return
+    if (player.level.isClientSide()) return
+    console.log(object.objectType.toString())
+    if (ftbHasTag(player , object , "QUEST" , "test")) player.tell("You have completed the test quest")
+    if (ftbHasTag(player , object , "TASK" , "test2")) player.tell("You have completed the test task")
+})
+function ftbHasTag(player , object , type , tag) {
+    if (object.objectType.toString() == type) {
+        if (!player.stages.has(type+ object.title.getString())) {
+            if (object.tags.contains(tag)) {
+                player.stages.add(type+ object.title.getString())
+                return true
+            }
+        }
+    }
+    if (player.stages.has(type + object.title.getString())) {player.stages.remove(type + object.title.getString())}
+    return false
+}
+// FTBQuestsEvents.completed("40E2B9555FC467BA" , event => {
+//     const {
+//         player
+//     } =event
+//     player.tell("You have completed the test quest")
+// })
+ServerEvents.commandRegistry(event => {
+    const { commands: Commands } = event;
+    event.register(
+        Commands.literal("test")
+            .executes(/** @param {$CommandContext} ctx */ ctx => {
+                /**@type {ServerPLayer_}*/
+                const source = ctx.source
+                const entity = source.entity
+                if (entity) {
+                    entity.tell("sth");
+                    return 1
+                } else {
+                    source.sendFailure("No entity found to execute sweepAttack.");
+                    return 0
+                }
+            })
+    );
+});

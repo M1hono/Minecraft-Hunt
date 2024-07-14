@@ -1,0 +1,3466 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:birch_forest": "2024-07-13 04:39:00 +1000",
+      "minecraft:bamboo_jungle": "2024-07-13 18:25:17 +1000",
+      "minecraft:beach": "2024-07-13 04:39:21 +1000",
+      "minecraft:lukewarm_ocean": "2024-07-13 18:40:55 +1000",
+      "minecraft:forest": "2024-07-13 18:01:40 +1000",
+      "minecraft:ocean": "2024-07-13 04:39:23 +1000",
+      "minecraft:old_growth_birch_forest": "2024-07-13 04:37:00 +1000",
+      "minecraft:meadow": "2024-07-13 20:56:19 +1000",
+      "minecraft:plains": "2024-07-13 18:51:04 +1000"
+    },
+    "done": false
+  },
+  "idas:idas_root": {
+    "criteria": {
+      "always": "2024-07-13 04:37:20 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2024-07-13 04:37:20 +1000"
+    },
+    "done": true
+  },
+  "iceandfire:iceandfire/root": {
+    "criteria": {
+      "tick": "2024-07-13 04:37:20 +1000"
+    },
+    "done": true
+  },
+  "l2backpack:backpacks/patchouli": {
+    "criteria": {
+      "0": "2024-07-13 04:37:20 +1000"
+    },
+    "done": true
+  },
+  "l2backpack:backpacks/root": {
+    "criteria": {
+      "0": "2024-07-13 04:37:20 +1000"
+    },
+    "done": true
+  },
+  "lootr:root": {
+    "criteria": {
+      "always_true": "2024-07-13 04:37:20 +1000"
+    },
+    "done": true
+  },
+  "integrated_villages:integrated_villages_root": {
+    "criteria": {
+      "always": "2024-07-13 04:37:20 +1000"
+    },
+    "done": true
+  },
+  "l2backpack:detection": {
+    "criteria": {
+      "locate": "2024-07-13 04:37:21 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/cherry_boat": {
+    "criteria": {
+      "in_water": "2024-07-13 04:37:33 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/bamboo_raft": {
+    "criteria": {
+      "in_water": "2024-07-13 04:37:33 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2024-07-13 04:37:33 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2024-07-13 04:37:33 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2024-07-13 04:37:33 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2024-07-13 04:37:33 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2024-07-13 04:37:33 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/mangrove_boat": {
+    "criteria": {
+      "in_water": "2024-07-13 04:37:33 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2024-07-13 04:37:33 +1000"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/cooking/rabbit_stew": {
+    "criteria": {
+      "has_any_ingredient": "2024-07-13 04:38:21 +1000"
+    },
+    "done": true
+  },
+  "create:root": {
+    "criteria": {
+      "0": "2024-07-13 04:38:21 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_rabbit": {
+    "criteria": {
+      "has_rabbit": "2024-07-13 04:38:21 +1000"
+    },
+    "done": true
+  },
+  "l2complements:recipes/burnt/burnt/rabbit": {
+    "criteria": {
+      "has_rabbit": "2024-07-13 04:38:21 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_rabbit_from_campfire_cooking": {
+    "criteria": {
+      "has_rabbit": "2024-07-13 04:38:21 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_rabbit_from_smoking": {
+    "criteria": {
+      "has_rabbit": "2024-07-13 04:38:21 +1000"
+    },
+    "done": true
+  },
+  "mna:root": {
+    "criteria": {
+      "get_vinteum": "2024-07-13 04:38:21 +1000"
+    },
+    "done": true
+  },
+  "farmersdelight:main/root": {
+    "criteria": {
+      "seeds": "2024-07-13 04:38:21 +1000"
+    },
+    "done": true
+  },
+  "wythers:world_explorer": {
+    "criteria": {
+      "wythers:sakura_forest": "2024-07-13 18:11:38 +1000",
+      "wythers:autumnal_plains": "2024-07-13 20:58:08 +1000",
+      "wythers:forest_edge": "2024-07-13 18:50:07 +1000",
+      "wythers:lantern_river": "2024-07-13 18:35:45 +1000",
+      "wythers:gravelly_river": "2024-07-13 04:38:56 +1000",
+      "wythers:sparse_bamboo_jungle": "2024-07-13 18:40:29 +1000",
+      "wythers:gravelly_beach": "2024-07-13 04:39:16 +1000",
+      "wythers:cool_stony_canyons": "2024-07-13 21:09:21 +1000",
+      "wythers:stony_canyon": "2024-07-13 20:55:51 +1000",
+      "wythers:ancient_moss_forest": "2024-07-13 18:25:04 +1000",
+      "wythers:cool_forest_edge": "2024-07-13 20:56:34 +1000",
+      "wythers:cool_forest": "2024-07-13 20:56:32 +1000"
+    },
+    "done": false
+  },
+  "alexsmobs:alexsmobs/grizzly_bear": {
+    "criteria": {
+      "killed_by": "2024-07-13 04:39:13 +1000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2024-07-13 17:40:00 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_mutton_from_smoking": {
+    "criteria": {
+      "has_mutton": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/blue_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/magenta_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/light_blue_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/green_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/purple_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/white_bed": {
+    "criteria": {
+      "has_white_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_white": {
+    "criteria": {
+      "has_white_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "l2complements:recipes/burnt/burnt/mutton": {
+    "criteria": {
+      "has_mutton": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "iceandfire:recipes/misc/dragon_meal": {
+    "criteria": {
+      "has_item": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/brown_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/gray_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/painting": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/red_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/light_gray_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/orange_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/cyan_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/white_carpet": {
+    "criteria": {
+      "has_white_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/pink_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/black_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_mutton": {
+    "criteria": {
+      "has_mutton": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/white_banner": {
+    "criteria": {
+      "has_white_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_mutton_from_campfire_cooking": {
+    "criteria": {
+      "has_mutton": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/cooking/pasta_with_mutton_chop": {
+    "criteria": {
+      "has_any_ingredient": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/white_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/lime_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "create:recipes/building_blocks/crafting/kinetics/yellow_seat": {
+    "criteria": {
+      "has_wool": "2024-07-13 17:42:13 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/gray_carpet": {
+    "criteria": {
+      "has_gray_wool": "2024-07-13 17:42:15 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/gray_banner": {
+    "criteria": {
+      "has_gray_wool": "2024-07-13 17:42:15 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/gray_bed": {
+    "criteria": {
+      "has_gray_wool": "2024-07-13 17:42:15 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_gray": {
+    "criteria": {
+      "has_gray_wool": "2024-07-13 17:42:15 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_gray_bed": {
+    "criteria": {
+      "has_light_gray_wool": "2024-07-13 17:46:52 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_gray_carpet": {
+    "criteria": {
+      "has_light_gray_wool": "2024-07-13 17:46:52 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_light_gray": {
+    "criteria": {
+      "has_light_gray_wool": "2024-07-13 17:46:52 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_gray_banner": {
+    "criteria": {
+      "has_light_gray_wool": "2024-07-13 17:46:52 +1000"
+    },
+    "done": true
+  },
+  "l2hostility:hostility/patchouli": {
+    "criteria": {
+      "0": "2024-07-13 18:21:49 +1000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:skeleton": "2024-07-13 18:29:28 +1000",
+      "minecraft:spider": "2024-07-13 21:01:00 +1000",
+      "minecraft:creeper": "2024-07-13 18:49:56 +1000",
+      "minecraft:zombie": "2024-07-13 18:21:49 +1000"
+    },
+    "done": false
+  },
+  "l2hostility:hostility/root": {
+    "criteria": {
+      "0": "2024-07-13 18:21:49 +1000"
+    },
+    "done": true
+  },
+  "l2hostility:recipes/misc/chaos_ingot": {
+    "criteria": {
+      "has_hostility_orb": "2024-07-13 18:21:49 +1000"
+    },
+    "done": true
+  },
+  "l2hostility:recipes/misc/bottle_of_sanity_craft": {
+    "criteria": {
+      "has_hostility_orb": "2024-07-13 18:21:49 +1000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:zombie": "2024-07-13 18:21:49 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coin_netherite_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/jungle": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_iron_to_wallet_diamond": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_emerald_from_block": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/cherry": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_netherite_from_coin": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/hopper_upgrade": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/mint_coin_netherite": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/acacia": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/crimson": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/atm": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_iron_to_wallet_netherite": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/quark/azalea": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_iron_from_block": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/bamboo": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coin_emerald_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/warped": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_copper_from_block": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/quark/ancient": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/cash_register": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/birch": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/melt_coin_emerald": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/mint_coin_gold": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/warped": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/dark_oak": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/melt_coin_gold": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/oak": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_emerald_to_wallet_diamond": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/bamboo": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_copper_to_wallet_emerald": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/speed_upgrade_1": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/speed_upgrade_2": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/speed_upgrade_3": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/speed_upgrade_4": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/speed_upgrade_5": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/dark_oak": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/oak": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_copper_to_wallet_netherite": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/mangrove": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/display_case": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/bamboo": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coin_copper_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_emerald_from_coin": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_gold_from_coin": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coin_diamond_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/portable_atm_swap": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_diamond_from_block": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/melt_coin_diamond": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/wallet_diamond": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/decorations/coin_jar/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/wallet_copper": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/quark/blossom": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/crimson": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_gold_to_wallet_diamond": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_gold_to_wallet_netherite": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/mint_coin_diamond": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/oak": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/warped": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/wallet_gold": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_iron_to_wallet_gold": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinblock_iron_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/quark/ancient": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/item_trader_interface": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/quark/blossom": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/dark_oak": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_copper_from_coin": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/cherry": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coin_chest": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/wallet_netherite": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_copper_to_wallet_gold": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_copper_to_wallet_diamond": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/warped": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coin_gold_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/acacia": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/terminal": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/coin_chest_exchange_upgrade": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinblock_emerald_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/cooking/dog_food": {
+    "criteria": {
+      "has_any_ingredient": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_iron_to_wallet_emerald": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/terminal_swap": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/trading_core": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/birch": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/jungle": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/cherry": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/washing": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/spruce": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/melt_coin_netherite": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/slot_machine": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/mint_coin_iron": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_copper_to_wallet_iron": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/copy_template": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/melt_coin_iron": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/washing": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/quark/blossom": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/portable_gem_terminal_swap": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/jungle": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/bamboo": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/crimson": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/mangrove": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_iron_from_coin": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000",
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinblock_netherite_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinblock_diamond_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/melt_coin_copper": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/coin_chest_magnet_upgrade_1": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/coin_chest_magnet_upgrade_2": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/coin_chest_magnet_upgrade_3": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/coin_chest_magnet_upgrade_4": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/cherry": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/quark/azalea": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/coin_chest_security_upgrade": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/spruce": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinblock_copper_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/armor_display": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/paygate": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:currency/root": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/quark/ancient": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coin_iron_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/birch": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/acacia": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_gold_to_wallet_emerald": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/atm_swap": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/tax_block": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/acacia": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_diamond_to_wallet_netherite": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/crimson": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/wallet_emerald": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/mangrove": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/spruce": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/dark_oak/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/oak": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/quark/blossom": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/ticket_kiosk": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf2/quark/ancient": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/gem_terminal": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/large_vending_machine/dye_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/decorations/coin_jar/piggy_bank": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/item_capacity_upgrade_3": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/item_capacity_upgrade_4": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/item_capacity_upgrade_1": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/item_capacity_upgrade_2": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/quark/azalea": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coinmint": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/azalea/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/create_template": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine/dye_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:currency/myfirstpenny": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/gem_terminal_swap": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/lime": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/network/item_network_trader_2": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/network/item_network_trader_3": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/network/item_network_trader_4": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/network/item_network_trader_1": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/bookshelf/dark_oak": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/mint_coin_emerald": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/light_gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/acacia/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/upgrade_wallet_emerald_to_wallet_netherite": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/jungle": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/light_blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_diamond_from_coin": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/decorations/coin_jar/sus_jar": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/building_blocks/organic_compost_from_rotten_flesh": {
+    "criteria": {
+      "has_rotten_flesh": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/blue": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinblock_gold_from_pile": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/spruce": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/pink": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/quark/azalea": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/spruce/brown": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/freezer/orange": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/portable_terminal_swap": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/ticket_station": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/shelf/mangrove": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/red": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/cyan": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/wallet/wallet_iron": {
+    "criteria": {
+      "coin": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/jungle/gray": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/oak/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/vending_machine_large": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_netherite_from_block": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/blossom/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/upgrades/network_upgrade": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/cherry/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/bamboo/magenta": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "l2complements:recipes/burnt/burnt/rotten_flesh": {
+    "criteria": {
+      "has_rotten_flesh": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/green": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/birch/purple": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/crimson/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/coins/coinpile_gold_from_block": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/quark/ancient/black": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/coin_mint/coin_mint/mint_coin_copper": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/warped/yellow": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/traders/card_display/mangrove/white": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "lightmanscurrency:recipes/misc/auction_stand/birch": {
+    "criteria": {
+      "money": "2024-07-13 18:22:01 +1000"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/cooking/squid_ink_pasta": {
+    "criteria": {
+      "has_any_ingredient": "2024-07-13 18:24:07 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/black_dye": {
+    "criteria": {
+      "has_ink_sac": "2024-07-13 18:24:07 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/paper": {
+    "criteria": {
+      "has_reeds": "2024-07-13 18:25:17 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/sugar_from_sugar_cane": {
+    "criteria": {
+      "has_sugar_cane": "2024-07-13 18:25:17 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/mojang_banner_pattern": {
+    "criteria": {
+      "has_enchanted_golden_apple": "2024-07-13 18:46:17 +1000"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2024-07-13 18:46:20 +1000"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "mutton": "2024-07-13 18:51:45 +1000",
+      "rotten_flesh": "2024-07-13 18:51:50 +1000",
+      "enchanted_golden_apple": "2024-07-13 18:46:20 +1000"
+    },
+    "done": false
+  },
+  "supplementaries:recipes/spring_launcher": {
+    "criteria": {
+      "has_gunpowder": "2024-07-13 18:52:14 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/firework_rocket_simple": {
+    "criteria": {
+      "has_gunpowder": "2024-07-13 18:52:14 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/tnt": {
+    "criteria": {
+      "has_gunpowder": "2024-07-13 18:52:14 +1000"
+    },
+    "done": true
+  },
+  "l2artifacts:recipes/misc/artifact_experience_1": {
+    "criteria": {
+      "has_rank_1": "2024-07-13 18:56:48 +1000"
+    },
+    "done": true
+  },
+  "l2artifacts:recipes/misc/rank_up/vampire_bracelet_2": {
+    "criteria": {
+      "has_vampire_bracelet_1": "2024-07-13 18:56:52 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/charcoal": {
+    "criteria": {
+      "has_log": "2024-07-13 20:31:18 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oak_planks": {
+    "criteria": {
+      "has_logs": "2024-07-13 20:31:18 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oak_wood": {
+    "criteria": {
+      "has_log": "2024-07-13 20:31:18 +1000"
+    },
+    "done": true
+  },
+  "tetra:recipes/string": {
+    "criteria": {
+      "got_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/tripwire_hook": {
+    "criteria": {
+      "has_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/bomb": {
+    "criteria": {
+      "has_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/candle": {
+    "criteria": {
+      "has_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/slingshot": {
+    "criteria": {
+      "has_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/crossbow": {
+    "criteria": {
+      "has_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/sack": {
+    "criteria": {
+      "has_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/bow": {
+    "criteria": {
+      "has_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/fishing_rod": {
+    "criteria": {
+      "has_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/fermented_spider_eye": {
+    "criteria": {
+      "has_spider_eye": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/white_wool_from_string": {
+    "criteria": {
+      "has_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/loom": {
+    "criteria": {
+      "has_string": "2024-07-13 22:24:29 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/ladder": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/crank": {
+    "criteria": {
+      "forge:rods/wooden": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_orange": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_magenta": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_axe": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "l2backpack:recipes/misc/pickup_tweaker_tool": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/daub_cross_brace": {
+    "criteria": {
+      "forge:rods/wooden": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_pink": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/campfire": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/timber_frame": {
+    "criteria": {
+      "forge:rods/wooden": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_hoe": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/timber_brace": {
+    "criteria": {
+      "forge:rods/wooden": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_shovel": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_black": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/wooden_sword": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_green": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_purple": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/timber_cross_brace": {
+    "criteria": {
+      "forge:rods/wooden": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_brown": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/combat/flint_knife": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/faucet": {
+    "criteria": {
+      "forge:rods/wooden": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "l2backpack:recipes/misc/destroy_tweaker_tool": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "l2weaponry:recipes/misc/misc/reinforced_handle": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_light_blue": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/daub_brace": {
+    "criteria": {
+      "forge:rods/wooden": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_blue": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/daub_frame": {
+    "criteria": {
+      "forge:rods/wooden": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_pickaxe": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_cyan": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_yellow": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_red": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/decorations/cutting_board": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "supplementaries:recipes/flags/flag_lime": {
+    "criteria": {
+      "has_stick": "2024-07-13 22:28:23 +1000"
+    },
+    "done": true
+  },
+  "mna:tier_1/cast_a_spell": {
+    "criteria": {
+      "cast_spell": "2024-07-13 22:33:44 +1000"
+    },
+    "done": true
+  },
+  "lootr:social": {
+    "criteria": {
+      "opened_chest": "2024-07-13 22:33:37 +1000"
+    },
+    "done": false
+  },
+  "lootr:1chest": {
+    "criteria": {
+      "opened_chest": "2024-07-13 22:33:37 +1000"
+    },
+    "done": true
+  },
+  "DataVersion": 3465
+}

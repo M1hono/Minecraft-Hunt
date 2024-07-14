@@ -1,0 +1,113 @@
+{
+  "create:root": {
+    "criteria": {
+      "0": "2024-07-12 04:35:57 +1000"
+    },
+    "done": true
+  },
+  "mna:root": {
+    "criteria": {
+      "get_vinteum": "2024-07-12 04:35:57 +1000"
+    },
+    "done": true
+  },
+  "farmersdelight:main/root": {
+    "criteria": {
+      "seeds": "2024-07-12 04:35:57 +1000"
+    },
+    "done": true
+  },
+  "idas:idas_root": {
+    "criteria": {
+      "always": "2024-07-12 04:35:59 +1000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2024-07-12 04:35:59 +1000"
+    },
+    "done": true
+  },
+  "iceandfire:iceandfire/root": {
+    "criteria": {
+      "tick": "2024-07-12 04:35:59 +1000"
+    },
+    "done": true
+  },
+  "l2backpack:backpacks/patchouli": {
+    "criteria": {
+      "0": "2024-07-12 04:35:59 +1000"
+    },
+    "done": true
+  },
+  "l2backpack:backpacks/root": {
+    "criteria": {
+      "0": "2024-07-12 04:35:59 +1000"
+    },
+    "done": true
+  },
+  "lootr:root": {
+    "criteria": {
+      "always_true": "2024-07-12 04:35:59 +1000"
+    },
+    "done": true
+  },
+  "integrated_villages:integrated_villages_root": {
+    "criteria": {
+      "always": "2024-07-12 04:35:59 +1000"
+    },
+    "done": true
+  },
+  "l2backpack:detection": {
+    "criteria": {
+      "locate": "2024-07-12 04:36:01 +1000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:bamboo_jungle": "2024-07-12 04:36:01 +1000",
+      "minecraft:savanna_plateau": "2024-07-13 02:51:43 +1000",
+      "minecraft:stony_peaks": "2024-07-13 02:18:29 +1000",
+      "minecraft:savanna": "2024-07-13 02:51:20 +1000"
+    },
+    "done": false
+  },
+  "wythers:world_explorer": {
+    "criteria": {
+      "wythers:tropical_forest_river": "2024-07-13 03:03:47 +1000",
+      "wythers:sakura_forest": "2024-07-12 05:12:49 +1000",
+      "wythers:warm_stony_shore": "2024-07-12 04:39:47 +1000",
+      "wythers:lantern_river": "2024-07-13 02:21:36 +1000",
+      "wythers:highland_tropical_rainforest": "2024-07-13 02:18:31 +1000",
+      "wythers:sparse_bamboo_jungle": "2024-07-12 05:09:03 +1000",
+      "wythers:humid_tropical_grassland": "2024-07-13 02:51:00 +1000",
+      "wythers:tropical_forest": "2024-07-13 02:50:59 +1000",
+      "wythers:tropical_beach": "2024-07-13 03:05:37 +1000",
+      "wythers:jungle_river": "2024-07-12 05:09:02 +1000",
+      "wythers:underground": "2024-07-12 05:09:07 +1000",
+      "wythers:ancient_moss_forest": "2024-07-13 02:56:01 +1000",
+      "wythers:warm_birch_forest": "2024-07-12 04:36:04 +1000",
+      "wythers:maple_mountains": "2024-07-12 05:14:50 +1000",
+      "wythers:granite_canyon": "2024-07-13 02:51:45 +1000",
+      "wythers:huangshan_highlands": "2024-07-13 02:18:09 +1000",
+      "wythers:bamboo_jungle_highlands": "2024-07-13 02:18:02 +1000"
+    },
+    "done": false
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:spider": "2024-07-13 02:51:08 +1000",
+      "minecraft:creeper": "2024-07-13 02:52:10 +1000"
+    },
+    "done": false
+  },
+  "lootr:social": {
+    "criteria": {
+      "opened_chest": "2024-07-13 02:55:37 +1000"
+    },
+    "done": false
+  },
+  "DataVersion": 3465
+}

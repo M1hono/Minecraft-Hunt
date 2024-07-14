@@ -14,9 +14,24 @@ const { $SoundSource } = require("packages/net/minecraft/sounds/$SoundSource");
  * @param {integer} slot 
  * @param {$Player} player 
  * @param {$ServerLevel} level 
- * @param {$MinecraftServer} server 
- * @param {integer} cooldownTicks 
- * @returns 
+ * @param {$MinecraftServer} server
+ * @example
+ * ItemEvents.rightClicked(event => {
+    const {
+        hand,
+        player,
+        level,
+        server
+    } = event;
+    if (hand != "MAIN_HAND") return
+    if (level.isClientSide()) return
+    // if (item.hasTag('minecraft:axes') === false) return
+    let slot = 0
+    const cooldownTicks = 80
+    if (player.getCooldowns().isOnCooldown("axe_use")) return;
+    player.getCooldowns().addCooldown("axe_use", cooldownTicks);
+    throwWeapon(slot , player , level , server)
+})
  */
 export function throwWeapon(slot, player, level, server) {
     if (slot >= player.inventory.containerSize) return;

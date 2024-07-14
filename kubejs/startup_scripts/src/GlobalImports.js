@@ -40,9 +40,16 @@ export const handleFishingLoot = (event) => {
     global.fishingLoot(event)
 }
 /**
- * handle living damage event.
+ * @description handle living damage event.
  * @param {$LivingDamageEvent} event 
  */
 export function handleLivingDamage(event) {
     global.livingDamage(event)
+}
+/**
+ * @description handle Advancement earn event
+ * @param {$AdvancementEvent$AdvancementEarnEvent} event
+ */
+export function handleAdvancementTrigger(event) {
+    global.advancementEarn(event)
 }

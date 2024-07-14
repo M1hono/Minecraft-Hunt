@@ -30,7 +30,7 @@ export function fishingChest(player, hook, dx, dy, dz , event) {
         falling_block.setPos(x, y + 1, z)
         falling_block.setMotion(dx, dy, dz)
         falling_block.mergeNbt({
-            BlockState: { Name: "minecraft:barrel" },
+            BlockState: { Name: "minecraft:barrel" }
         })
         falling_block.persistentData.putBoolean('fishing_loot', true)
         let uuid = falling_block.getUuid()

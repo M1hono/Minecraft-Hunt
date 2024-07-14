@@ -267,7 +267,7 @@ export function getOrSource(damageType , entity ) {
 }
 const { STRUCTURE } = $Registries;
 /**
- * @notification Require AsnycLocator
+ * @Require AsnycLocator
  * @author M1hono
  * @description Asynchronously searches for a specified structure around the player.
  * 
@@ -305,7 +305,7 @@ export function asyncStructureLocator(player, structure, callback) {
         })
 }
 /**
- * @notification Require MoreJS
+ * @Require MoreJS
  * @author M1hono
  * @description searches for a specified structure around the player within 5000 chunks without async.
  * @param {$Player} player - The player object, used to determine the starting position for the search.
@@ -320,7 +320,7 @@ export function structureLocator(player, structure) {
 }
 const { BIOME } = $Registries;
 /**
- * @notification Require MoreJS
+ * @Require MoreJS
  * @author M1hono
  * @description searches for a specified biome around the player 5000 chunks without async.
  * @param {$Player} player - The player object, used to determine the starting position for the search.

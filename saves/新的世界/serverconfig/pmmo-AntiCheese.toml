@@ -1,0 +1,98 @@
+
+#Anti-Cheese is a system for managing how XP is gained.
+#There are various ways in which players can exploit
+#features of various mods and mechanics to gain xp at
+#rates that are not intended.  The below anti-cheese
+#features address many of the most common.
+[AntiCheese]
+	#if set to true, players who are AFK will continuously grow their
+	#reduction value and will end up gaining negative xp.
+	#If this is false, they only stop gaining and never lose.
+	AFK_Can_Subtract = false
+
+	#AFK Tracking allows you to control if and when a player
+	#should not gain xp while afk.  All afk timers are configuration
+	#specific, so you can configure separate thresholds for different
+	#types of xp.
+	[AntiCheese.AFK]
+
+		[AntiCheese.AFK.SWIM_SPRINTING]
+			cooloff_amount = 1
+			min_time_to_apply = 200
+			tolerance_percent = 0.0
+			tolerance_flat = 0
+			strict_tolerance = true
+			source = []
+			retention_duration = 0
+			reduction = 0.1
+
+		[AntiCheese.AFK.SURFACING]
+			cooloff_amount = 1
+			min_time_to_apply = 200
+			tolerance_percent = 0.0
+			tolerance_flat = 0
+			strict_tolerance = true
+			source = []
+			retention_duration = 0
+			reduction = 0.1
+
+		[AntiCheese.AFK.DIVING]
+			cooloff_amount = 1
+			min_time_to_apply = 200
+			tolerance_percent = 0.0
+			tolerance_flat = 0
+			strict_tolerance = true
+			source = []
+			retention_duration = 0
+			reduction = 0.1
+
+		[AntiCheese.AFK.SUBMERGED]
+			cooloff_amount = 1
+			min_time_to_apply = 200
+			tolerance_percent = 0.0
+			tolerance_flat = 0
+			strict_tolerance = true
+			source = []
+			retention_duration = 0
+			reduction = 0.1
+
+		[AntiCheese.AFK.SWIMMING]
+			cooloff_amount = 1
+			min_time_to_apply = 200
+			tolerance_percent = 0.0
+			tolerance_flat = 0
+			strict_tolerance = true
+			source = []
+			retention_duration = 0
+			reduction = 0.1
+
+	#Diminishing XP allows you to reduce the amount of XP earned
+	#for a specific event when the xp is earned in quick succession.
+	[AntiCheese.DiminishingXP]
+
+		[AntiCheese.DiminishingXP.RIDING]
+			cooloff_amount = 0
+			min_time_to_apply = 0
+			tolerance_percent = 0.0
+			tolerance_flat = 0
+			strict_tolerance = true
+			source = ["minecraft:horse", "minecraft:boat"]
+			retention_duration = 200
+			reduction = 0.005
+
+	#Normalization allows you to keep xp gain values from spiking
+	#by keeping them within a range of tolerance.  When normalized,
+	#xp from an event will not exceed the threshold above the previously
+	#earned xp value.
+	[AntiCheese.Normalization]
+
+		[AntiCheese.Normalization.SPRINTING]
+			cooloff_amount = 0
+			min_time_to_apply = 0
+			tolerance_percent = 0.1
+			tolerance_flat = 10
+			strict_tolerance = true
+			source = []
+			retention_duration = 400
+			reduction = 0.0
+

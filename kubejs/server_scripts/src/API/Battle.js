@@ -1,12 +1,5 @@
 // priority: 150
 import { $ThrowingAxeEntity } from "packages/dev/xkmc/l2weaponry/content/entity/$ThrowingAxeEntity";
-import { $ServerPlayer } from "packages/net/minecraft/server/level/$ServerPlayer";
-import { $MobType } from "packages/net/minecraft/world/entity/$MobType";
-import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
-import { $Item } from "packages/net/minecraft/world/item/$Item";
-import { $ItemStack } from "packages/net/minecraft/world/item/$ItemStack";
-import { $TooltipFlag } from "packages/net/minecraft/world/item/$TooltipFlag";
-import { $EnchantmentHelper } from "packages/net/minecraft/world/item/enchantment/$EnchantmentHelper";
 /**
  * @author M1hono
  * @description get the enchantments from the throwed item.
@@ -73,6 +66,7 @@ export function getThrowingEnchantmentLevel(immediate, enchantmentId) {
     }
     return null
 }
+import { $TooltipFlag } from "packages/net/minecraft/world/item/$TooltipFlag";
 /**
  * @author M1hono
  * @description get the attack damage from item's tooltip.
@@ -95,6 +89,13 @@ export function getItemAttackDamageFromTooltip(player, itemStack) {
     }
     return 1.0
 }
+import { $ServerPlayer } from "packages/net/minecraft/server/level/$ServerPlayer";
+import { $EquipmentSlot } from "packages/net/minecraft/world/entity/$EquipmentSlot";
+import { $MobType } from "packages/net/minecraft/world/entity/$MobType";
+import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
+import { $Item } from "packages/net/minecraft/world/item/$Item";
+import { $ItemStack } from "packages/net/minecraft/world/item/$ItemStack";
+import { $EnchantmentHelper } from "packages/net/minecraft/world/item/enchantment/$EnchantmentHelper";
 /**
  * @author M1hono
  * @description get the attack damage from the item.
