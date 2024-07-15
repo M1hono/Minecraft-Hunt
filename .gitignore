@@ -19,3 +19,5 @@ options.txt
 rhino.local.properties
 usercache.json
 usernamecache.json
+hs_*
+/resourcepacks

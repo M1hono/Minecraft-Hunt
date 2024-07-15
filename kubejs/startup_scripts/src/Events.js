@@ -4,7 +4,7 @@
  * Used to handle pmmo xp event.
  */
 const { $XpEvent } = require("packages/harmonised/pmmo/api/events/$XpEvent")
-const { handlePmmoXp } = require("./GlobalImports")
+const { handlePmmoXp } = require("./GlobalImports/EventHandlerImports")
 ForgeEvents.onEvent($XpEvent,
     /**@typeof $XpEvent */event => {
     handlePmmoXp(event)
@@ -14,13 +14,13 @@ ForgeEvents.onEvent($XpEvent,
  * Used to handle ritual complete event.
  */
 const { $RitualCompleteEvent } = require("packages/com/mna/api/events/$RitualCompleteEvent")
-const { handleRitualComplete } = require("./GlobalImports")
+const { handleRitualComplete } = require("./GlobalImports/EventHandlerImports")
 ForgeEvents.onEvent( $RitualCompleteEvent,
     /**@typeof  $RitualCompleteEvent*/ event => {
     handleRitualComplete(event)
 })
 const { $LivingDamageEvent } = require("packages/net/minecraftforge/event/entity/living/$LivingDamageEvent")
-const { handleLivingDamage } = require("./GlobalImports")
+const { handleLivingDamage } = require("./GlobalImports/EventHandlerImports")
 /**
  * @description Trigger when LivingDamage is dealt.
  * Used to handle damage dealt by players and other damage related functions.
@@ -29,7 +29,7 @@ ForgeEvents.onEvent($LivingDamageEvent,/**@typeof  $LivingDamageEvent*/event=>{
     handleLivingDamage(event)
 })
 const { $ItemFishedEvent } = require("packages/net/minecraftforge/event/entity/player/$ItemFishedEvent")
-const { handleFishingLoot } = require("./GlobalImports")
+const { handleFishingLoot } = require("./GlobalImports/EventHandlerImports")
 /**
  * @description Trigger when player fish an item.
  * Used to handle fishing event and fishing chest functions.
@@ -38,7 +38,7 @@ ForgeEvents.onEvent($ItemFishedEvent,/**@typeof $ItemFishedEvent*/event=>{
     handleFishingLoot(event)
 })
 const { $AdvancementEvent$AdvancementEarnEvent } = require("packages/net/minecraftforge/event/entity/player/$AdvancementEvent$AdvancementEarnEvent")
-const { handleAdvancementTrigger } = require("./GlobalImports")
+const { handleAdvancementTrigger } = require("./GlobalImports/EventHandlerImports")
 /**
  * @description Trigger when player earn a advancement.
  * Used to handle varios events based on Advancement Trigger
@@ -46,7 +46,7 @@ const { handleAdvancementTrigger } = require("./GlobalImports")
 ForgeEvents.onEvent($AdvancementEvent$AdvancementEarnEvent,/**@typeof $AdvancementEvent$AdvancementEarnEvent*/event=>{
     handleAdvancementTrigger(event)
 })
-const { handlePlayerClone } = require("./GlobalImports")
+const { handlePlayerClone } = require("./GlobalImports/EventHandlerImports")
 const { $PlayerEvent$Clone } = require("packages/net/minecraftforge/event/entity/player/$PlayerEvent$Clone")
 ForgeEvents.onEvent($PlayerEvent$Clone,/**@typeof $PlayerEvent$Clone*/event=>{
     handlePlayerClone(event)

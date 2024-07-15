@@ -1,4 +1,4 @@
-// priority: 150
+// priority: 155
 import { $Server } from "packages/info/journeymap/shaded/org/eclipse/jetty/server/$Server";
 import { $Dimension } from "packages/java/awt/$Dimension";
 import { $Structure } from "packages/net/minecraft/world/level/levelgen/structure/$Structure";
@@ -14,10 +14,6 @@ import { $BlockPos } from "packages/net/minecraft/core/$BlockPos";
 import { $AsyncLocator } from "packages/brightspark/asynclocator/$AsyncLocator";
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
 import { $TagKey } from "packages/net/minecraft/tags/$TagKey";
-import { $ServerLevel } from "packages/net/minecraft/server/level/$ServerLevel";
-import { $Monster } from "packages/net/minecraft/world/entity/monster/$Monster";
-import { $DamageType } from "packages/net/minecraft/world/damagesource/$DamageType";
-import { $TargetDummyEntity } from "packages/net/mehvahdjukaar/dummmmmmy/common/$TargetDummyEntity";
 const UUID = Java.loadClass('java.util.UUID');
 const $UUIDUtil = Java.loadClass('net.minecraft.core.UUIDUtil');
 /**
@@ -332,4 +328,18 @@ export function biomeLocator(player, biome) {
     const biomeId = Utils.id(biome)
     const resourceOrTag = $ResourceOrTag.get(biomeId , BIOME)
     return $LevelUtils.findBiome(player.blockPosition() , level , resourceOrTag , 5000)
+}
+/**
+ * @author M1hono
+ * @description Extracts the final part of a Minecraft resource identifier.
+ * @param {string} id - The full resource identifier (e.g., "minecraft:recipe/sth")
+ * @returns {string} - The extracted name (e.g., "sth")
+ */
+export function extractName(id) {
+    if (typeof id !== 'string' || id.trim() === '') {
+        return ''
+    }
+    const withoutNamespace = id.includes(':') ? id.split(':').pop() : id
+    const parts = withoutNamespace.split('/')
+    return parts[parts.length - 1] || ''
 }

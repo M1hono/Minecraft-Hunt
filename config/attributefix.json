@@ -506,7 +506,7 @@
         "value": 1000
       }
     },
-    "additionalentityattributes:water_visibility": {
+    "epicfight:impact": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -517,7 +517,7 @@
         "value": 1024
       }
     },
-    "epicfight:impact": {
+    "additionalentityattributes:water_visibility": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -814,17 +814,6 @@
         "value": 1
       }
     },
-    "additionalentityattributes:bonus_rare_loot_rolls": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 128,
-        "value": 128
-      }
-    },
     "epicfight:max_strikes": {
       "enabled": false,
       "min": {
@@ -834,6 +823,17 @@
       "max": {
         "default": 1024,
         "value": 1024
+      }
+    },
+    "additionalentityattributes:bonus_rare_loot_rolls": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 128,
+        "value": 128
       }
     },
     "epicfight:armor_negation": {
