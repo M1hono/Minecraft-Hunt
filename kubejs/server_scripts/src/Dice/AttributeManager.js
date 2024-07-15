@@ -7,7 +7,25 @@ PlayerEvents.loggedIn(event => {
         player.persistentData.put("attributes", new $CompoundTag())
     }
     attributeupdater(player)
+    if (player.tags.contains("hurt")) {
+        player.tags.remove("hurt")
+        return
+    }
+    if (player.persistentData.contains("health")) {
+        player.health = player.persistentData.getDouble("health")
+        player.persistentData.remove("health")
+        return
+    }
     player.health += getAttribute(player, "minecraft:generic.max_health")
+})
+PlayerEvents.loggedOut(event => {
+    const { player } = event
+    if (player.health == player.maxHealth) return
+    if (player.health > player.getAttributeBaseValue("generic.max_health")) {
+        player.persistentData.putDouble("health", player.health)
+        return
+    }
+    player.addTag("hurt")
 })
 /** 
  * @author M1hono

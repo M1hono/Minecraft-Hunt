@@ -5,6 +5,6 @@ const { attributeupdater } = require("../Dice/AttributeManager");
  */
 global.playerClone = event => {
     const { entity  , original } = event
-    if (!entity instanceof $Player) return;
     attributeupdater(entity)
+    entity.health = original.health
 }
