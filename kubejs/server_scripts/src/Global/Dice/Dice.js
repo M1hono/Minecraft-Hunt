@@ -26,7 +26,10 @@ global.dice = (player, type , sides) =>{
         default:
             break;
     }
-}
+}/**
+ * 
+ * @param {$Player} player
+ */
 global.initDice = (player) =>{
     const { data } = player
     if (data.attackdice === undefined) data.attackdice = 1

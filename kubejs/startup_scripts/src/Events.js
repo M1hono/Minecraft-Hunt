@@ -46,3 +46,8 @@ const { handleAdvancementTrigger } = require("./GlobalImports")
 ForgeEvents.onEvent($AdvancementEvent$AdvancementEarnEvent,/**@typeof $AdvancementEvent$AdvancementEarnEvent*/event=>{
     handleAdvancementTrigger(event)
 })
+const { handlePlayerClone } = require("./GlobalImports")
+const { $PlayerEvent$Clone } = require("packages/net/minecraftforge/event/entity/player/$PlayerEvent$Clone")
+ForgeEvents.onEvent($PlayerEvent$Clone,/**@typeof $PlayerEvent$Clone*/event=>{
+    handlePlayerClone(event)
+})

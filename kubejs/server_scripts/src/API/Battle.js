@@ -108,13 +108,13 @@ export function getItemAttackDamage(player , itemStack){
         server,
         level,
     } = player
-    const fakeplayer = new $ServerPlayer(server , level , player.getGameProfile())
+    let fakeplayer = new $ServerPlayer(server , level , player.getGameProfile())
     fakeplayer.mainHandItem = itemStack
-    const fakeItem = fakeplayer.mainHandItem
+    let fakeItem = fakeplayer.mainHandItem
     if (fakeItem.getAttributeModifiers($EquipmentSlot.MAINHAND).entries().isEmpty()) {
         return 1.0
     }
-    const attibutes = fakeItem.getAttributeModifiers($EquipmentSlot.MAINHAND).entries().iterator().next().getValue()
+    let attibutes = fakeItem.getAttributeModifiers($EquipmentSlot.MAINHAND).entries().iterator().next().getValue()
     let attackDamage = attibutes.getAmount()
     if (attibutes.getId() == $Item.BASE_ATTACK_DAMAGE_UUID) {
         attackDamage += player.getAttributeBaseValue("generic.attack_damage")

@@ -53,3 +53,10 @@ export function handleLivingDamage(event) {
 export function handleAdvancementTrigger(event) {
     global.advancementEarn(event)
 }
+/**
+ * @description update player's armor set bonus.
+ * @param {$AdvancementEvent$AdvancementEarnEvent} event
+ */
+export function handlePlayerClone(event) {
+    global.playerClone(event)
+}

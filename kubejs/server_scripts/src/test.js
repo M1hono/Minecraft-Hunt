@@ -1,41 +1,36 @@
 // priority: 99
-const { $CuriosContainer } = require("packages/top/theillusivec4/curios/common/inventory/container/$CuriosContainer")
-const { getCuriosItemList } = require("./API/Curios")
 const { screenshake , randomUUID, getOrSource } = require("./API/Utils")
-const { $CuriosContainerV2 } = require("packages/top/theillusivec4/curios/common/inventory/container/$CuriosContainerV2")
-const { $ListTag } = require("packages/net/minecraft/nbt/$ListTag")
-const { $CompoundTag } = require("packages/net/minecraft/nbt/$CompoundTag")
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
 const { getItemAttackDamage } = require("./API/Battle")
-const { $InteractionHand } = require("packages/net/minecraft/world/$InteractionHand")
-const { $CommandSource } = require("packages/net/minecraft/commands/$CommandSource")
-const { $CommandSourceStack } = require("packages/net/minecraft/commands/$CommandSourceStack")
 const { $CommandContext } = require("packages/com/mojang/brigadier/context/$CommandContext")
 LevelEvents.afterExplosion(event => {
     screenshake(event)
 })
+const { $UUID } = require("packages/java/util/$UUID")
 PlayerEvents.loggedIn(event => {
     const {
         player
     } = event
-    if (isPlayerWearingItem(player, 'l2hostility:ring_of_corrosion')) {
-        let blockReachIdentifier = randomUUID()
-        player.modifyAttribute("forge:block_reach", blockReachIdentifier , - 3.0 , "addition")
-        player.removeAttribute("forge:block_reach", blockReachIdentifier)
-        player.tell("You are wearing a ring")
-    }
+    if (!player.persistentData.getAllKeys().contains("attributes")) player.persistentData.merge({})
+    if (!player.persistentData.hasUUID("forge:block_reach")) player.persistentData.putUUID("forge:block_reach", $UUID.randomUUID())
+    let blockReachIdentifier =player.persistentData.getUUID("forge:block_reach")
+    player.modifyAttribute("forge:block_reach", blockReachIdentifier , - 3.0 , "addition")
 })
 PlayerEvents.respawned(event => {
     const {
         player
     } = event
-    if (isPlayerWearingItem(player, 'l2hostility:ring_of_corrosion')) {
-        let blockReachIdentifier = randomUUID()
-        player.modifyAttribute("forge:block_reach", blockReachIdentifier , - 3.0 , "addition")
-        player.removeAttribute("forge:block_reach", blockReachIdentifier)
-        player.tell("You are wearing a ring")
-    }
+    let blockReachIdentifier =player.persistentData.getUUID("forge:block_reach")
+    player.modifyAttribute("forge:block_reach", blockReachIdentifier , - 3.0 , "addition")
 })
+function attributeManager (player) {
+
+}
+function pushAttribute (player , attribute ) {
+    if (!player.persistentData.hasUUID(attribute)) player.persistentData.putUUID(attribute, $UUID.randomUUID())
+    let blockReachIdentifier =player.persistentData.getUUID(attribute)
+    player.modifyAttribute(attribute, blockReachIdentifier , - 3.0 , "addition")
+}
 ItemEvents.rightClicked(event => {
     const {
         player,
@@ -57,17 +52,6 @@ ItemEvents.rightClicked(event => {
     //     }
     // })
 
-})
-ItemEvents.rightClicked(event => {
-    const {
-        player,
-        hand,
-        level
-    } = event
-    if (hand.toString() == "MAIN_HAND") return
-    player.swing(hand , true)
-    ++player.attackStrengthTicker
-    event.entity.health -= 1
 })
 ItemEvents.entityInteracted(event => {
     const {
@@ -163,4 +147,4 @@ ServerEvents.commandRegistry(event => {
                 }
             })
     );
-});
+})

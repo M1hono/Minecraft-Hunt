@@ -110,7 +110,6 @@ function fishingChestLoot(event) {
         return
     } else if (diceRoll == 1) {
         lootTable = lootData.getLootTable('minecraft:gameplay/fishing_chest/pool').getRandomItems(lootParam)
-        console.info(lootTable)
         popItem(lootTable, block)
         lootbigFailure(level, player, block)
         return
