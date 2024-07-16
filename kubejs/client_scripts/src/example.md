@@ -92,29 +92,29 @@ ClientEvents.loggedIn(event => {
     })
 })
 
-RenderEntityEvents.afterRender(event => {
-    let e = event.getEntity();
-    let h = e.getBbHeight();
-    let w = e.getBbWidth();
-    event.render("example_block");
-    let o = event.getObject("example_item");
-    //console.log(o);
-    o.render();
-    //event.render("example_icon");
-    event.renderWithOffset("example_triangle", [0.0, h + 0.2, 0.0])
-    let o2 = event.getObject("example_lines");
-    o2.setVertices([
-        -w, h, 0.001,
-        w, h, 0.001,
-        w, h, 0.001,
-        w, 0, 0.001,
-        w, 0, 0.001,
-        -w, 0, 0.001,
-        -w, 0, 0.001,
-        -w, h, 0.001
-    ]);
-    o2.render();
-})
+// RenderEntityEvents.afterRender(event => {
+//     let e = event.getEntity();
+//     let h = e.getBbHeight();
+//     let w = e.getBbWidth();
+//     event.render("example_block");
+//     let o = event.getObject("example_item");
+//     //console.log(o);
+//     o.render();
+//     //event.render("example_icon");
+//     event.renderWithOffset("example_triangle", [0.0, h + 0.2, 0.0])
+//     let o2 = event.getObject("example_lines");
+//     o2.setVertices([
+//         -w, h, 0.001,
+//         w, h, 0.001,
+//         w, h, 0.001,
+//         w, 0, 0.001,
+//         w, 0, 0.001,
+//         -w, 0, 0.001,
+//         -w, 0, 0.001,
+//         -w, h, 0.001
+//     ]);
+//     o2.render();
+// })
 
 RenderLevelEvents.afterSolidBlockRender(event => {
     // event.renderInWorld("example_triangle", 100.5, 100.5, 100.5)

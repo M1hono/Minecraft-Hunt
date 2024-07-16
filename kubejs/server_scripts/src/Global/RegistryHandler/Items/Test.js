@@ -1,18 +1,22 @@
+const { $BiConsumer } = require("packages/java/util/function/$BiConsumer")
+const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
+const { $CuriosApi } = require("packages/top/theillusivec4/curios/api/$CuriosApi")
+const { $SlotContext } = require("packages/top/theillusivec4/curios/api/$SlotContext")
+const { $SlotType } = require("packages/top/theillusivec4/curios/common/slottype/$SlotType")
+const { getCuriosItemList } = require("../../../API/Curios")
+
 global.test = (itemstack, level, entity) => {
     if (level.isClientSide()) return itemstack
-    let effects = entity.potionEffects
-    effects.add('minecraft:haste', 120 * 20)
-    console.log(itemstack.damageValue)
+    /**@type {$Player} */
+    let player = entity
     itemstack.damageValue++
-    console.log(itemstack.damageValue)
-    console.log(itemstack.maxDamage)
     if (itemstack.damageValue >= itemstack.maxDamage) {
         itemstack.shrink(1)
     }
-    if (entity.player) {
-        entity.give(Item.of('minecraft:glass_bottle'))
+    if (player.player) {
+        console.log(getCuriosItemList(player , "ring").length)
+        // player.tell(player.level.getBiome(player.blockPosition()))
     }
     entity.addItemCooldown(itemstack , 20)
-    console.log(itemstack)
     return itemstack
 }

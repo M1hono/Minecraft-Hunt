@@ -15,17 +15,29 @@ const { $CompoundTag } = require("packages/net/minecraft/nbt/$CompoundTag")
  */
 export const PlayerAttributeManager = {
     /**
+     * @private This function should not be used out of this object.
+     * @author M1hono
+     * @description Initialize the player attributes.
+     * @param {$Player} player
+     */
+    _initializeAttributes(player) {
+        if (!player.persistentData.contains("attributes")) {
+            player.persistentData.put("attributes", new $CompoundTag());
+        }
+    },
+    /**
      * @public
      * @author M1hono
      * @description Update the player attributes effects.
      * @param {$Player} player
      */
     update(player) {
-        const attributes = player.persistentData.getCompound("attributes")
+        this._initializeAttributes(player);
+        const attributes = player.persistentData.getCompound("attributes");
         attributes.getAllKeys().forEach(attribute => {
-            const value = attributes.getDouble(attribute)
-            this._applyAttribute(player, attribute, value)
-        })
+            const value = attributes.getDouble(attribute);
+            this._applyAttribute(player, attribute, value);
+        });
     },
     /**
      * @public
@@ -103,6 +115,5 @@ export const PlayerAttributeManager = {
 }
 PlayerEvents.loggedIn(event => {
     const { player } = event
-    if (!player.persistentData.get("attributes")) player.persistentData.put("attributes", new $CompoundTag())
     PlayerAttributeManager.update(player)
 })

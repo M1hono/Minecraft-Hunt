@@ -5,6 +5,7 @@ import { $LivingEntity } from "packages/net/minecraft/world/entity/$LivingEntity
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
 import { getSkillLevel } from "../../../API/Pmmo";
 import { handleDiceRoll } from "../../../GlobalImports";
+import { getOrSource } from "../../../API/Utils";
 /**
  * @author M1hono
  * @description Deal with events when player deal damage to other entities.
@@ -33,6 +34,8 @@ export function playerDamage(entity , target , amount , source) {
                 case "player":
                     stages.add("attack")
                     handleDiceRoll(entity , "attack" , str )
+                    target.invulnerableTime = 0
+                    target.attack( getOrSource("alexscaves:acid" , entity), amount)
                     removeStage( server , stages)
                     break;
                 case "arrow":
