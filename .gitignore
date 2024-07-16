@@ -21,3 +21,7 @@ usercache.json
 usernamecache.json
 hs_*
 /resourcepacks
+/config/jei/ingredient-list-mod-sort-order.ini
+/config/quark-common.toml
+resourcepacks/Minecraft-Mod-Language-Modpack-Converted-1.20.1.zip
+resourcepacks/
