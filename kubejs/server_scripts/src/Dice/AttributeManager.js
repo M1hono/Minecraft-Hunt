@@ -2,7 +2,17 @@
 import { randomUUID } from "../API/Utils"
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
 const { $CompoundTag } = require("packages/net/minecraft/nbt/$CompoundTag")
-
+/**
+ * @public
+ * @author M1hono
+ * @description Player attribute manager.
+ * @param {update|addAttribute|subtractAttribute|removeAttribute|_applyAttribute|getAttribute} PlayerAttributeManager
+ * @example
+ * PlayerAttributeManager.addAttribute(player, "minecraft:generic.max_health", 10) // Add 10 max health to the player.
+ * PlayerAttributeManager.removeAttribute(player, "minecraft:generic.max_health") // Remove the max health attribute from the player.
+ * PlayerAttributeManager.update(player) // Update the player attributes. (Need to be called when the player is cloned or persistentData changed without using this object.)
+ * PlayerAttributeManager.getAttribute(player, "minecraft:generic.max_health") // Get the max health attribute value of the player added by this obejct.
+ */
 export const PlayerAttributeManager = {
     /**
      * @public
@@ -58,7 +68,7 @@ export const PlayerAttributeManager = {
         }
     },
     /**
-     * @private This function should not be used out of this this object.
+     * @private This function should not be used out of this object.
      * @author M1hono
      * @description Apply the attribute to the player.
      * @param {$Player} player
@@ -76,6 +86,7 @@ export const PlayerAttributeManager = {
             }
             let identifier = player.persistentData.getUUID(attribute)
             player.modifyAttribute(attribute, identifier, value, "addition")
+            if (attribute == "minecraft:generic.max_health") player.health += value
         }
     },
     /**
@@ -90,31 +101,8 @@ export const PlayerAttributeManager = {
         return player.persistentData.getCompound("attributes").getDouble(attribute)
     }
 }
-// handle the player login and logout events for attribute init.
 PlayerEvents.loggedIn(event => {
     const { player } = event
-    if (!player.persistentData.contains("attributes")) {
-        player.persistentData.put("attributes", new $CompoundTag())
-    }
+    if (!player.persistentData.get("attributes")) player.persistentData.put("attributes", new $CompoundTag())
     PlayerAttributeManager.update(player)
-
-    if (player.tags.contains("hurt")) {
-        player.tags.remove("hurt")
-        return
-    }
-    if (player.persistentData.contains("health")) {
-        player.health = player.persistentData.getDouble("health")
-        player.persistentData.remove("health")
-        return
-    }
-    player.health += PlayerAttributeManager.getAttribute(player, "minecraft:generic.max_health")
-})
-PlayerEvents.loggedOut(event => {
-    const { player } = event
-    if (player.health == player.maxHealth) return
-    if (player.health > player.getAttributeBaseValue("generic.max_health")) {
-        player.persistentData.putDouble("health", player.health)
-        return
-    }
-    player.addTag("hurt")
 })

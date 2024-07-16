@@ -3,8 +3,8 @@ import { $MinecraftServer } from "packages/net/minecraft/server/$MinecraftServer
 import { $DamageSource } from "packages/net/minecraft/world/damagesource/$DamageSource";
 import { $LivingEntity } from "packages/net/minecraft/world/entity/$LivingEntity";
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
-const { handleDiceRoll } = require("../../../GlobalImports");
-const { getSkillLevel } = require("../../../API/Pmmo");
+import { getSkillLevel } from "../../../API/Pmmo";
+import { handleDiceRoll } from "../../../GlobalImports";
 /**
  * @author M1hono
  * @description Deal with events when player deal damage to other entities.

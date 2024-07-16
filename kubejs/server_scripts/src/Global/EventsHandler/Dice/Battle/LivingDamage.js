@@ -1,6 +1,6 @@
 // priority: 50
 import { $LivingDamageEvent } from "packages/net/minecraftforge/event/entity/living/$LivingDamageEvent"
-import { playerDamage } from "../../../Dice/Battle/PlayerDamage/PlayerDamage"
+import { playerDamage } from "../../../../Dice/Battle/PlayerDamage/PlayerDamage"
 
 /**
  * handle living damage event

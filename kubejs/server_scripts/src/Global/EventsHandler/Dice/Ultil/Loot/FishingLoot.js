@@ -1,8 +1,8 @@
 // priority: 50
 import { $ItemFishedEvent } from "packages/net/minecraftforge/event/entity/player/$ItemFishedEvent"
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player"
-import { fishingChest } from "../../../../Dice/Ultil/Loot/FishingChest/FishingChest"
-import { handleDiceRoll, handleGetDice } from "../../../../GlobalImports"
+import { handleDiceRoll, handleGetDice } from "../../../../../GlobalImports"
+import { fishingChest } from "../../../../../Dice/Ultil/Loot/FishingChest/FishingChest"
 
 /**
  * 
