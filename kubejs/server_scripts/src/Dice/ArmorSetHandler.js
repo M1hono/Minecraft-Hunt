@@ -2,7 +2,6 @@
 import { getUniqueCuriosItems, isPlayerWearingItem } from "../API/Curios";
 import { PlayerAttributeManager } from "./AttributeManager";
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player");
-const { $CompoundTag } = require("packages/net/minecraft/nbt/$CompoundTag");
 
 export const SetBonusManager = {
     setDefinitions: {},
@@ -77,7 +76,6 @@ export const SetBonusManager = {
         const bonuses = this.setDefinitions[setName].bonuses;
         for (const [attribute, value] of Object.entries(bonuses)) {
             PlayerAttributeManager.addAttribute(player, attribute, value);
-            console.log(`Applying ${value} to ${attribute} for ${setName}`);
         }
     },
 
@@ -106,6 +104,9 @@ SetBonusManager.defineSet("test1", {
     bonuses: {
         "minecraft:generic.max_health": 10,
         "minecraft:generic.armor": 5
+    },
+    customCheck: function(player, equippedItems, curiosItems) {
+        return curiosItems.some(item => item.id === "l2hostility:ring_of_corrosion" && item.count >= 2);
     }
 });
 SetBonusManager.defineSet("test2", {

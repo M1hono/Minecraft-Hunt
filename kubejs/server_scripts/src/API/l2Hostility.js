@@ -52,9 +52,7 @@ const $HostileEntity = Java.loadClass("dev.xkmc.l2hostility.content.capability.m
 export function hasTrait(entity, trait) {
     let hasTrait = false;
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
-        console.log("Capability present");
         let traits = mobTraitCap.traits;
-        console.log("Traits: ", traits);
         for (let entry of traits.entrySet()) {
             let key = entry.getKey().getID();
             if (key.equals(trait)) {
@@ -74,9 +72,7 @@ export function hasTrait(entity, trait) {
 export function getTraitLevel(entity, trait) {
     let traitLevel = -1;
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
-        console.log("Capability present");
         let traits = mobTraitCap.traits;
-        console.log("Traits: ", traits);
         for (let entry of traits.entrySet()) {
             let key = entry.getKey().getID();
             if (key.equals(trait)) {
@@ -95,14 +91,11 @@ export function getTraitLevel(entity, trait) {
  */
 export function setTrait(entity, trait, lv) {
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
-        const currentHealth = entity.health;
-        const maxHealth = entity.getAttributeValue("minecraft:generic.max_health");
-        const healthPercentage = currentHealth / maxHealth;
+        const healthPercentage = entity.health / entity.maxHealth;;
         mobTraitCap.setTrait(trait, lv);
         entity.server.scheduleInTicks(1, () => {
             mobTraitCap.syncToClient(entity);
-            const newMaxHealth = entity.getAttributeValue("minecraft:generic.max_health");
-            entity.health = newMaxHealth * healthPercentage;
+            entity.health = entity.maxHealth; * healthPercentage;
         });
     });
 }
@@ -112,7 +105,7 @@ export function setTrait(entity, trait, lv) {
  * @param {$Entity} entity - the mob you want to get the level.
  * @returns {number} - the level of the mob.
  */
-export function getDifficultLevel(entity) {
+export function getmobLevel(entity) {
     let lv = 0;
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
         lv = mobTraitCap.getLevel();
@@ -126,14 +119,11 @@ export function getDifficultLevel(entity) {
  */
 export function setLevelWithoutReroll(entity, lv) {
     entity.getCapability($HostileEntity.CAPABILITY).ifPresent(mobTraitCap => {
-        const currentHealth = entity.health;
-        const maxHealth = entity.getAttributeValue("minecraft:generic.max_health");
-        const healthPercentage = currentHealth / maxHealth;
+        const healthPercentage = entity.health / entity.maxHealth;;
         mobTraitCap.setLevel(entity, lv);
         entity.server.scheduleInTicks(1, () => {
             mobTraitCap.syncToClient(entity);
-            const newMaxHealth = entity.getAttributeValue("minecraft:generic.max_health");
-            entity.health = newMaxHealth * healthPercentage;
+            entity.health = entity.maxHealth; * healthPercentage;
         });
     });
 }
