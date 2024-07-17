@@ -1,0 +1,31 @@
+{
+    "fallback": "minecraft:empty",
+    "name": "towns_and_towers_expand:exclusives/town_iberian/decor",
+    "elements": [
+        {
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "soyorin:exclusives/town_iberian/decor/well",
+                "projection": "rigid",
+                "processors": "minecraft:empty"
+            },
+            "weight": 1
+        },
+        {
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "soyorin:exclusives/town_iberian/decor/street_lamp",
+                "projection": "rigid",
+                "processors": "minecraft:empty"
+            },
+            "weight": 3
+        },
+        {
+        "weight": 1,
+        "element": {
+          "projection": "rigid",
+          "element_type": "minecraft:empty_pool_element"
+        }
+      }
+    ]
+}

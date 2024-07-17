@@ -1,0 +1,42 @@
+{
+    "fallback": "minecraft:empty",
+    "name": "towns_and_towers_expand:exclusives/town_iberian/houses",
+    "elements": [
+        {
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "soyorin:exclusives/town_iberian/houses/iberian_garden_1",
+                "projection": "rigid",
+                "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+            },
+            "weight": 1
+        },
+        {
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "soyorin:exclusives/town_iberian/houses/iberian_large_house_1",
+                "projection": "rigid",
+                "processors": "kaisyn:village/exclusives/iberian/house_iberian"
+            },
+            "weight": 10
+        },
+        {
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "soyorin:exclusives/town_iberian/houses/iberian_large_house_2",
+                "projection": "rigid",
+                "processors": "kaisyn:village/exclusives/iberian/house_iberian"
+            },
+            "weight": 10
+        },
+        {
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "soyorin:exclusives/town_iberian/houses/iberian_large_house_3",
+                "projection": "rigid",
+                "processors": "kaisyn:village/exclusives/iberian/house_iberian"
+            },
+            "weight": 10
+        }
+    ]
+}
