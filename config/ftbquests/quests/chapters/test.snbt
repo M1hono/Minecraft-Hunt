@@ -1,0 +1,30 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "test"
+	group: ""
+	id: "51985B41460D511B"
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		id: "40E2B9555FC467BA"
+		tags: ["test"]
+		tasks: [
+			{
+				id: "20AF323094EFA7DF"
+				item: "minecraft:oak_log"
+				tags: ["test2"]
+				type: "item"
+			}
+			{
+				id: "0D9010F89AC51C52"
+				item: "quark:hollow_oak_log"
+				type: "item"
+			}
+		]
+		title: "Test"
+		x: -7.5d
+		y: -5.0d
+	}]
+	title: "test"
+}

@@ -1,6 +1,5 @@
-const { extractName } = require("../API/ExtractName");
-const { getMana } = require("../API/MNAmana");
 const { $RecipeType } = require("packages/mezz/jei/api/recipe/$RecipeType");
+const { extractName } = require("../API/Utils");
 
 PlayerEvents.chat(event => {
     if (event.getMessage() != 'recipe') return;

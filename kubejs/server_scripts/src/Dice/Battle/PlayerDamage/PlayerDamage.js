@@ -1,11 +1,11 @@
 // priority: 99
-import { $Stages } from "packages/dev/latvian/mods/kubejs/stages/$Stages";
 import { $MinecraftServer } from "packages/net/minecraft/server/$MinecraftServer";
 import { $DamageSource } from "packages/net/minecraft/world/damagesource/$DamageSource";
 import { $LivingEntity } from "packages/net/minecraft/world/entity/$LivingEntity";
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
-const { handleDiceRoll } = require("../../../GlobalImports");
-const { getSkillLevel } = require("../../../API/Pmmo");
+import { getSkillLevel } from "../../../API/Pmmo";
+import { handleDiceRoll } from "../../../GlobalImports";
+import { getOrSource } from "../../../API/Utils";
 /**
  * @author M1hono
  * @description Deal with events when player deal damage to other entities.
@@ -21,24 +21,35 @@ export function playerDamage(entity , target , amount , source) {
             block,
             server
         } = entity
+        const {
+            immediate: { type }
+        } = source
         global.initDice(entity)
-        // console.log(entity)
-        // console.log(target)
-        // console.log(amount)
-        // console.log(source.immediate.nbt)
+        let str = getSkillLevel("strength" , entity)
+        let dex = getSkillLevel("dexterity" , entity)
+        let originalInvulnerableTime = target.invulnerableTime
+        target.invulnerableTime = originalInvulnerableTime
         if (!stages.has("attack")) {
             switch (source.getType()) {
                 case "player":
                     stages.add("attack")
-                    let str = getSkillLevel("strength" , entity)
                     handleDiceRoll(entity , "attack" , str )
-                    removeStage( server , stages )
+                    target.invulnerableTime = 0
+                    target.attack( getOrSource("alexscaves:acid" , entity), amount)
+                    removeStage( server , stages)
                     break;
                 case "arrow":
                     stages.add("attack")
-                    let dex = getSkillLevel("dexterity" , entity)
                     handleDiceRoll(entity , "attack" , dex )
-                    removeStage( server , stages )
+                    removeStage( server , stages)
+                    break;
+                case "trident":
+                    stages.add("attack")
+                    if (type == "l2weaponry:throwing_axe") {
+                        target.invulnerableTime = 0
+                    }
+                    handleDiceRoll(entity , "attack" , dex )
+                    removeStage( server , stages)
                     break;
             }
         }
@@ -49,9 +60,9 @@ export function playerDamage(entity , target , amount , source) {
  * @author M1hono
  * @description Using stages to control the frequency of diceRoll.
  * @param {$MinecraftServer} server
- * @param {$Stages} stages
+ * @param {$Stages_} stages
  */
-function removeStage(server , stages) {
+function removeStage(server , stages , originalInvulnerableTime , target) {
     server.scheduleInTicks(1, () => {
         stages.remove("attack")
     })

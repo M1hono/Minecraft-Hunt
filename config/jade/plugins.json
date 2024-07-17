@@ -56,6 +56,10 @@
   "jadeaddons": {
     "equipment_requirement": ""
   },
+  "crockpot": {
+    "birdcage": true,
+    "crock_pot": true
+  },
   "supplementaries": {
     "hat_stand": true
   },
