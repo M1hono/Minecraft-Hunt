@@ -1,3 +1,4 @@
+// packmode: Dev
 const { $RecipeType } = require("packages/mezz/jei/api/recipe/$RecipeType");
 const { extractName } = require("../API/Utils");
 

@@ -1,3 +1,4 @@
+// packmode: Dev
 // ServerEvents.tags('worldgen/biome', event => {
 //     // /**地形 */
 //     // //平原
