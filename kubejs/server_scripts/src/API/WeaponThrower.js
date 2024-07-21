@@ -85,7 +85,6 @@ WeaponThrower.prototype = {
      */
     _handleWeaponThrow: function(itemStack, slot) {
         if (this.player.isCrouching() || !this.player.isAlive()) return;
-
         this.player.potionEffects.add("minecraft:slowness", this.slownessDuration, this.slownessAmplifier);
 
         let damage = this._getItemDamage(itemStack);

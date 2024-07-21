@@ -1,5 +1,9 @@
+// ignore: true
 // priority: 150
 // requires: mna
+
+// This part has been divided into another project.
+
 const { PlayerMagicProvider } = require("packages/com/mna/capabilities/playerdata/magic/PlayerMagicProvider");
 const { ServerMessageDispatcher } = require("packages/com/mna/network/ServerMessageDispatcher");
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player");

@@ -25,3 +25,5 @@ hs_*
 /config/quark-common.toml
 resourcepacks/Minecraft-Mod-Language-Modpack-Converted-1.20.1.zip
 resourcepacks/
+fancymenu_data/
+mods/.index/

@@ -1,4 +1,4 @@
-// priority: 150
+// priority: 149
 import { getUniqueCuriosItems, isPlayerWearingItem } from "../API/Curios";
 import { PlayerAttributeManager } from "./AttributeManager";
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player");
@@ -36,7 +36,6 @@ export const SetBonusManager = {
         if (!player.persistentData.contains("activeSetBonus")) {
             player.persistentData.putString("activeSetBonus", "default");
         }
-        PlayerAttributeManager.initializeAttributes(player);
     },
 
     _getEquippedItems: function(player) {

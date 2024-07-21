@@ -142,19 +142,19 @@ const { STRUCTURE } = $Registries;
  *     }
  * });
  */
-export function asyncStructureLocator(player, structure, callback) {
-    const { level } = player
-    const structureId = Utils.id(structure)
-    const structureTagKey = $TagKey.create(STRUCTURE, structureId)
-    $AsyncLocator.locate(level, structureTagKey, player.blockPosition(), 10000, false)
-        .thenOnServerThread(pos => {
-            if (pos != null) {
-                callback(pos)
-            } else {
-                callback(null)
-            }
-        })
-}
+// export function asyncStructureLocator(player, structure, callback) {
+//     const { level } = player
+//     const structureId = Utils.id(structure)
+//     const structureTagKey = $TagKey.create(STRUCTURE, structureId)
+//     $AsyncLocator.locate(level, structureTagKey, player.blockPosition(), 10000, false)
+//         .thenOnServerThread(pos => {
+//             if (pos != null) {
+//                 callback(pos)
+//             } else {
+//                 callback(null)
+//             }
+//         })
+// }
 /**
  * @Require MoreJS
  * @author M1hono

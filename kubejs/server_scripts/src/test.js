@@ -5,6 +5,8 @@ const { screenshake } = require("./API/Utils")
 const { PlayerAttributeManager } = require("./Dice/AttributeManager")
 const { $ServerLevel } = require("packages/net/minecraft/server/level/$ServerLevel")
 const { $MinecraftServer } = require("packages/net/minecraft/server/$MinecraftServer")
+const { $Placeholder } = require("packages/de/keksuccino/fancymenu/customization/placeholder/$Placeholder")
+const { $PlaceholderRegistry } = require("packages/de/keksuccino/fancymenu/customization/placeholder/$PlaceholderRegistry")
 LevelEvents.afterExplosion(event => {
     screenshake(event)
 })
@@ -19,6 +21,7 @@ ServerEvents.commandRegistry(event => {
             const { source } = ctx
             /**@type {$ServerPlayer} */
             const player = source.getPlayer()
+            player.level.getSunAngle()
             const level = player.level
             const defaultSpawnX = level.levelData.getXSpawn()
             const defaultSpawnY = level.levelData.getYSpawn()

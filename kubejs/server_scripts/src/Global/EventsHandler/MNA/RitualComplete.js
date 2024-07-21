@@ -1,4 +1,6 @@
+// ignore: true
 // priority: 100
+// This part has been divided into another project.
 const { $Player_ } = require("packages/net/minecraft/world/entity/player/$Player")
 const { extractName } = require("../../../API/Utils")
 /**

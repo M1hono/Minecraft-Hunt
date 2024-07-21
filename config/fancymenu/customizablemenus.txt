@@ -1,0 +1,5 @@
+type = customizablemenus
+
+com.github.alexthe666.iceandfire.client.gui.IceAndFireMainMenu {
+}
+

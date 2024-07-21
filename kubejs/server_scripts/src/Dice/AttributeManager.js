@@ -1,4 +1,4 @@
-// priority: 99
+// priority: 150
 import { randomUUID } from "../API/Utils"
 const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
 const { $CompoundTag } = require("packages/net/minecraft/nbt/$CompoundTag")

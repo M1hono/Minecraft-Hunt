@@ -5,12 +5,13 @@ ForgeEvents.onEvent($XpEvent,
     /**@typeof $XpEvent */event => {
     handlePmmoXp(event)
 })
-const { $RitualCompleteEvent } = require("packages/com/mna/api/events/$RitualCompleteEvent")
-const { handleRitualComplete } = require("./GlobalImports/EventHandlerImports")
-ForgeEvents.onEvent( $RitualCompleteEvent,
-    /**@typeof  $RitualCompleteEvent*/ event => {
-    handleRitualComplete(event)
-})
+// This part has been divided into another project.
+// const { $RitualCompleteEvent } = require("packages/com/mna/api/events/$RitualCompleteEvent")
+// const { handleRitualComplete } = require("./GlobalImports/EventHandlerImports")
+// ForgeEvents.onEvent( $RitualCompleteEvent,
+//     /**@typeof  $RitualCompleteEvent*/ event => {
+//     handleRitualComplete(event)
+// })
 const { $LivingDamageEvent } = require("packages/net/minecraftforge/event/entity/living/$LivingDamageEvent")
 const { handleLivingDamage } = require("./GlobalImports/EventHandlerImports")
 ForgeEvents.onEvent($LivingDamageEvent,/**@typeof  $LivingDamageEvent*/event=>{

@@ -1,3 +1,4 @@
+// ignored: true
 /**
  * @typedef {"l2weaponry:trident-bypass_magic-no_projectile"
 * |"tetra:bleeding"
@@ -186,4 +187,4 @@
 * |"l2hostility:wither"} Trait
 */
 
-export {};
+export {}; 
