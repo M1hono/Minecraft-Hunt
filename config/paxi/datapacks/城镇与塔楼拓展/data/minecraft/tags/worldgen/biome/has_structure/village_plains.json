@@ -1,9 +1,0 @@
-{
-    "replace": false,
-    "values": [
-        {
-            "id":"#region:overworld/surface/warm/plains",
-            "required": false
-        }
-    ]
-}

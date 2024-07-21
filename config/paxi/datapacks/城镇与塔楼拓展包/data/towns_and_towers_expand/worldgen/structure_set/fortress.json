@@ -1,0 +1,16 @@
+{
+    "structures": [
+        {
+            "structure": "towns_and_towers_expand:exclusives/fortress_iberian",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "salt": 123456789,
+        "spacing": 56,
+        "separation": 32,
+        "frequency": 1,
+        "spread_type": "linear"
+    }
+}

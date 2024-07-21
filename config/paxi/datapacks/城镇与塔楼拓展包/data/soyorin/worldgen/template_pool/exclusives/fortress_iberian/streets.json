@@ -1,0 +1,114 @@
+{
+  "fallback": "minecraft:empty",
+  "name": "towns_and_towers_expand:exclusives/town_iberian/street",
+  "elements": [
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/straight_01",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/straight_02",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/straight_03",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/straight_04",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/corner_01",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/corner_02",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/corner_03",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/corner_04",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/crossroad_01",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/crossroad_02",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/crossroad_03",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "legacy_single_pool_element",
+        "location": "soyorin:exclusives/town_iberian/street/crossroad_04",
+        "projection": "terrain_matching",
+        "processors": "kaisyn:village/exclusives/iberian/street_iberian"
+      },
+      "weight": 1
+    }
+  ]
+}

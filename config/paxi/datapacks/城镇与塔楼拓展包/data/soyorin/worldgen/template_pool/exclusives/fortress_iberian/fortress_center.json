@@ -1,0 +1,15 @@
+{
+    "fallback": "minecraft:empty",
+    "name": "towns_and_towers_expand:exclusives/town_iberian/town_center",
+    "elements": [
+        {
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "soyorin:exclusives/fortress_iberian/fortress_centers/iberian_meeting_point_1",
+                "projection": "rigid",
+                "processors": "minecraft:empty"
+            },
+            "weight": 1
+        }
+    ]
+}
