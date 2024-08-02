@@ -24,7 +24,7 @@ ForgeEvents.onEvent($ItemFishedEvent,/**@typeof $ItemFishedEvent*/event=>{
 })
 const { $AdvancementEvent$AdvancementEarnEvent } = require("packages/net/minecraftforge/event/entity/player/$AdvancementEvent$AdvancementEarnEvent")
 const { handleAdvancementTrigger } = require("./GlobalImports/EventHandlerImports")
-ForgeEvents.onEvent($AdvancementEvent$AdvancementEarnEvent,/**@typeof $AdvancementEvent$AdvancementEarnEvent*/event=>{
+ForgeEvents.onEvent($AdvancementEvent$AdvancementEarnEvent,/**@param $AdvancementEvent$AdvancementEarnEvent*/event=>{
     handleAdvancementTrigger(event)
 })
 const { handlePlayerClone } = require("./GlobalImports/EventHandlerImports")

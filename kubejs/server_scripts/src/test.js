@@ -1,12 +1,13 @@
 // priority: 99
 const { $ServerPlayer } = require("packages/net/minecraft/server/level/$ServerPlayer")
-const { getUniqueCuriosItems, getCuriosItemList } = require("./API/Curios")
 const { screenshake } = require("./API/Utils")
 const { PlayerAttributeManager } = require("./Dice/AttributeManager")
-const { $ServerLevel } = require("packages/net/minecraft/server/level/$ServerLevel")
-const { $MinecraftServer } = require("packages/net/minecraft/server/$MinecraftServer")
-const { $Placeholder } = require("packages/de/keksuccino/fancymenu/customization/placeholder/$Placeholder")
-const { $PlaceholderRegistry } = require("packages/de/keksuccino/fancymenu/customization/placeholder/$PlaceholderRegistry")
+const { $CustomGoal } = require("packages/net/liopyu/entityjs/util/ai/$CustomGoal")
+const { $Goal } = require("packages/net/minecraft/world/entity/ai/goal/$Goal")
+const { $EnumSet } = require("packages/java/util/$EnumSet")
+const { $Goal$Flag } = require("packages/net/minecraft/world/entity/ai/goal/$Goal$Flag")
+const { $LivingEntity } = require("packages/net/minecraft/world/entity/$LivingEntity")
+const { $Mob } = require("packages/net/minecraft/world/entity/$Mob")
 LevelEvents.afterExplosion(event => {
     screenshake(event)
 })
@@ -44,4 +45,15 @@ ServerEvents.commandRegistry(event => {
             return 1
         })
     )
+})
+EntityEvents.spawned(event => {
+    /**@type {$LivingEntityKJS_}*/
+    const entity = event.getEntity()
+    entity.getAttributeTotalValue("minecraft:generic.movement_speed")
+})
+new $CustomGoal().setFlags($EnumSet.of($Goal$Flag.MOVE))
+EntityEvents.spawned(event => {
+    if (!(event.entity.type == "villager")) return
+    /**@type {$Mob} */
+    const entity = event.entity
 })

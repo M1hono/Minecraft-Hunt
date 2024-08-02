@@ -11,11 +11,10 @@ import { $Entity } from "packages/net/minecraft/world/entity/$Entity";
 import { $LevelUtils } from "packages/com/almostreliable/morejs/util/$LevelUtils";
 import { $ResourceOrTag } from "packages/com/almostreliable/morejs/util/$ResourceOrTag";
 import { $BlockPos } from "packages/net/minecraft/core/$BlockPos";
-import { $AsyncLocator } from "packages/brightspark/asynclocator/$AsyncLocator";
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
 import { $TagKey } from "packages/net/minecraft/tags/$TagKey";
-const UUID = Java.loadClass('java.util.UUID');
-const $UUIDUtil = Java.loadClass('net.minecraft.core.UUIDUtil');
+const UUID = Java.loadClass("java.util.UUID");
+const $UUIDUtil = Java.loadClass("net.minecraft.core.UUIDUtil");
 /**
  * @author https://github.com/squoshi
  * @description Return a random UUID.
@@ -35,11 +34,11 @@ export let toNBTUUID = (uuid) => $UUIDUtil.uuidToIntArray(uuid);
  * @returns {$Entity_}
  */
 export let entityByUUID = (uuid) => {
-    Utils.server.getEntities().forEach(entity => {
-        if (entity.uuid.equals(uuid)) return entity;
-        return null;
-    });
-}
+  Utils.server.getEntities().forEach((entity) => {
+    if (entity.uuid.equals(uuid)) return entity;
+    return null;
+  });
+};
 /**
  * @author M1hono
  * @description Return a random chest loot table.
@@ -48,29 +47,42 @@ export let entityByUUID = (uuid) => {
  * @returns {$LootTable}
  */
 export function chestloot(entity, filter) {
-    const {
-        server: { lootData }
-    } = entity
-    let filteredList = lootData.getKeys($LootDataType.TABLE)
-        .stream()
-        .filter(id => id.path.contains(filter))
-        .map(id => id.toString()).toList()
-    return filteredList[Math.floor(Math.random() * filteredList.length)]
+  const {
+    server: { lootData },
+  } = entity;
+  let filteredList = lootData
+    .getKeys($LootDataType.TABLE)
+    .stream()
+    .filter((id) => id.path.contains(filter))
+    .map((id) => id.toString())
+    .toList();
+  return filteredList[Math.floor(Math.random() * filteredList.length)];
 }
 /**
  * @author https://discord.com/channels/303440391124942858/1048591172165189632/threads/1100369951308664933
  * @description Spawn a structure in the world.
- * @param {$Server} server 
- * @param {$Dimension} dimension 
- * @param {$Structure} structure 
- * @param {integer} x 
- * @param {integer} y 
- * @param {integer} z 
+ * @param {$Server} server
+ * @param {$Dimension} dimension
+ * @param {$Structure} structure
+ * @param {integer} x
+ * @param {integer} y
+ * @param {integer} z
  */
 export function spawnStructure(server, dimension, structure, x, y, z) {
-    let level = server.getLevel(dimension)
-    let pos = BlockPos(x, y, z)
-    server.structureManager.get(structure).ifPresent(e => e.placeInWorld(level, pos, pos, new $StructurePlaceSettings(), level.random, 3))
+  let level = server.getLevel(dimension);
+  let pos = BlockPos(x, y, z);
+  server.structureManager
+    .get(structure)
+    .ifPresent((e) =>
+      e.placeInWorld(
+        level,
+        pos,
+        pos,
+        new $StructurePlaceSettings(),
+        level.random,
+        3
+      )
+    );
 }
 /**
  * @notification Require Lodestone
@@ -78,20 +90,22 @@ export function spawnStructure(server, dimension, structure, x, y, z) {
  * @description Shake the screen.
  */
 export function screenshake(event) {
-    const {
-        x,
-        y,
-        z,
-        level
-    } = event
-    level.getEntitiesWithin(AABB.of(x - 20, y - 20, z - 20, x + 20, y + 20, z + 20)).forEach(entity => {
-        if (entity.isPlayer()) {
-            let distance = entity.getDistance(x, y, z)
-            distance = 20 - distance
-            distance = distance / 20 * 2
-            entity.sendData('screenshake', { i1: distance * 0.6, i2: distance, i3: distance * 0.2, duration: 15 })
-        }
-    })
+  const { x, y, z, level } = event;
+  level
+    .getEntitiesWithin(AABB.of(x - 20, y - 20, z - 20, x + 20, y + 20, z + 20))
+    .forEach((entity) => {
+      if (entity.isPlayer()) {
+        let distance = entity.getDistance(x, y, z);
+        distance = 20 - distance;
+        distance = (distance / 20) * 2;
+        entity.sendData("screenshake", {
+          i1: distance * 0.6,
+          i2: distance,
+          i3: distance * 0.2,
+          duration: 15,
+        });
+      }
+    });
 }
 const { DAMAGE_TYPE } = $Registries;
 
@@ -105,33 +119,32 @@ const { DAMAGE_TYPE } = $Registries;
  * you must use target's attack method to deal damage to the target and use attacker as the argument.
  * player.attack(getOrSource("minecraft:fire", entity),10) // let the entity deal 10 fire damage to the player.
  */
-export function getOrSource(damageType , entity ) {
-    const { level } = entity
-    const type = Utils.id(damageType)
-    const damageTypeKey = $ResourceKey.create(DAMAGE_TYPE, type)
-    const damageTypeHolder = 
-    level
+export function getOrSource(damageType, entity) {
+  const { level } = entity;
+  const type = Utils.id(damageType);
+  const damageTypeKey = $ResourceKey.create(DAMAGE_TYPE, type);
+  const damageTypeHolder = level
     .registryAccess()
     .registryOrThrow(DAMAGE_TYPE)
-    .getHolderOrThrow(damageTypeKey)
-    return new $DamageSource(damageTypeHolder , entity, entity)
+    .getHolderOrThrow(damageTypeKey);
+  return new $DamageSource(damageTypeHolder, entity, entity);
 }
 const { STRUCTURE } = $Registries;
 /**
  * @Require AsnycLocator
  * @author M1hono
  * @description Asynchronously searches for a specified structure around the player.
- * 
+ *
  * This function uses $AsyncLocator to search for the specified structure
  * around the player's current position. The search range is 100 blocks
  * around the player's location. The search result is returned via a callback.
- * 
+ *
  * @param {$Player} player - The player object, used to determine the starting position for the search.
  * @param {string} structure - The identifier of the structure to search for (e.g., "minecraft:ancient_city").
  * @param {function($BlockPos|null): void} callback - The callback function to be called when the search is complete.
  *        If a structure is found, the callback will receive a BlockPos object as an argument, representing the structure's position.
  *        If no structure is found, the callback will receive null as an argument.
- * 
+ *
  * @example
  * // Search for an ancient city and log the result to the console
  * structureLocator(player, "minecraft:ancient_city", (pos) => {
@@ -164,10 +177,15 @@ const { STRUCTURE } = $Registries;
  * @returns {$BlockPos} - The position of the structure if found.
  */
 export function structureLocator(player, structure) {
-    const { level } = player
-    const structureId = Utils.id(structure)
-    const resourceOrTag = $ResourceOrTag.get(structureId , STRUCTURE)
-    return $LevelUtils.findStructure(player.blockPosition() , level , resourceOrTag , 5000)
+  const { level } = player;
+  const structureId = Utils.id(structure);
+  const resourceOrTag = $ResourceOrTag.get(structureId, STRUCTURE);
+  return $LevelUtils.findStructure(
+    player.blockPosition(),
+    level,
+    resourceOrTag,
+    5000
+  );
 }
 const { BIOME } = $Registries;
 /**
@@ -179,10 +197,15 @@ const { BIOME } = $Registries;
  * @returns {$BlockPos} - The position of the biome if found.
  */
 export function biomeLocator(player, biome) {
-    const { level } = player
-    const biomeId = Utils.id(biome)
-    const resourceOrTag = $ResourceOrTag.get(biomeId , BIOME)
-    return $LevelUtils.findBiome(player.blockPosition() , level , resourceOrTag , 5000)
+  const { level } = player;
+  const biomeId = Utils.id(biome);
+  const resourceOrTag = $ResourceOrTag.get(biomeId, BIOME);
+  return $LevelUtils.findBiome(
+    player.blockPosition(),
+    level,
+    resourceOrTag,
+    5000
+  );
 }
 /**
  * @author M1hono
@@ -191,10 +214,20 @@ export function biomeLocator(player, biome) {
  * @returns {string} - The extracted name (e.g., "sth")
  */
 export function extractName(id) {
-    if (typeof id !== 'string' || id.trim() === '') {
-        return ''
-    }
-    const withoutNamespace = id.includes(':') ? id.split(':').pop() : id
-    const parts = withoutNamespace.split('/')
-    return parts[parts.length - 1] || ''
+  if (typeof id !== "string" || id.trim() === "") {
+    return "";
+  }
+  const withoutNamespace = id.includes(":") ? id.split(":").pop() : id;
+  const parts = withoutNamespace.split("/");
+  return parts[parts.length - 1] || "";
+}
+/**
+ * @author M1hono
+ * @description Return a boolean value based on the given probability.
+ * @param {number} probability - A number between 0.0 and 100.0
+ * @returns {boolean} The result of the random chance.
+ */
+export function randomChance(probability) {
+  if (typeof probability !== 'number') return false;
+  return Math.random() < Math.min(Math.max(probability, 0), 100) / 100;
 }
