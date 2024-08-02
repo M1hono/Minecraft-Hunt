@@ -4,6 +4,7 @@ import { setLevelWithoutReroll, setLevelWithReroll } from "../../../API/l2Hostil
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
 import { $ServerLevel } from "packages/net/minecraft/server/level/$ServerLevel";
 import { getMaxMana, setMana } from "../../../API/MNAmana";
+import { randomInt } from "../../../API/Utils";
 
 /**
  * @author M1hono
@@ -25,7 +26,7 @@ export function lootbigFailure(level, player, block) {
             enemy.spawn();
 
             let strongEnemy = level.getEntity(uuid)
-            setLevelWithReroll( strongEnemy , Math.floor(Math.random() * 100)+1)
+            setLevelWithReroll( strongEnemy , randomInt(1,50))
         },
         // event 2 : give slowness and hunger
         () => {
@@ -41,7 +42,7 @@ export function lootbigFailure(level, player, block) {
         }
         
     ];
-    const randomEvent = events[Math.floor(Math.random() * events.length)]
+    const randomEvent = events[randomInt(0, events.length - 1)]
     // This is for testing
     // const randomEvent = events[1]
     randomEvent();
@@ -73,7 +74,7 @@ export function lootbigSuccess(level, player, block) {
         }
         // 
     ]
-    const randomEvent = events[Math.floor(Math.random() * events.length)]
+    const randomEvent = events[randomInt(0, events.length - 1)]
     // This is for testing
     // const randomEvent = events[1]
     randomEvent()
@@ -93,7 +94,7 @@ export function lootNormalEvents (level, player, block) {
             
         }
     ]
-    const randomEvent = events[Math.floor(Math.random() * events.length)]
+    const randomEvent = events[randomInt(0, events.length - 1)]
     // This is for testing
     // const randomEvent = events[1]
     randomEvent()

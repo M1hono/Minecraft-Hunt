@@ -231,3 +231,14 @@ export function randomChance(probability) {
   if (typeof probability !== 'number') return false;
   return Math.random() < Math.min(Math.max(probability, 0), 100) / 100;
 }
+/**
+ * @author M1hono
+ * @description Return a random integer between the specified minimum and maximum values (inclusive).
+ * @param {number} min - The minimum value (integer, can be negative)
+ * @param {number} max - The maximum value (integer, can be negative)
+ * @returns {number} A random integer between min and max (inclusive)
+ */
+export function randomInt(min, max) {
+  if (typeof min !== 'number' || typeof max !== 'number') return NaN;
+  return Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) + Math.ceil(min);
+}

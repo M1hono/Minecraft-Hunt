@@ -3,6 +3,7 @@ import { $Player } from "packages/net/minecraft/world/entity/player/$Player"
 import { $FishingHook } from "packages/net/minecraft/world/entity/projectile/$FishingHook"
 import { getSkillLevel } from "../../../../API/Pmmo"
 import { lootbigFailure, lootbigSuccess } from "../RewardEvents"
+import { randomChance } from "../../../../API/Utils"
 const { $ServerLevel } = require("packages/net/minecraft/server/level/$ServerLevel")
 const { $FallingBlockEntity } = require("packages/net/minecraft/world/entity/item/$FallingBlockEntity")
 const { $LootParams$Builder } = require("packages/net/minecraft/world/level/storage/loot/$LootParams$Builder")
@@ -25,7 +26,7 @@ export function fishingChest(player, hook, dx, dy, dz , event) {
         y,
         z
     } = hook
-    if (Math.floor(Math.random() * 100) + 1 >= 50) {
+    if (randomChance(50)) {
         const falling_block = level.createEntity('falling_block')
         falling_block.setPos(x, y + 1, z)
         falling_block.setMotion(dx, dy, dz)

@@ -1,5 +1,6 @@
 // priority: 101
 import { $Player } from "packages/net/minecraft/world/entity/player/$Player"
+import { randomInt } from "../../../API/Utils"
 /**
  * @typedef {"attack" | "defense" | "ultil"} DiceType
  */
@@ -12,7 +13,7 @@ import { $Player } from "packages/net/minecraft/world/entity/player/$Player"
 global.dice = (player, type , sides) =>{
     global.initDice(player)
     const { data } = player
-    const dice =  Math.floor(Math.random() * sides) + 1
+    const dice =  randomInt(1, sides)
     switch (type) {
         case 'attack':
             data.attackdice = dice
