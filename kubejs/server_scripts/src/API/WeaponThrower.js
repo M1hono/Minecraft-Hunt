@@ -1,15 +1,17 @@
 // priority: 145
-import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
-import { getItemAttackDamageFromTooltip } from "./Battle";
-import { $Level } from "packages/net/minecraft/world/level/$Level";
-const { $ItemStack } = require("packages/net/minecraft/world/item/$ItemStack");
-const {
-  $ThrowingAxeEntity,
-} = require("packages/dev/xkmc/l2weaponry/content/entity/$ThrowingAxeEntity");
-const {
-  $AbstractArrow,
-} = require("packages/net/minecraft/world/entity/projectile/$AbstractArrow");
-const { $SoundEvents } = require("packages/net/minecraft/sounds/$SoundEvents");
+
+// import { $Player } from "packages/net/minecraft/world/entity/player/$Player";
+// import { getItemAttackDamageFromTooltip as Battle.getItemAttackDamageFromTooltip } from "./Battle";
+// import { $Level } from "packages/net/minecraft/world/level/$Level";
+// const { $ItemStack } = require("packages/net/minecraft/world/item/$ItemStack");
+// const {
+//   $ThrowingAxeEntity,
+// } = require("packages/dev/xkmc/l2weaponry/content/entity/$ThrowingAxeEntity");
+// const {
+//   $AbstractArrow,
+// } = require("packages/net/minecraft/world/entity/projectile/$AbstractArrow");
+// const { $SoundEvents } = require("packages/net/minecraft/sounds/$SoundEvents");
+
 /**
  * @public
  * @author M1hono
@@ -18,7 +20,7 @@ const { $SoundEvents } = require("packages/net/minecraft/sounds/$SoundEvents");
  * @param {$Level} level - The level in which the throwing occurs
  * @param {$MinecraftServer_} server - The Minecraft server instance
  */
-export function WeaponThrower(player, level, server) {
+function WeaponThrower(player, level, server) {
   this.player = player;
   this.level = level;
   this.server = server;
@@ -127,7 +129,7 @@ WeaponThrower.prototype = {
     if (this.customDamageCalculation) {
       return this.customDamageCalculation(this.player, itemStack);
     }
-    return getItemAttackDamageFromTooltip(this.player, itemStack);
+    return Battle.getItemAttackDamageFromTooltip(this.player, itemStack);
   },
 
   /**

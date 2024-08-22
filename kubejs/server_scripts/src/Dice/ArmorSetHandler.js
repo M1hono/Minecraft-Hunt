@@ -1,11 +1,11 @@
 // priority: 149
-import { getUniqueCuriosItems, isPlayerWearingItem } from "../API/Curios";
-import { PlayerAttributeManager } from "./AttributeManager";
-const {
-  $Player,
-} = require("packages/net/minecraft/world/entity/player/$Player");
+// import { getUniqueCuriosItems as Curios.getUniqueCuriosItems, isPlayerWearingItem as Curios.isPlayerWearingItem } from "../API/Curios";
+// import { PlayerAttributeManager as AttributeManager.PlayerAttributeManager } from "./AttributeManager";
+// const {
+//   $Player,
+// } = require("packages/net/minecraft/world/entity/player/$Player");
 
-export const SetBonusManager = {
+ const SetBonusManager = {
   setDefinitions: {},
 
   defineSet: function (setName, definition) {
@@ -16,7 +16,7 @@ export const SetBonusManager = {
   updatePlayerSetBonus: function (player) {
     this._initializePlayerData(player);
     const equippedItems = this._getEquippedItems(player);
-    const curiosItems = getUniqueCuriosItems(player);
+    const curiosItems = Curios.getUniqueCuriosItems(player);
     let newActiveSet = "default";
     for (const [setName, definition] of Object.entries(this.setDefinitions)) {
       if (
@@ -73,7 +73,7 @@ export const SetBonusManager = {
     );
 
     const curiosCheck = requiredCurios.every((id) =>
-      isPlayerWearingItem(player, id)
+      Curios.isPlayerWearingItem(player, id)
     );
 
     if (definition.customCheck) {
@@ -92,7 +92,7 @@ export const SetBonusManager = {
 
     const bonuses = this.setDefinitions[setName].bonuses;
     for (const [attribute, value] of Object.entries(bonuses)) {
-      PlayerAttributeManager.addAttribute(player, attribute, value);
+      AttributeManager.PlayerAttributeManager.addAttribute(player, attribute, value);
     }
   },
 
@@ -101,7 +101,7 @@ export const SetBonusManager = {
 
     const bonuses = this.setDefinitions[setName].bonuses;
     for (const [attribute, value] of Object.entries(bonuses)) {
-      PlayerAttributeManager.subtractAttribute(player, attribute, value);
+      AttributeManager.PlayerAttributeManager.subtractAttribute(player, attribute, value);
     }
   },
 

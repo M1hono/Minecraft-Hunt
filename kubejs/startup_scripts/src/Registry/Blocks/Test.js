@@ -1,3 +1,3 @@
-StartupEvents.registry("block",event=>{
-    event.create("test").randomTick(())
-})
+// StartupEvents.registry("block",event=>{
+//     event.create("test").randomTick(())
+// })

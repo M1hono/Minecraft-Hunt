@@ -1,6 +1,6 @@
 // priority: 50
-import { $LivingDamageEvent } from "packages/net/minecraftforge/event/entity/living/$LivingDamageEvent"
-import { playerDamage } from "../../../../Dice/Battle/PlayerDamage/PlayerDamage"
+// import { $LivingDamageEvent } from "packages/net/minecraftforge/event/entity/living/$LivingDamageEvent"
+// import { playerDamage as PlayerDamage.playerDamage } from "../../../../Dice/Battle/PlayerDamage/PlayerDamage"
 
 /**
  * handle living damage event
@@ -13,5 +13,5 @@ global.livingDamage = (event) => {
         source, // damage source
         source : { actual : entity } // enitty that deal damage
     } = event
-    playerDamage(entity, target, amount , source)
+    PlayerDamage.playerDamage(entity, target, amount , source)
 }

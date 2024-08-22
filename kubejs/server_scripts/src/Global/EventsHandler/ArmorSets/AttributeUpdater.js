@@ -1,5 +1,5 @@
 // priority: 50
-const { $PlayerEvent$Clone } = require("packages/net/minecraftforge/event/entity/player/$PlayerEvent$Clone")
+// const { $PlayerEvent$Clone } = require("packages/net/minecraftforge/event/entity/player/$PlayerEvent$Clone")
 /**
  * @param {$PlayerEvent$Clone} event
  */

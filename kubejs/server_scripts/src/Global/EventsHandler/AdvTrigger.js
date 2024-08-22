@@ -1,6 +1,6 @@
 // priority: 50
-const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
-const { $AdvancementEvent$AdvancementEarnEvent } = require("packages/net/minecraftforge/event/entity/player/$AdvancementEvent$AdvancementEarnEvent")
+// const { $Player } = require("packages/net/minecraft/world/entity/player/$Player")
+// const { $AdvancementEvent$AdvancementEarnEvent } = require("packages/net/minecraftforge/event/entity/player/$AdvancementEvent$AdvancementEarnEvent")
 /**
  * @description handle Advancement earn event
  * @param {$AdvancementEvent$AdvancementEarnEvent} event
